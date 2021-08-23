@@ -21,6 +21,8 @@ Sites:
 
 * https://reverb.com/ De este sitio tomamos de refrencia el Carrito de Compras
 
+PPT ECOMMERCE:
+https://docs.google.com/presentation/d/17IAyNnJhLIt6JlgJi-jrFBobYF8rk4ZVpdpYnMSuWac/edit?usp=sharing
 
 Link al wireframe
 * Desktop:  https://xd.adobe.com/view/609f3c30-a1ca-431b-79c6-29cc316be19d-16ae/
