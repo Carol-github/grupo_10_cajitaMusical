@@ -1,0 +1,233 @@
+
+header{
+    z-index: 90;
+   width: 90%; 
+   margin-right: auto;
+   margin-left: auto;
+}
+.header_top{
+    height: 60px;
+    padding-top: 1%;
+    display:flex; 
+    justify-content: space-around;
+}
+.logo_desktop{
+    width: 10%;   
+    display: inline;
+}
+.logo_mobile{
+    width: 10%;   
+    display: none;
+}
+.search_input{
+    height: 40px;
+    padding-left: 1%;
+    width: 50%;
+}
+.login_btn{
+    background-color: #3483FA;
+    color: #ffffff;
+    border-style: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    display: inline;
+}
+.txt_btn_login{
+    margin-left:1%
+}
+.burguer_menu{
+    display: none;
+}
+.login_btn:hover{
+    background-color: #2662BE;
+    font-weight: 600;
+    transition-duration: 0.5s;
+}
+.header_bottom{
+    display:flex; 
+    justify-content: space-around;
+    margin-bottom: 0.5%;
+    height: 50px;
+    overflow: visible;
+}
+.location_address{
+ display:flex; 
+ justify-content: space-evenly;
+ width: 20%;
+ padding-top: 1%;
+}
+.icon_gps{
+    width: 7%;
+}
+.p_gps{
+    font-size: 16px;
+}
+.a_gps_2{
+    color: #3483FA;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.nav_header{
+    padding-top: 2px;
+    width: 40%;
+    display: inline;
+}
+.nav_ul_header{
+    list-style-type: none;
+    padding-top: 3%;
+}
+.nav_ul_li_header{
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+.nav_ul_li_header a{
+    text-decoration: none;
+    color: #000000;
+}
+.nav_ul_li_header a:hover{
+    color: #2662BE; 
+    transition-duration: 0.5s;
+}
+
+.nav_ul_li_cat_ul{
+    display: none;
+    list-style-type: none;
+}
+.nav_ul_li_cat_ul_li{
+    margin-top: 3px;
+}
+.header_bottom nav li:hover > ul {
+    display: block;
+}
+.header_top ul {
+    list-style-type: none;
+}
+.burguer_menu_list{
+    display: none;
+    list-style-type: none;
+}
+.header_top ul li:hover > ul{
+    display: block;
+}
+.btns_header_bottom{
+    display: flex; 
+    justify-content: space-between;
+    width: 30%;
+}
+.btn_header_bottom {
+    background-color: #ffffff;
+    border-style: none; 
+    display: flex;
+    text-decoration: none;
+    color: #000000;
+}
+.btns_header_bottom{
+    align-content: center; 
+    align-items: center;
+}
+.img_btn_fav{
+    width: 15%;
+}
+.img_btn_cart{
+    width: 20%;
+}
+.txt_btn_icon{
+    padding-left: 10px
+} 
+.btn_cart_mobile{
+    display: none;
+}
+.btn_header_bottom:hover {
+    font-weight: 600;
+    transform: scale(1.1,1.1);
+    transition-duration: 0.5s;
+}
+
+.btn_header_bottom_2 {
+   color: #3483FA;
+    background-color: #ffffff;
+    border-style: none; 
+    display: inline;
+    text-decoration: none;
+    
+}
+.btn_header_bottom_2:hover {
+    color: #2662BE;
+    font-weight: 600;
+    transition-duration: 0.5s;
+ }
+
+@media (max-width: 1024px){ 
+
+    .logo_desktop{
+        display: none;
+    }
+    .logo_mobile{
+        display: inline;
+        width: 10%;
+    }
+    .login_btn, .nav_header, .btn_header_bottom, .btn_header_bottom_2 {
+        display: none;
+    }
+    .burguer_menu{
+        background-color: #ffffff;
+        color: #ffffff;
+        border-style: none;
+        width: 30px;
+        display: inline;
+    } 
+    .btn_cart_mobile{
+        display: inline;
+    }
+    .header_bottom{
+        margin-top: 3%;
+    }
+   
+    .location_address{
+        width: 100%;
+        justify-content: left;
+        padding-left: 5%;
+       }
+       .icon_gps{
+        width: 20px;  
+    }
+    .p_gps{
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 14px;
+                margin-right: 5px;
+    }
+    .a_gps_2{
+        margin-top: auto;
+        margin-bottom: auto;
+        color: #3483FA;
+        font-size: 14px;
+        text-decoration: none;
+
+    }
+
+    .delivery_post{
+        margin-left: 5px;
+        display: flex;
+        flex-direction: row;
+        margin-right: 10px;
+    }
+ 
+       .btns_header_bottom{
+        width: 20%;
+    }
+   
+}
+
+
+@media (max-width: 375px){
+    .icon_gps{
+        width: 15px;
+    }
+    .a_gps_2{   
+        font-size: 10px;
+    } 
+ }

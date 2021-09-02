@@ -1,0 +1,22 @@
+@import url(header.css);
+@import url(footer.css);
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 375px){
+     .slider{
+        display: none!important;
+    }
+    .slider_mobile{
+        display: block!important;
+    }
+
+ }

@@ -1,0 +1,25 @@
+{
+  "name": "grupo_10_cajitamusical",
+  "version": "1.0.0",
+  "description": "Una breve descripcion de la oferta de productos:\r Tienda online de instrumentos musicales. Se venderán instrumentos musicales, categorizados en 4 tipos: vientos, percusion, cuerdas y teclados.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carol-github/grupo_10_cajitaMusical.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carol-github/grupo_10_cajitaMusical/issues"
+  },
+  "homepage": "https://github.com/Carol-github/grupo_10_cajitaMusical#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {}
+}
