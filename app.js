@@ -15,7 +15,7 @@ app.get ("/detalle_producto",(req, res) => {
     res.sendFile (path.resolve("./views/productDetail.html"));
 });
 app.get ("/carrito",(req, res) => {
-    res.sendFile (path.resolve("./views/cart.html"));
+    res.sendFile (path.resolve("./views/productCart.html"));
 });
 app.get ("/registro",(req, res) => {
     res.sendFile (path.resolve("./views/register.html"));

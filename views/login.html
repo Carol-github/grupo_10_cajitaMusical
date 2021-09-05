@@ -112,15 +112,15 @@
 
 <!-- main start -->
 
-<main style="display: flex; justify-content: center; margin-top: 10vh;">
-    <section style=" width: 50%; height: 50vh;   border-radius: 35px;">
-        <form action="/login" method="POST" style="display: flex; flex-direction: column; justify-content: space-evenly; width: 35%; height: 30vh; margin: auto;">
-            <label for="user" style="color: #000; font-size: 16px;">USUARIO</label>
-            <input type="text" id="user" required>
-            <label for="pass"  style="color: #000; font-size: 16px">CONTRASEÑA</label>
-            <input type="password" id="pass"  minlength="5"  maxlength="10" required>
+<main class="content_reg">
+    <section class="section_reg" >
+        <form class="form_reg"action="/login" method="POST">
+            <label class="label_reg" for="user">USUARIO</label>
+            <input class="input_reg" type="text" id="user" required>
+            <label class="label_reg" for="pass">CONTRASEÑA</label>
+            <input class="input_reg" type="password" id="pass"  minlength="5"  maxlength="10" required>
             <a href="#">Olvidaste tu contraseña</a>
-            <button type="submit">INGRESAR</button>
+            <button class="login_btn" type="submit">INGRESAR</button>
             <a href="#">¿No tenés usuario? Registrate</a>
         </form>
     </section>
