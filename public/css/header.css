@@ -22,27 +22,32 @@ header{
 .search_input{
     height: 40px;
     padding-left: 1%;
-    width: 50%;
+    width: 50%!important;
 }
+/* 
 .login_btn{
-    background-color: #3483FA;
+    background-color: var(--btn_background_color);
     color: #ffffff;
     border-style: none;
     width: 150px;
-    height: 40px;
+    height: 40px!important;
     border-radius: 10px;
-    display: inline;
-}
+    display: flex;
+} 
+.login_btn img{
+    width: 50px;
+} 
+
 .txt_btn_login{
     margin-left:1%
 }
-.burguer_menu{
-    display: none;
-}
 .login_btn:hover{
-    background-color: #2662BE;
+    background-color: var(--btn_background_color_hover);
     font-weight: 600;
     transition-duration: 0.5s;
+} */
+.burguer_menu{
+    display: none;
 }
 .header_bottom{
     display:flex; 
@@ -64,7 +69,7 @@ header{
     font-size: 16px;
 }
 .a_gps_2{
-    color: #3483FA;
+    color:  var(--btn_background_color);
     font-size: 12px;
     text-decoration: none;
 }
@@ -88,7 +93,7 @@ header{
     color: #000000;
 }
 .nav_ul_li_header a:hover{
-    color: #2662BE; 
+    color:  var(--btn_background_color_hover); 
     transition-duration: 0.5s;
 }
 
@@ -147,7 +152,7 @@ header{
 }
 
 .btn_header_bottom_2 {
-   color: #3483FA;
+   color:  var(--btn_background_color);
     background-color: #ffffff;
     border-style: none; 
     display: inline;
@@ -155,7 +160,7 @@ header{
     
 }
 .btn_header_bottom_2:hover {
-    color: #2662BE;
+    color:  var(--btn_background_color_hover);
     font-weight: 600;
     transition-duration: 0.5s;
  }
@@ -171,6 +176,9 @@ header{
     }
     .login_btn, .nav_header, .btn_header_bottom, .btn_header_bottom_2 {
         display: none;
+    }
+    .search_input{
+        margin-top: 1%;
     }
     .burguer_menu{
         background-color: #ffffff;
@@ -198,12 +206,12 @@ header{
         margin-top: auto;
         margin-bottom: auto;
         font-size: 14px;
-                margin-right: 5px;
+        margin-right: 5px;
     }
     .a_gps_2{
         margin-top: auto;
         margin-bottom: auto;
-        color: #3483FA;
+        color: var(--btn_background_color);
         font-size: 14px;
         text-decoration: none;
 
@@ -224,6 +232,9 @@ header{
 
 
 @media (max-width: 375px){
+    .search_input{
+        margin-top: 2%;
+    }
     .icon_gps{
         width: 15px;
     }

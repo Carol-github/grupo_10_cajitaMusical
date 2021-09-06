@@ -47,25 +47,26 @@
 }
 
 .cart_amount_detail{
+    display: flex;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 
 .btn_cart{
-    width: 30px;
-    font-size: 20px;
-    color:#3483FA;
-    background-color: #fff;
-    font-weight: 600;
+    width: 30px!important;
+    font-size: 20px!important;
+    color:#3483FA!important;
+    background-color: #fff!important;
+    font-weight: 600!important;
 }
 
 .btn_cart:hover{
-    background-color: #fff;
-    border-color: #3483FA;
-    color:#3483FA;
-    border-style: solid;
-    border-width: 1px;
+    background-color: #fff!important;
+    border-color: #3483FA!important;
+    color:#3483FA!important;
+    border-style: solid!important;
+    border-width: 1px!important;
 }
 
 .btn_width{

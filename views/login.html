@@ -30,10 +30,10 @@
             <img src="./img/imagotipo.svg" class="logo_desktop" alt="logo del sitio cajita musical.">
             <img src="./img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
             <input type="text" class="search_input" placeholder="Busca por marca, instrumento, etc.">
-            <button class="login_btn"  > 
+            <a href="/login"class="btn"> 
                 <img src="./img/icon_btn_login.svg" alt=""> 
                 <span class="txt_btn_login"> Mi cuenta</span>
-            </button>
+           </a>
             <ul style="align-content: center; margin-top: auto;margin-bottom: auto;">
                 <li class="burguer_li">
                     <button class="burguer_menu"> 
@@ -116,12 +116,12 @@
     <section class="section_reg" >
         <form class="form_reg"action="/login" method="POST">
             <label class="label_reg" for="user">USUARIO</label>
-            <input class="input_reg" type="text" id="user" required>
+            <input class="input_reg" type="text" id="user" name="user" required>
             <label class="label_reg" for="pass">CONTRASEÑA</label>
-            <input class="input_reg" type="password" id="pass"  minlength="5"  maxlength="10" required>
-            <a href="#">Olvidaste tu contraseña</a>
-            <button class="login_btn" type="submit">INGRESAR</button>
-            <a href="#">¿No tenés usuario? Registrate</a>
+            <input style="margin-bottom: 0%;"  class="input_reg" type="password" id="pass" name="pass" minlength="5"  maxlength="10" required>
+            <a href="#" style="margin-left: 0%;" class="link">Olvidaste tu contraseña</a>
+            <button class="btn no_disapear" type="submit">INGRESAR</button>
+            <a href="#" class="link">¿No tenés usuario? Registrate</a>
         </form>
     </section>
 </main>

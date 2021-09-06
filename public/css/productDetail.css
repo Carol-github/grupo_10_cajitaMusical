@@ -1,17 +1,17 @@
 
 .main_product {
-    height: 100vh;
-    padding: 2%;
+    height: 80vh;
+    padding: 3%;
 }
 
 .product_detail {
     display: flex;
+    flex-direction: column;
 
 }
 
 .product_images {
-    width: 50vw;
-    height: 60vh;
+    width: 40vw!important;
 }
 
 .product_ppal_image {
@@ -37,11 +37,14 @@
 
 .product_slider_image {
     width: 50px;
-    height: 100px;
+}
+.product_information{
+    width: 40vw;
+    padding-top: 5%;
 }
 
 .product_name {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     margin-bottom: 3%;
     text-transform: uppercase;
@@ -50,14 +53,15 @@
 .product_cost {
     font-size: 50px;
     font-weight: 200;
-    margin-bottom: 3%;
     text-transform: uppercase;
 }
 
 .product_description {
     font-size: 16px;
     font-weight: 300;
-    margin-bottom: 1%;
+    margin-top: 3%;
+    width:100%;
+    margin-bottom: 3%;
 }
 
 .product_share {
@@ -66,3 +70,6 @@
     margin-bottom: 3%;
     color: #3483FA;
 }
+.detail_btns{
+    display: flex; 
+    justify-content: start;  }

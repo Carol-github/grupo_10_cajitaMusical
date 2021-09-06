@@ -3,7 +3,10 @@
 @import url(productDetail.css);
 @import url(registerLogin.css);
 @import url(productCart.css);
-
+:root{
+    --btn_background_color: #3483FA;
+    --btn_background_color_hover: #2662BE;
+}
 *{
     box-sizing: border-box;
     margin: 0px;
@@ -15,6 +18,57 @@
 
 body{
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  height: auto;
+}
+
+/* UI KIT */
+
+.btn{
+    background-color: var(--btn_background_color);
+    color: #ffffff;
+    border-style: none;
+    width: 150px;
+    height: 40px!important;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+}
+.txt_btn_login{
+    margin-left:1%
+}
+.btn:hover{
+    background-color: var(--btn_background_color_hover);
+    font-weight: 600;
+    transition-duration: 0.5s;
+} 
+input{
+    width: 100%!important;
+    border-color: rgb(189, 187, 187);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    height: 35px;
+}
+.link{
+    color: var(--btn_background_color);
+    text-decoration: none;
+    font-size: 16px;
+    text-align: left;
+}
+.link:hover{
+    color: var(--btn_background_color_hover);
+    font-weight: 600;
+}
+@media (max-width: 1024px){
+.no_disapear{
+    display: inline!important;
+}
 }
 
 @media (max-width: 375px){

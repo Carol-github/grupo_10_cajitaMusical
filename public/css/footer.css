@@ -4,7 +4,9 @@ footer{
     background-color: #000000;
     color: #ffffff;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly;  
+    width: 100%;
+    align-self: flex-end;
 }
 
 .copyright{
@@ -34,7 +36,7 @@ footer{
     margin-bottom: 10px;
 }
 .terms a:hover{
-    color: #3483FA;
+    color:  var(--btn_background_color);
     transform: scale(1.1,1.1);
     transition-duration: 0.5s;
 }
@@ -52,8 +54,7 @@ transition-duration: 0.5s;
 }
 .icon_yt:hover{
     transform: scale(1.1,1.1);
- transition-duration: 0.5s;
- fill: red;
+    transition-duration: 0.5s;
  }
  .rrss{
      display: flex; 
@@ -88,7 +89,8 @@ transition-duration: 0.5s;
     }
     
     .copyright img{
-        margin-right: 0px;
+        margin-right: auto;
+        margin-left: auto;
     }
     .copyright div p{
         text-align: center;
