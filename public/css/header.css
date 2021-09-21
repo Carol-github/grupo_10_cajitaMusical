@@ -48,6 +48,21 @@ header{
 } */
 .burguer_menu{
     display: none;
+    position: relative;
+    z-index: 10;
+}
+.burguer_container{
+    background-color: #ffffff;
+    align-content: center; 
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+    z-index: 10;
+}
+.burguer_container:hover{
+    top: 20px;
+    height: 50vh;
+   
 }
 .header_bottom{
     display:flex; 

@@ -4,7 +4,7 @@
   "description": "Una breve descripcion de la oferta de productos:\r Tienda online de instrumentos musicales. Se venderán instrumentos musicales, categorizados en 4 tipos: vientos, percusion, cuerdas y teclados.",
   "main": "app.js",
   "scripts": {
-    "serve": "nodemon app.js",
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
