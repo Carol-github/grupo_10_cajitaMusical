@@ -12,7 +12,7 @@
     <!-- BOOSTRAP -->
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous"> -->
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
 <!-- header top start -->
 
         <div class="header_top">
-            <img src="./img/imagotipo.svg" class="logo_desktop" alt="logo del sitio cajita musical.">
-            <img src="./img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
+            <img src="../img/imagotipo.svg" class="logo_desktop" alt="logo del sitio cajita musical.">
+            <img src="../img/imagotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
             <input type="text" class="search_input" placeholder="Busca por marca, instrumento, etc.">
             <a href="/login"class="btn"> 
                 <img src="./img/icon_btn_login.svg" alt=""> 
@@ -112,19 +112,35 @@
 
 <!-- main start -->
 
-<main class="content_reg">
-    <section class="section_reg" >
-        <form class="form_reg"action="/login" method="POST">
-            <label class="label_reg" for="user">USUARIO</label>
-            <input class="input_reg" type="text" id="user" name="user" required>
-            <label class="label_reg" for="pass">CONTRASEÑA</label>
-            <input style="margin-bottom: 0%;"  class="input_reg" type="password" id="pass" name="pass" minlength="5"  maxlength="10" required>
-            <a href="#" style="margin-left: 0%;" class="link">Olvidaste tu contraseña</a>
-            <button class="btn no_disapear" type="submit">INGRESAR</button>
-            <a href="#" class="link">¿No tenés usuario? Registrate</a>
-        </form>
-    </section>
-</main>
+    <main class="main_product">
+        <section class="product_detail">
+            <div class="product_images">
+
+                <div class="product_ppal_image">
+                <img  src="img/guitarra.jpg" alt="guitarra">
+                </div>
+
+                <div class="product_slider_images">
+
+                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+
+                </div>
+            </div>
+            <div class="product_information">
+               <h1 class="product_name">Guitarra Fender Stratocaster</h1>
+               <h3 class="product_cost">$300.000</h3>
+               <span class="product_share">o en 18 cuotas de $16.666</span>
+               <p class="product_description">Nombrada con las características típicas que esperarías de una Stratocaster, la American Performer cuenta, sin embargo, con algunas características modernas pensadas para llevarla a cabo. Con pastillas Yosemite nuevas, un mástil liso con acabado satinado y el circuito de tono deseable 'Greasebucket', este instrumento puede servir como el caballo de batalla perfecto para cualquier guitarrista.</p>
+               <div class="detail_btns">
+               <button class="btn"> Comprar </button>
+               <button class="btn">Agregar al carrito</button>
+            </div>
+            </div>
+        </section>   
+    </main>
 
 <!--footer start -->
 
@@ -151,7 +167,7 @@
             </div>
         </section>
     </footer>
-
+    
 <!-- JS BOOSTRAP -->
 
 <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

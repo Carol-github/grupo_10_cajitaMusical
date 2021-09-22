@@ -27,17 +27,17 @@
 <!-- header top start -->
 
         <div class="header_top">
-            <img src="./img/imagotipo.svg" class="logo_desktop" alt="logo del sitio cajita musical.">
-            <img src="./img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
+            <img src="../img/imagotipo.svg" class="logo_desktop" alt="logo del sitio cajita musical.">
+            <img src="../img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
             <input type="text" class="search_input" placeholder="Busca por marca, instrumento, etc.">
-            <a href="/login"class="btn"> 
-                <img src="./img/icon_btn_login.svg" alt=""> 
+            <a href="/login"class="btn disapear"> 
+                <img src="../img/icon_btn_login.svg" alt=""> 
                 <span class="txt_btn_login"> Mi cuenta</span>
            </a>
-            <ul style="align-content: center; margin-top: auto;margin-bottom: auto;">
+            <ul class="burguer_container">
                 <li class="burguer_li">
                     <button class="burguer_menu"> 
-                        <img src="./img/dot_menu.svg" alt="">
+                        <img src="../img/dot_menu.svg" alt="">
                     </button>
                     <ul class="burguer_menu_list" >
                         <li><a href="">Iniciar sesion</a></li>
@@ -52,7 +52,7 @@
                 </li>
             </ul>
             <button class="btn_header_bottom btn_cart_mobile" > 
-                <img src="./img/icon_carrito.svg" alt="">
+                <img src="../img/icon_carrito.svg" alt="">
             </button>
         </div>
 
@@ -60,10 +60,10 @@
 
         <div class="header_bottom">
             <div class="location_address">
-                <img src="./img/icon_gps.svg" class="icon_gps" alt="">
+                <img src="../img/icon_gps.svg" class="icon_gps" alt="">
                <div class="delivery_post">
                  <p class="p_gps"> Enviar a:</p>
-                <a href="/" class="a_gps_2" > Ingresa CP y conoce costo de envío.</a> 
+                <a href="" class="a_gps_2" > Ingresa CP y conoce costo de envío.</a> 
                 </div>
             </div>
             <nav class="nav_header">
@@ -98,37 +98,63 @@
             </nav>
             <div class="btns_header_bottom">
                 <a href="#" class="btn_header_bottom" > 
-                    <img class="img_btn_fav"src="./img/icon_heart.svg" alt="">
+                    <img class="img_btn_fav"src="../img/icon_heart.svg" alt="">
                     <span class="txt_btn_icon">Favoritos</span> 
                 </a>
                 <a href="#" class="btn_header_bottom"> 
-                    <img class="img_btn_cart" src="./img/icon_carrito.svg" alt="">
+                    <img class="img_btn_cart" src="../img/icon_carrito.svg" alt="">
                     <span class="txt_btn_icon">Carrito</span> 
                 </a>
-            <a href="#"class="btn_header_bottom_2">REGISTRATE</a>
+            <a href="/usuarios/registrar"class="btn_header_bottom_2">REGISTRATE</a>
             </div>
         </div>
     </header>
 
 <!-- main start -->
-    
-<main class="content_reg">
-    <section class="section_reg">
-        <form class="form_reg"action="/login" method="POST">
-            <label for="user" class="label_reg">NOMBRE DE USUARIO</label>
-            <input type="text" id="user" name="user" required>
-            <label for="email" class="label_reg">EMAIL</label>
-            <input type="email" id="email" name="email" required>
-            <label for="pass"  class="label_reg">CONTRASEÑA</label>
-            <input class="input_reg" type="password" id="pass" name="pass"  minlength="5"  maxlength="10" required>
-            <label for="confirm_pass"  class="label_reg">REPETIR CONTRASEÑA</label>
-            <input class="input_reg" type="password" id="confirm_pass" name="confirm_pass"  minlength="5" maxlength="10"required>
-            <button class="btn no_disapear" type="submit">REGISTRAR</button>
-        </form>
-    </section>
-</main>
 
-<!--footer start -->
+    <main style="height:100vh;">
+    
+        <section class="slider">
+            <img style="width: 100%;"  src="/img/slider_cm_1.jpeg" alt="">
+        </section>
+        <section class="slider_mobile">
+            <img style="width: 100%;"  src="/img/slider_cm_1_mobile.jpeg" alt="">
+        </section>
+        <h3 style="margin-top: .7%; margin-bottom: 1%; text-align: center; font-weight: 300;">CATEGORIAS</h3>
+        <section style="display:flex; justify-content: space-evenly;">
+            <div style="width: 22%; border-style: solid; border-color: black; border-width: 1px;">
+                <img style="width: 100%;" src="/img/cat_guitar_color.jpg" alt="">
+                <div style="padding-left:5%;">
+                <h4>CUERDAS</h4>
+                    <p style="font-weight: 300;">Guitarras, Bajos, Violines, Contrabajos ...</p>
+                </div>
+            </div>
+            <div style="width: 22%; border-style: solid; border-color: black; border-width: 1px;">
+                <img style="width: 100%;" src="/img/cat_drumms_color.jpg" alt="">
+                <div style="padding-left:5%;">
+                <h4>PERCUSIÓN</h4>
+                    <p style="font-weight: 300;">Baterías, tambores, platos, djembes...</p>
+                </div>
+            </div>
+            <div style="width: 22%; border-style: solid; border-color: black; border-width: 1px;">
+                <img style="width: 100%;" src="/img/cat_keys_color.jpg" alt="">
+                <div style="padding-left:5%;">
+                <h4>TECLAS</h4>
+                    <p style="font-weight: 300; font-size: 14px;">Teclados, Pianos, Sintetizadores...</p>
+                </div>
+            </div>
+            <div  style="width: 22%; border-style: solid; border-color: black; border-width: 1px;">
+                <img style="width: 100%;" src="/img/cat_winds_color.jpg" alt="">
+                <div style="padding-left:5%;">
+                <h4>VIENTOS</h4>
+                    <p style="font-weight: 300;">Flautas, Saxofones, Clarinetes, Didjeridoo...</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+<!-- footer start -->
 
     <footer>
         <section class="copyright">
