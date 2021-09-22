@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAJITA MUSICAL</title>
-    <!-- SEO -->
-	<meta name="descritption" content="Ecommerce de instrumentos musicales, con envio a todo el pais.">
-	<meta name="keywords" content="Ecommerce de instrumentos y articulos musicales">
-	<link rel="canonical" href="https://www.cajita-musical.co/" /> 
-    <!-- BOOSTRAP -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous"> -->
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-</head>
+<%- include ('../partials/head')%>
 <body>
-
-<!-- header start-->
-
+    
+    <!-- header start-->
+    
     <header>    
-
-<!-- header top start -->
-
+        
+        <!-- header top start -->
+        
         <div class="header_top">
             <img src="../img/imagotipo.svg" class="logo_desktop" alt="logo del sitio cajita musical.">
             <img src="../img/imagotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
@@ -33,7 +16,7 @@
             <a href="/login"class="btn"> 
                 <img src="./img/icon_btn_login.svg" alt=""> 
                 <span class="txt_btn_login"> Mi cuenta</span>
-           </a>
+            </a>
             <ul style="align-content: center; margin-top: auto;margin-bottom: auto;">
                 <li class="burguer_li">
                     <button class="burguer_menu"> 
@@ -55,15 +38,15 @@
                 <img src="./img/icon_carrito.svg" alt="">
             </button>
         </div>
-
-<!-- header bottom start -->
-
+        
+        <!-- header bottom start -->
+        
         <div class="header_bottom">
             <div class="location_address">
                 <img src="./img/icon_gps.svg" class="icon_gps" alt="">
-               <div class="delivery_post">
-                 <p class="p_gps"> Enviar a:</p>
-                <a href="" class="a_gps_2" > Ingresa CP y conoce costo de envío.</a> 
+                <div class="delivery_post">
+                    <p class="p_gps"> Enviar a:</p>
+                    <a href="" class="a_gps_2" > Ingresa CP y conoce costo de envío.</a> 
                 </div>
             </div>
             <nav class="nav_header">
@@ -81,7 +64,7 @@
                                 <a href="">Vientos</a>
                             </li>
                             <li>
-                                 <a href="">Teclas</a>
+                                <a href="">Teclas</a>
                             </li>
                         </ul>
                     </li>
@@ -105,57 +88,57 @@
                     <img class="img_btn_cart" src="./img/icon_carrito.svg" alt="">
                     <span class="txt_btn_icon">Carrito</span> 
                 </a>
-            <a href="#"class="btn_header_bottom_2">REGISTRATE</a>
+                <a href="#"class="btn_header_bottom_2">REGISTRATE</a>
             </div>
         </div>
     </header>
-
-<!-- main start -->
-
+    
+    <!-- main start -->
+    
     <main class="main_product">
         <section class="product_detail">
             <div class="product_images">
-
+                
                 <div class="product_ppal_image">
-                <img  src="img/guitarra.jpg" alt="guitarra">
+                    <img  src="img/guitarra.jpg" alt="guitarra">
                 </div>
-
+                
                 <div class="product_slider_images">
-
-                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
-                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
-                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
-                  <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
-
+                    
+                    <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                    <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                    <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                    <img class="product_slider_image" src="img/guitarra.jpg" alt="guitarra">
+                    
                 </div>
             </div>
             <div class="product_information">
-               <h1 class="product_name">Guitarra Fender Stratocaster</h1>
-               <h3 class="product_cost">$300.000</h3>
-               <span class="product_share">o en 18 cuotas de $16.666</span>
-               <p class="product_description">Nombrada con las características típicas que esperarías de una Stratocaster, la American Performer cuenta, sin embargo, con algunas características modernas pensadas para llevarla a cabo. Con pastillas Yosemite nuevas, un mástil liso con acabado satinado y el circuito de tono deseable 'Greasebucket', este instrumento puede servir como el caballo de batalla perfecto para cualquier guitarrista.</p>
-               <div class="detail_btns">
-               <button class="btn"> Comprar </button>
-               <button class="btn">Agregar al carrito</button>
-            </div>
+                <h1 class="product_name">Guitarra Fender Stratocaster</h1>
+                <h3 class="product_cost">$300.000</h3>
+                <span class="product_share">o en 18 cuotas de $16.666</span>
+                <p class="product_description">Nombrada con las características típicas que esperarías de una Stratocaster, la American Performer cuenta, sin embargo, con algunas características modernas pensadas para llevarla a cabo. Con pastillas Yosemite nuevas, un mástil liso con acabado satinado y el circuito de tono deseable 'Greasebucket', este instrumento puede servir como el caballo de batalla perfecto para cualquier guitarrista.</p>
+                <div class="detail_btns">
+                    <button class="btn"> Comprar </button>
+                    <button class="btn">Agregar al carrito</button>
+                </div>
             </div>
         </section>   
     </main>
-
-<!--footer start -->
-
+    
+    <!--footer start -->
+    
     <footer>
         <section class="copyright">
-                <img src="/img/isotipo_white.svg" alt="isotipo de la marca">
-                <div >
-                    <p>Copyright © 2021 Cajita Musical S.R.L.</p>
-                    <p>Av. Caseros 3039, Piso 2, CP 1264, Parque Patricios, CABA</p>
-                </div>
+            <img src="/img/isotipo_white.svg" alt="isotipo de la marca">
+            <div >
+                <p>Copyright © 2021 Cajita Musical S.R.L.</p>
+                <p>Av. Caseros 3039, Piso 2, CP 1264, Parque Patricios, CABA</p>
+            </div>
         </section>
         <section class="terms">
-                <a href="">Términos y condiciones</a>
-                <a href="">Politicas de privacidad</a>
-                <a href="">Contacto</a>
+            <a href="">Términos y condiciones</a>
+            <a href="">Politicas de privacidad</a>
+            <a href="">Contacto</a>
         </section>
         <section class="rrss">
             <span class="txt_rsss">Seguinos</span>
@@ -168,11 +151,11 @@
         </section>
     </footer>
     
-<!-- JS BOOSTRAP -->
-
-<!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
-
-</body>
-
-</html>
+    <!-- JS BOOSTRAP -->
+    
+    <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
+        
+    </body>
+    
+    </html>
