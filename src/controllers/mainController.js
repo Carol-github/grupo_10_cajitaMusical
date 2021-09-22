@@ -2,7 +2,8 @@ const path = require('path');
 
 const mainController = {
     index: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/index/index.html'));
+        //res.render(path.join(__dirname, '../views/index/index.ejs'));
+        res.render('index/index');
     }
 }
 
