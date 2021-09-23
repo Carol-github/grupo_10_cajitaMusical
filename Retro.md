@@ -1,1 +1,1 @@
-armando retrospectiva
+armando retrospectiva..
