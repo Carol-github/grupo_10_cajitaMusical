@@ -22,7 +22,7 @@ const mainController = {
         //console.log(products_in_sale);
 		res.render('index.ejs',{
 			products_in_sale: products_in_sale
-		})
+		});
 	}
 };
 
