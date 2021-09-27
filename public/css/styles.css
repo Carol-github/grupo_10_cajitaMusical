@@ -35,7 +35,7 @@ h5{
     margin-top: 1%; 
     margin-bottom: 1%; 
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
 }
 h4{
     margin-top: 1%; 
@@ -197,7 +197,7 @@ p{
     .price_item_menu_2{
         font-size: 30px;
         font-weight: 300;
-        color:var(--btn_background_color);
+        color:black;
         
     }
     .img_item_menu{
@@ -287,7 +287,7 @@ p{
             margin-left: 0%;
         }
         h5{
-            font-size: 18px;
+            font-size: 16px;
         }
         p{
             font-size:14px;
