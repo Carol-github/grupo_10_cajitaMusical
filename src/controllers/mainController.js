@@ -19,7 +19,7 @@ const mainController = {
 		const products_in_sale = products.filter(product => {
 			return product.oferta == "true"
 		});
-        console.log(products_in_sale);
+        //console.log(products_in_sale);
 		res.render('index.ejs',{
 			products_in_sale: products_in_sale
 		})
