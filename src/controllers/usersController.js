@@ -7,6 +7,9 @@ const usersController = {
     },
     register: (req, res) => {
         res.render('users/register');
+    },
+    admin: (req, res) => {
+        res.render('users/admin');
     }
 }
 
