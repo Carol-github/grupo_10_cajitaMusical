@@ -73,10 +73,10 @@
             <section class="scroll menu">
                 <% products_in_sale.forEach(product => { %>
                     <a href="/productos/detalle" class="item_menu_2 link" >
-                        <img  class="img_item_menu_2" src="/img/imgProducts/<%= products_in_sale.image %>" alt="imagen de producto">
+                        <img  class="img_item_menu_2" src="/img/imgProducts/<%= product.image %>" alt="imagen de producto">
                         <div class="item_menu_off_txt_2">
-                            <h5 class="center_alig"><%= products_in_sale.title %></h5>
-                            <span class="price_item_menu_2"><%= products_in_sale.price %></span>
+                            <h5 class="center_alig"><%= product.title %></h5>
+                            <span class="price_item_menu_2"><%= product.price %></span>
                         </div>
                     </a>
                     
