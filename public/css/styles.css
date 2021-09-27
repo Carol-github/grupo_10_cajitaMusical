@@ -154,11 +154,11 @@ input{
 visibility: visible;
 }
 .icon_category{
-    width: 30%; 
+    width: 70px; 
     margin-bottom: 5px;
 }
 .teclas{
-    width: 40%; 
+    width: 100px; 
 }
 .item_menu:hover .info_item_menu h4{
     font-size: 25px;

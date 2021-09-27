@@ -1,10 +1,10 @@
 
 header{
     z-index: 90;
-   width: 100%; 
-   margin-right: auto;
-   margin-left: auto;
-   background-color: #ffffff;
+    width: 100%; 
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #ffffff;
 }
 .header_top{
     height: 60px;
@@ -86,7 +86,7 @@ header{
 .burguer_container:hover{
     top: 20px;
     height: 50vh;
-   
+    
 } */
 .header_bottom{
     display:flex; 
@@ -96,10 +96,10 @@ header{
     overflow: visible;
 }
 .location_address{
- display:flex; 
- justify-content: space-evenly;
- width: 20%;
- padding-top: 1%;
+    display:flex; 
+    justify-content: space-evenly;
+    width: 20%;
+    padding-top: 1%;
 }
 .icon_gps{
     width: 7%;
@@ -153,7 +153,7 @@ header{
 }
 .header_bottom nav li:hover > ul {
     display: block;
-
+    
 }
 .header_top ul {
     list-style-type: none;
@@ -201,7 +201,7 @@ header{
 }
 
 .btn_header_bottom_2 {
-   color:  var(--btn_background_color);
+    color:  var(--btn_background_color);
     background-color: #ffffff;
     border-style: none; 
     display: inline;
@@ -212,7 +212,7 @@ header{
     color:  var(--btn_background_color_hover);
     font-weight: 600;
     transition-duration: 0.5s;
- }
+}
 
 @media (max-width: 1024px){ 
     .logo_link_desktop{
@@ -254,16 +254,16 @@ header{
         transition: all 600ms;  
     }
     .container_all_popup:target{
-           background-color: rgba(255, 255, 255, 0.95);
-           visibility: visible;
-           opacity: 1;
+        background-color: rgba(255, 255, 255, 0.95);
+        visibility: visible;
+        opacity: 1;
     }
     .container_all_popup:target .popup{
         top: 50%;
         left: 50%;
         transform: rotate(0deg) translate(-50%, -50%);
         visibility: visible;
- }
+    }
     .popup{
         width: 100%;
         max-width: 800px;
@@ -292,7 +292,7 @@ header{
         top: -30px;
         right: 50px;
     }
-
+    
     .btn_close_popup_2{
         margin-top: 30px;
     }
@@ -303,13 +303,13 @@ header{
     .header_bottom{
         margin-top: 3%;
     }
-   
+    
     .location_address{
         width: 100%;
         justify-content: left;
         padding-left: 5%;
-       }
-       .icon_gps{
+    }
+    .icon_gps{
         width: 20px;  
     }
     .p_gps{
@@ -324,20 +324,20 @@ header{
         color: var(--btn_background_color);
         font-size: 14px;
         text-decoration: none;
-
+        
     }
-
+    
     .delivery_post{
         margin-left: 5px;
         display: flex;
         flex-direction: row;
         margin-right: 10px;
     }
- 
-       .btns_header_bottom{
+    
+    .btns_header_bottom{
         width: 20%;
     }
-   
+    
 }
 
 
@@ -357,4 +357,4 @@ header{
     .header_bottom{
         margin-top: 0%;
     }
- }
+}

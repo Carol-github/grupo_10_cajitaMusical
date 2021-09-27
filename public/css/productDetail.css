@@ -79,7 +79,7 @@
     .product_information{
         padding-left: 15px;
     }
-    }
+}
 @media (max-width: 420px){
     .product_detail {
         flex-direction: column!important;
@@ -91,9 +91,9 @@
         margin-bottom: 10px;
         display: flex;
     }
-.product_slider_images {
-    display: none;
-}
+    .product_slider_images {
+        display: none;
+    }
     .product_share{
         text-align: center;
         width: 100px!important; 
@@ -106,4 +106,4 @@
         width: 90vw;
         padding-top: 0%;
     }
- }
+}
