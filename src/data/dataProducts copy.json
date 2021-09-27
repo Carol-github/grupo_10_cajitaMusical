@@ -1,0 +1,27 @@
+[
+    
+    {
+        "category":"cuerdas",
+        "title":"Cuerdas",
+        "image": "cuerdas.jpg"
+    },
+
+    {
+        "category":"vientos",
+        "title":"Vientos",
+        "image": "vientos.jpg"
+    },
+
+    {
+        "category":"teclas",
+        "title":"Teclas",
+        "image": "teclas.jpg"
+    },
+
+    {
+        "category":"percusion",
+        "title":"Percusión",
+        "image": "percusion.jpg"
+    }    
+
+]
