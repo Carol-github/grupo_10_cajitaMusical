@@ -36,106 +36,17 @@
             </a>   -->
          
             <!-- offers section -->
-            <section class="scroll menu_list">
+            <section class="scroll menu_list" style="padding:10px;">
+                <% products.forEach(product => { %>
                 <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
+                    <img  class="img_item_menu_2" src="/img/imgProducts/<%= product.image %>" alt="">
                     <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
+                        <span><%= product.subcategory %></span> 
+                        <h5 class="center_alig"><%= product.title %></h5>
+                        <span class="price_item_menu_2">$<%= product.price %></span>
                     </div>
                 </a>  
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>        
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>         
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-                <a href="/productos/detalle" class="item_menu_3 link" >
-                    <img  class="img_item_menu_2" src="/img/guitarra.jpg" alt="">
-                    <div class="item_menu_off_txt_2">
-                        <h5 class="center_alig">Fender Jaguar</h5>
-                        <span class="price_item_menu_2">$5000</span>
-                    </div>
-                </a>
-            
+                <% }) %>
         </section>
     </main>
 

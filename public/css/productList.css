@@ -44,6 +44,8 @@
     padding-top: 15px;
     padding-bottom: 15px;
     display: inline-block;
+
+    margin: 10px;
  }
 @media (max-width: 768px){
 .modal_filter_btn{
