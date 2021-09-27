@@ -16,13 +16,8 @@
         </section>
         <h3>CATEGORIAS</h3>
         <section class="menu scroll">
-<<<<<<< HEAD
-            <div class="item_menu">
-                <div class="info_item_menu">
-=======
            <a href="/productos/lista" class="item_menu">
                  <div class="info_item_menu">
->>>>>>> c28170f211276846faf19f4e516542f631aa459b
                     <img class="icon_category"  src="/img/icon_cuerdas.svg" alt="">
                     <h4>CUERDAS</h4>
                     <div class="line_2"></div>
@@ -79,10 +74,10 @@
                 <% products_in_sale.forEach(product => { %>
                     
                     <a href="/productos/detalle" class="item_menu_2 link" >
-                        <img  class="img_item_menu_2" src="/img/imgProducts/<%= products_in_sale.image %>" alt="imagen de producto">
+                        <img  class="img_item_menu_2" src="/img/imgProducts/<%= product.image %>" alt="imagen de producto">
                         <div class="item_menu_off_txt_2">
-                            <h5 class="center_alig"><%= products_in_sale.title %></h5>
-                            <span class="price_item_menu_2"><%= products_in_sale.price %></span>
+                            <h5 class="center_alig"><%= product.title %></h5>
+                            <span class="price_item_menu_2"><%= product.price %></span>
                         </div>
                     </a>
                     
