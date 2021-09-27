@@ -1,0 +1,14 @@
+.header_minimal{
+    background-color: var(--btn_background_color);
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.header_minimal a{
+ display: flex;
+ justify-content: space-around;
+}
+.header_minimal a img{
+    width: 50%;
+}

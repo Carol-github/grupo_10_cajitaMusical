@@ -7,6 +7,7 @@ footer{
     justify-content: space-evenly;  
     width: 100%;
     align-self: flex-end;
+    margin-top: 50px;
 }
 
 .copyright{

@@ -1,28 +1,48 @@
 
 header{
     z-index: 90;
-   width: 90%; 
+   width: 100%; 
    margin-right: auto;
    margin-left: auto;
+   background-color: #ffffff;
 }
 .header_top{
     height: 60px;
     padding-top: 1%;
     display:flex; 
     justify-content: space-around;
+    width: 100%!important;
+}
+.logo_link_desktop{
+    display: flex;
+}
+.logo_link_mobile{
+    display: none;
 }
 .logo_desktop{
-    width: 10%;   
+    width: 45%;   
     display: inline;
 }
 .logo_mobile{
-    width: 10%;   
     display: none;
 }
 .search_input{
     height: 40px;
     padding-left: 1%;
     width: 50%!important;
+    display: flex;
+    border-color: rgb(189, 187, 187);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.search_input input{
+    border-color: none!important;
+    border-style: none!important;
+    border-width: none!important;
+    border-radius: none!important;
+    height: 35px;
 }
 /* 
 .login_btn{
@@ -51,6 +71,10 @@ header{
     position: relative;
     z-index: 10;
 }
+.popup{
+    display: none;
+}
+/* 
 .burguer_container{
     background-color: #ffffff;
     align-content: center; 
@@ -63,7 +87,7 @@ header{
     top: 20px;
     height: 50vh;
    
-}
+} */
 .header_bottom{
     display:flex; 
     justify-content: space-around;
@@ -102,6 +126,9 @@ header{
     float: left;
     text-align: center;
     width: 25%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-bottom:10px;
 }
 .nav_ul_li_header a{
     text-decoration: none;
@@ -116,19 +143,25 @@ header{
     display: none;
     list-style-type: none;
 }
+.nav_ul_li_cat_ul_li_1{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
 .nav_ul_li_cat_ul_li{
-    margin-top: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .header_bottom nav li:hover > ul {
     display: block;
+
 }
 .header_top ul {
     list-style-type: none;
 }
-.burguer_menu_list{
+/* .burguer_menu_list{
     display: none;
     list-style-type: none;
-}
+} */
 .header_top ul li:hover > ul{
     display: block;
 }
@@ -158,6 +191,7 @@ header{
     padding-left: 10px
 } 
 .btn_cart_mobile{
+    margin: auto;
     display: none;
 }
 .btn_header_bottom:hover {
@@ -181,13 +215,20 @@ header{
  }
 
 @media (max-width: 1024px){ 
-
+    .logo_link_desktop{
+        display: none;
+    }
+    .logo_link_mobile{
+        display: flex;
+        width: 5%;
+    }
     .logo_desktop{
         display: none;
     }
     .logo_mobile{
         display: inline;
-        width: 10%;
+        margin: auto!important;
+        width: 100%;
     }
     .login_btn, .nav_header, .btn_header_bottom, .btn_header_bottom_2 {
         display: none;
@@ -201,7 +242,61 @@ header{
         border-style: none;
         width: 30px;
         display: inline;
+        margin: auto;
     } 
+    .container_all_popup{
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        visibility: hidden;  
+        opacity: 0;
+        transition: all 600ms;  
+    }
+    .container_all_popup:target{
+           background-color: rgba(255, 255, 255, 0.95);
+           visibility: visible;
+           opacity: 1;
+    }
+    .container_all_popup:target .popup{
+        top: 50%;
+        left: 50%;
+        transform: rotate(0deg) translate(-50%, -50%);
+        visibility: visible;
+ }
+    .popup{
+        width: 100%;
+        max-width: 800px;
+        height: 500px;
+        position: relative;
+        visibility: hidden;
+        top: -80%;
+        left: -80%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        transform: rotate(90deg) translate(-150%,230%);
+        transition: all 600ms;
+    }
+    .line_2{
+        border-top: 1px solid var(--btn_background_color);
+        height: 2px;
+        width: 200px;
+        padding: 0;
+        margin: 20px auto 20px auto;
+    }
+    .btn_close_popup{
+        position: absolute;
+        top: -30px;
+        right: 50px;
+    }
+
+    .btn_close_popup_2{
+        margin-top: 30px;
+    }
+    
     .btn_cart_mobile{
         display: inline;
     }
@@ -247,6 +342,9 @@ header{
 
 
 @media (max-width: 375px){
+    .logo_link_mobile{
+        width: 10%;
+    }
     .search_input{
         margin-top: 2%;
     }
@@ -256,4 +354,7 @@ header{
     .a_gps_2{   
         font-size: 10px;
     } 
+    .header_bottom{
+        margin-top: 0%;
+    }
  }
