@@ -1,0 +1,31 @@
+[
+    
+    {
+        "category":"cuerdas",
+        "title":"Cuerdas",
+        "image": "img_cuerdas.jpg",
+        "icon":"icon_cuerdas.svg"
+    },
+
+    {
+        "category":"vientos",
+        "title":"Vientos",
+        "image": "img_vientos.jpg",
+        "icon":"icon_vientos.svg"
+    },
+
+    {
+        "category":"teclas",
+        "title":"Teclas",
+        "image": "img_teclas.jpg",
+        "icon":"icon_teclas.svg"
+    },
+
+    {
+        "category":"percusion",
+        "title":"Percusión",
+        "image": "img_percusion.jpg",
+        "icon":"icon_percusion.svg"
+    }    
+
+]

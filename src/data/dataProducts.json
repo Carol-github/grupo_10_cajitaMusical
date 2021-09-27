@@ -1,0 +1,299 @@
+[
+    
+    {
+        "id":"1",
+        "title":"Epiphone Allen Woody Rumblekat Bass",
+        "price":"50000",
+        "category":"cuerdas",
+        "subcategory":"bajo",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "ETBKPWGB3-3.jpg"
+    },
+    {
+        "id":"2",
+        "title":"Epiphone Jack Casady Bass",
+        "price":"120000",
+        "category":"cuerdas",
+        "subcategory":"bajo",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "ETBKPWGB3-4.jpg"
+    },
+    {
+        "id":"3",
+        "title":"Fender modelo Jazz Bass 60´s Classic",
+        "price":"130000",
+        "category":"cuerdas",
+        "subcategory":"bajo",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "1-1.jpg"
+    },
+    {
+        "id":"4",
+        "title":"EPIPHONE BAJO THUND.PRO-IV",
+        "price":"105000",
+        "category":"cuerdas",
+        "subcategory":"bajo",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "EPIPHONE-BAJO-THUND.PRO-IV-OB.jpg"
+    },
+    {
+        "id":"5",
+        "title":"Fender modelo Jazz Bass 60´s",
+        "price":"140000",
+        "category":"cuerdas",
+        "subcategory":"bajo",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "1.jpg"
+    },
+
+    {
+        "id":"6",
+        "title":"Epiphone Sheraton-II Pro",
+        "price":"160000",
+        "category":"cuerdas",
+        "subcategory":"guitarra",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "ETBKPWGB3-1.jpg"
+    },
+
+    {
+        "id":"7",
+        "title":"Epiphone Wildkat White Royale",
+        "price":"175000",
+        "category":"cuerdas",
+        "subcategory":"guitarra",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "ETBKPWGB3.jpg"
+    },
+
+    {
+        "id":"8",
+        "title":"GIBSON EXPLORER T 2017 HC",
+        "price":"165000",
+        "category":"cuerdas",
+        "subcategory":"guitarra",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "gibson-explorer-2017-t-hc-heritage-cherry_1_GIT0039743-000.jpg"
+    },
+
+    {
+        "id":"9",
+        "title":"GIBSON LP CLASSIC 2018 GT",
+        "price":"240000",
+        "category":"cuerdas",
+        "subcategory":"guitarra",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "guitarra-gibson-flying-v-2019-b2-satin-ebony-envio-gratis-cu-D_NQ_NP_891150-MLA31615250028_072019-F-3.jpg"
+    },
+
+    {
+        "id":"10",
+        "title":"Guitarra Eléctrica Memphis – TL (Telecaster)",
+        "price":"140000",
+        "category":"cuerdas",
+        "subcategory":"guitarra",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "tlwhite-4-300x269-1.jpg"
+    },
+
+    {
+        "id":"11",
+        "title":"Batería Parquer 5 cuerpos",
+        "price":"210000",
+        "category":"perusion",
+        "subcategory":"bateria",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_890331-MLA44011387388_112020-O.jpg"
+    },
+
+    {
+        "id":"12",
+        "title":"Batería Legend Traveler 4 Cuerpos con fierros",
+        "price":"230000",
+        "category":"perusion",
+        "subcategory":"bateria",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "Legend-Traveler.jpg"
+    },
+
+    {
+        "id":"13",
+        "title":"Batería Grestch Renegade 5 Cuerpos",
+        "price":"250000",
+        "category":"perusion",
+        "subcategory":"bateria",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "Gretsch-Renegade-Bordo.jpg"
+    },
+
+    {
+        "id":"14",
+        "title":"Batería Gretsch Catalina Club 4 Cuerpos",
+        "price":"235000",
+        "category":"perusion",
+        "subcategory":"bateria",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "Gretsch-Catalina-Club-Spark.jpg"
+    },
+
+    {
+        "id":"15",
+        "title":"Batería Grestch Catalina Club 4 Cuerpos",
+        "price":"230000",
+        "category":"perusion",
+        "subcategory":"bateria",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "Gretsch-Catalina-Club-Negro.jpg"
+    },
+
+    {
+        "id":"16",
+        "title":"Alesis Strike Kit",
+        "price":"120000",
+        "category":"perusion",
+        "subcategory":"bateria_electrica",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "Alesis-Strike-kit.jpg"
+    },
+
+    {
+        "id":"17",
+        "title":"Batería eléctrica Carlsbro Club100",
+        "price":"140000",
+        "category":"perusion",
+        "subcategory":"bateria_electrica",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_733859-MLA46103816051_052021-O.jpg"
+    },
+
+    {
+        "id":"18",
+        "title":"Bateria Electronica Nord Drum 3P",
+        "price":"110000",
+        "category":"perusion",
+        "subcategory":"bateria_electrica",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "1903.jpg"
+    },
+
+    {
+        "id":"19",
+        "title":"BATERIA ELECTRONICA PARA NIÑOS CARLSBRO ROCK 50",
+        "price":"115000",
+        "category":"perusion",
+        "subcategory":"bateria_electrica",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "descarga-4.jpg"
+    },
+
+    {
+        "id":"20",
+        "title":"Batería Electrónica Behringer Xd8usb",
+        "price":"280000",
+        "category":"perusion",
+        "subcategory":"bateria_electrica",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "behringer_xd8usb_a.jpg"
+    },
+
+    {
+        "id":"21",
+        "title":"KAWAI GL10 Piano Acústico",
+        "price":"430000",
+        "category":"teclas",
+        "subcategory":"piano_acustico",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "Kawai-2.jpg"
+    },
+
+    {
+        "id":"22",
+        "title":"CASIO CTX 5000 Teclado",
+        "price":"80000",
+        "category":"teclas",
+        "subcategory":"teclado",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "ctx-5000.jpg"
+    },
+
+    {
+        "id":"23",
+        "title":"KORG LIVERPOOL MICRO 61 TECLAS",
+        "price":"75000",
+        "category":"teclas",
+        "subcategory":"teclado",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_930683-MLA31604907684_072019-O.jpg"
+    },
+
+    {
+        "id":"24",
+        "title":"Teclado Alesis Vortex Wireless 2",
+        "price":"70000",
+        "category":"teclas",
+        "subcategory":"teclado",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "unnamed-1.jpg"
+    },
+
+    {
+        "id":"25",
+        "title":"Controlador Midi Novation 49sl Mklll 49 Teclas Sensibles",
+        "price":"80000",
+        "category":"teclas",
+        "subcategory":"teclado",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_981376-MLA45035732131_022021-O.jpg"
+    },
+
+    {
+        "id":"26",
+        "title":"Armónica Hohner BluesHarp",
+        "price":"2000",
+        "category":"vientos",
+        "subcategory":"armonicas",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_798919-MLA31576018843_072019-O.jpg"
+    },
+
+    {
+        "id":"27",
+        "title":"Trombon a pistones Stagg",
+        "price":"65000",
+        "category":"vientos",
+        "subcategory":"trombones",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_786331-MLA40447291611_012020-W.jpg"
+    },
+
+    {
+        "id":"28",
+        "title":"Saxo Alto Roy Benson TS-202",
+        "price":"80000",
+        "category":"vientos",
+        "subcategory":"saxos",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_979777-MLA29274541393_012019-O.jpg"
+    },
+
+    {
+        "id":"29",
+        "title":"YAMAHA YFL 212 Flauta Traversa Cerrada",
+        "price":"45000",
+        "category":"vientos",
+        "subcategory":"flautas",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "flauta-traversa-yamaha-yfl-212-estuche-rigido-cuotas-D_NQ_NP_691057-MLA28956827163_122018-F-300x199-1.jpg"
+    },
+
+    {
+        "id":"30",
+        "title":"Trompeta Pocket Parquer",
+        "price":"73000",
+        "category":"vientos",
+        "subcategory":"trompetas",
+        "description":"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
+        "image": "D_NQ_NP_806708-MLA31913068338_082019-O.jpg"
+    }
+
+]
