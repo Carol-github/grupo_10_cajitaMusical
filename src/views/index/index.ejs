@@ -16,134 +16,113 @@
         </section>
         <h3>CATEGORIAS</h3>
         <section class="menu scroll">
-            <a href="/productos/lista" class="item_menu">
-                <div class="info_item_menu">
-                    <img class="icon_category"  src="/img/icon_cuerdas.svg" alt="">
-                    <h4>CUERDAS</h4>
-                    <div class="line_2"></div>
-                    <p>Guitarras, Bajos,<br>  Violines, Contrabajos ...</p>
-                </div>
-            </a>
-            <a href="/productos/lista" class="item_menu">
-                <div class="info_item_menu">
-                    <img class="icon_category"  src="/img/icon_percusion.svg" alt="">
-                    <h4>PERCUSIÓN</h4>
-                    <div class="line_2"></div>
-                    <p>Baterías, tambores,<br>  platos, djembes...</p>
-                </div>
-            </a>
-            <a href="/productos/lista" class="item_menu">
-                <div class="info_item_menu">
-                    <img class="icon_category teclas"  src="/img/icon_teclas.svg" alt="">
-                    <h4>TECLAS</h4>
-                    <div class="line_2"></div>
-                    <p>Teclados, Pianos,<br> Sintetizadores, Modulos...</p>
-                </div>
-            </a>
-            <a href="/productos/lista" class="item_menu">
-                <div class="info_item_menu">
-                    <img class="icon_category"  src="/img/icon_vientos.svg" alt="">
-                    <h4>VIENTOS</h4>
-                    <div class="line_2"></div>
-                    <p>Flautas, Saxofones,<br> Clarinetes, Didjeridoo...</p>
-                </div>
-            </a>
+            <% categories.forEach(category => { %>
+                <a href="/productos/lista" class="item_menu" style="background-image: url(/img/<%= category.image %>g)">
+                    <div class="info_item_menu">
+                        <img class="icon_category"  src="/img/<%= category.icon %>" alt="">
+                        <h4><%= category.title %></h4>
+                        <div class="line_2"></div>
+                        <p><%= category.description %></p>
+                    </div>
+                </a>
+            <% }) %>
+                
         </section>
         <!-- web info section -->
         <section class="web_info">
-            <div class="web_info_box">
-                <img class="web_info_img" src="/img/icon_tag_price.svg" alt="">
-                <div class="web_info_txt">
-                    <h5 class="left_alig">IGUALAMOS LOS COSTOS</h5>
-                    <p>Si encontrar un instrumento que vendemos en otra <br>
-                        Tienda oficial, más barato lo igualamos. <a href="" class="link">Conoce más.</a></p>
-                    </div>
-                </div>
                 <div class="web_info_box">
-                    <img class="web_info_img"  src="/img/icon_truck.svg" alt="">
-                    <div class="web_info_txt" >
-                        <h5>COMPRA ONLINE y RECIBI EN TU CASA</h5>
-                        <p>Conocer medios, costos y más <a href="" class="link"> clickeando aquí</a></p>
+                    <img class="web_info_img" src="/img/icon_tag_price.svg" alt="">
+                    <div class="web_info_txt">
+                        <h5 class="left_alig">IGUALAMOS LOS COSTOS</h5>
+                        <p>Si encontrar un instrumento que vendemos en otra <br>
+                            Tienda oficial, más barato lo igualamos. <a href="" class="link">Conoce más.</a></p>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <!-- offers section -->
-            <h3>OFERTAS IMPERDIBLES</h3>
-            
-            <section class="scroll menu">
-                <% products_in_sale.forEach(product => { %>
-                    
-                    <a href="/productos/detalle" class="item_menu_2 link" >
-                        <img  class="img_item_menu_2" src="/img/imgProducts/<%= product.image %>" alt="imagen de producto">
-                        <div class="item_menu_off_txt_2">
-                            <span class="price_item_menu_2">$<%= product.price %></span>
-                            <span><%= product.subcategory %></span>                             
-                            <h5 class="center_alig"><%= product.title %></h5>
-                            
+                    <div class="web_info_box">
+                        <img class="web_info_img"  src="/img/icon_truck.svg" alt="">
+                        <div class="web_info_txt" >
+                            <h5>COMPRA ONLINE y RECIBI EN TU CASA</h5>
+                            <p>Conocer medios, costos y más <a href="" class="link"> clickeando aquí</a></p>
                         </div>
-                    </a>
-                    
-                    <% }) %>
+                    </div>
                 </section>
+                <!-- offers section -->
+                <h3>OFERTAS IMPERDIBLES</h3>
                 
-                
-                <!-- section web info -->
-                <section class="web_info_2">
-                    <div  class="web_info_box_2" >
-                        <img class="web_info_img_2" src="/img/icon_credit_card.svg" alt="">
-                        <div class="web_info_txt_2">
-                            <h5 class="center_alig">Elegí cómo pagar</h5>
-                            <p class="center_alig">Podés pagar con tarjeta, débito, efectivo <br>
-                                o hasta 12 cuotas sin tarjeta <br>
-                                con un Crédito Musical.</p>
-                                <a href=""class="link">Formas de pago</a>
+                <section class="scroll menu">
+                    <% products_in_sale.forEach(product => { %>
+                        
+                        <a href="/productos/detalle" class="item_menu_2 link" >
+                            <img  class="img_item_menu_2" src="/img/imgProducts/<%= product.image %>" alt="imagen de producto">
+                            <div class="item_menu_off_txt_2">
+                                <span class="price_item_menu_2">$<%= product.price %></span>
+                                <span><%= product.subcategory %></span>                             
+                                <h5 class="center_alig"><%= product.title %></h5>
+                                
                             </div>
-                        </div>
+                        </a>
+                        
+                        <% }) %>
+                    </section>
+                    
+                    
+                    <!-- section web info -->
+                    <section class="web_info_2">
                         <div  class="web_info_box_2" >
-                            <img class="web_info_img_2" src="/img/icon_box.svg" alt="">
+                            <img class="web_info_img_2" src="/img/icon_credit_card.svg" alt="">
                             <div class="web_info_txt_2">
                                 <h5 class="center_alig">Elegí cómo pagar</h5>
                                 <p class="center_alig">Podés pagar con tarjeta, débito, efectivo <br>
                                     o hasta 12 cuotas sin tarjeta <br>
                                     con un Crédito Musical.</p>
-                                    <a href="" class="link">Formas de pago</a>
+                                    <a href=""class="link">Formas de pago</a>
                                 </div>
                             </div>
                             <div  class="web_info_box_2" >
-                                <img  class="web_info_img_2" src="/img/icon_shield.svg" alt="">
-                                <div  class="web_info_txt_2">
+                                <img class="web_info_img_2" src="/img/icon_box.svg" alt="">
+                                <div class="web_info_txt_2">
                                     <h5 class="center_alig">Elegí cómo pagar</h5>
                                     <p class="center_alig">Podés pagar con tarjeta, débito, efectivo <br>
                                         o hasta 12 cuotas sin tarjeta <br>
                                         con un Crédito Musical.</p>
-                                        <a href=""class="link">Formas de pago</a>
+                                        <a href="" class="link">Formas de pago</a>
                                     </div>
                                 </div>
-                            </section>
+                                <div  class="web_info_box_2" >
+                                    <img  class="web_info_img_2" src="/img/icon_shield.svg" alt="">
+                                    <div  class="web_info_txt_2">
+                                        <h5 class="center_alig">Elegí cómo pagar</h5>
+                                        <p class="center_alig">Podés pagar con tarjeta, débito, efectivo <br>
+                                            o hasta 12 cuotas sin tarjeta <br>
+                                            con un Crédito Musical.</p>
+                                            <a href=""class="link">Formas de pago</a>
+                                        </div>
+                                    </div>
+                                </section>
+                                
+                                <section class="web_info">
+                                    <div class="web_info_box info_2">
+                                        <h5>Botón de arrepentimiento</h5>
+                                        <a href=""class="link">Cancelar una compra</a>
+                                        <a href=""class="link">Cancelar una suscripción</a>
+                                    </div>
+                                    <div class="web_info_box info_2">
+                                        <h5>Conocé las normas que aplican cuando comprás</h5>
+                                        <a href="" class="link">Ver contratos de adhesión - Ley N.º 24.240 de Defensa del Consumidor</a>
+                                    </div>
+                                </section>
+                            </main>
                             
-                            <section class="web_info">
-                                <div class="web_info_box info_2">
-                                    <h5>Botón de arrepentimiento</h5>
-                                    <a href=""class="link">Cancelar una compra</a>
-                                    <a href=""class="link">Cancelar una suscripción</a>
-                                </div>
-                                <div class="web_info_box info_2">
-                                    <h5>Conocé las normas que aplican cuando comprás</h5>
-                                    <a href="" class="link">Ver contratos de adhesión - Ley N.º 24.240 de Defensa del Consumidor</a>
-                                </div>
-                            </section>
-                        </main>
-                        
-                        <!-- footer -->
-                        <%- include ('../partials/footer')%>
-                        
-                        
-                        <!-- JS BOOSTRAP -->
-                        
-                        <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-                            <script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
+                            <!-- footer -->
+                            <%- include ('../partials/footer')%>
                             
-                        </body>
-                        
-                        </html>
-                        
+                            
+                            <!-- JS BOOSTRAP -->
+                            
+                            <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                                <script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
+                                
+                            </body>
+                            
+                            </html>
+                            
