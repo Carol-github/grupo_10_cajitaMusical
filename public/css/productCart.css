@@ -97,7 +97,7 @@
 .final_btn_cart{
     display: none!important; 
 }
-@media (max-width: 375px){
+@media (max-width: 420px){
     .cart_checkout{
         flex-direction: column;
         height: 150px;

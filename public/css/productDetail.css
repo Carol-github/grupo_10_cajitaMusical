@@ -80,7 +80,7 @@
         padding-left: 15px;
     }
     }
-@media (max-width: 375px){
+@media (max-width: 420px){
     .product_detail {
         flex-direction: column!important;
     }
