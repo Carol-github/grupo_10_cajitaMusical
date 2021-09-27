@@ -1,7 +1,8 @@
 [
-    
+   
     {
         "id":"1",
+        "oferta": "false",
         "title":"Epiphone Allen Woody Rumblekat Bass",
         "price":"50000",
         "category":"cuerdas",
@@ -11,6 +12,7 @@
     },
     {
         "id":"2",
+        "oferta": "false",
         "title":"Epiphone Jack Casady Bass",
         "price":"120000",
         "category":"cuerdas",
@@ -20,6 +22,7 @@
     },
     {
         "id":"3",
+        "oferta": "false",
         "title":"Fender modelo Jazz Bass 60´s Classic",
         "price":"130000",
         "category":"cuerdas",
@@ -29,6 +32,7 @@
     },
     {
         "id":"4",
+        "oferta": "true",
         "title":"EPIPHONE BAJO THUND.PRO-IV",
         "price":"105000",
         "category":"cuerdas",
@@ -38,6 +42,7 @@
     },
     {
         "id":"5",
+        "oferta": "false",
         "title":"Fender modelo Jazz Bass 60´s",
         "price":"140000",
         "category":"cuerdas",
@@ -48,6 +53,7 @@
 
     {
         "id":"6",
+        "oferta": "false",
         "title":"Epiphone Sheraton-II Pro",
         "price":"160000",
         "category":"cuerdas",
@@ -58,6 +64,7 @@
 
     {
         "id":"7",
+        "oferta": "false",
         "title":"Epiphone Wildkat White Royale",
         "price":"175000",
         "category":"cuerdas",
@@ -68,6 +75,7 @@
 
     {
         "id":"8",
+        "oferta": "false",
         "title":"GIBSON EXPLORER T 2017 HC",
         "price":"165000",
         "category":"cuerdas",
@@ -78,6 +86,7 @@
 
     {
         "id":"9",
+        "oferta": "true",
         "title":"GIBSON LP CLASSIC 2018 GT",
         "price":"240000",
         "category":"cuerdas",
@@ -88,6 +97,7 @@
 
     {
         "id":"10",
+        "oferta": "false",
         "title":"Guitarra Eléctrica Memphis – TL (Telecaster)",
         "price":"140000",
         "category":"cuerdas",
@@ -98,6 +108,7 @@
 
     {
         "id":"11",
+        "oferta": "true",
         "title":"Batería Parquer 5 cuerpos",
         "price":"210000",
         "category":"perusion",
@@ -108,6 +119,7 @@
 
     {
         "id":"12",
+        "oferta": "false",
         "title":"Batería Legend Traveler 4 Cuerpos con fierros",
         "price":"230000",
         "category":"perusion",
@@ -118,6 +130,7 @@
 
     {
         "id":"13",
+        "oferta": "false",
         "title":"Batería Grestch Renegade 5 Cuerpos",
         "price":"250000",
         "category":"perusion",
@@ -128,6 +141,7 @@
 
     {
         "id":"14",
+        "oferta": "false",
         "title":"Batería Gretsch Catalina Club 4 Cuerpos",
         "price":"235000",
         "category":"perusion",
@@ -138,6 +152,7 @@
 
     {
         "id":"15",
+        "oferta": "false",
         "title":"Batería Grestch Catalina Club 4 Cuerpos",
         "price":"230000",
         "category":"perusion",
@@ -148,6 +163,7 @@
 
     {
         "id":"16",
+        "oferta": "false",
         "title":"Alesis Strike Kit",
         "price":"120000",
         "category":"perusion",
@@ -158,6 +174,7 @@
 
     {
         "id":"17",
+        "oferta": "true",
         "title":"Batería eléctrica Carlsbro Club100",
         "price":"140000",
         "category":"perusion",
@@ -168,6 +185,7 @@
 
     {
         "id":"18",
+        "oferta": "false",
         "title":"Bateria Electronica Nord Drum 3P",
         "price":"110000",
         "category":"perusion",
@@ -178,6 +196,7 @@
 
     {
         "id":"19",
+        "oferta": "false",
         "title":"BATERIA ELECTRONICA PARA NIÑOS CARLSBRO ROCK 50",
         "price":"115000",
         "category":"perusion",
@@ -188,6 +207,7 @@
 
     {
         "id":"20",
+        "oferta": "false",
         "title":"Batería Electrónica Behringer Xd8usb",
         "price":"280000",
         "category":"perusion",
@@ -198,6 +218,7 @@
 
     {
         "id":"21",
+        "oferta": "true",
         "title":"KAWAI GL10 Piano Acústico",
         "price":"430000",
         "category":"teclas",
@@ -208,6 +229,7 @@
 
     {
         "id":"22",
+        "oferta": "false",
         "title":"CASIO CTX 5000 Teclado",
         "price":"80000",
         "category":"teclas",
@@ -218,6 +240,7 @@
 
     {
         "id":"23",
+        "oferta": "false",
         "title":"KORG LIVERPOOL MICRO 61 TECLAS",
         "price":"75000",
         "category":"teclas",
@@ -228,6 +251,7 @@
 
     {
         "id":"24",
+        "oferta": "true",
         "title":"Teclado Alesis Vortex Wireless 2",
         "price":"70000",
         "category":"teclas",
@@ -238,6 +262,7 @@
 
     {
         "id":"25",
+        "oferta": "false",
         "title":"Controlador Midi Novation 49sl Mklll 49 Teclas Sensibles",
         "price":"80000",
         "category":"teclas",
@@ -248,6 +273,7 @@
 
     {
         "id":"26",
+        "oferta": "false",
         "title":"Armónica Hohner BluesHarp",
         "price":"2000",
         "category":"vientos",
@@ -258,6 +284,7 @@
 
     {
         "id":"27",
+        "oferta": "false",
         "title":"Trombon a pistones Stagg",
         "price":"65000",
         "category":"vientos",
@@ -268,6 +295,7 @@
 
     {
         "id":"28",
+        "oferta": "false",
         "title":"Saxo Alto Roy Benson TS-202",
         "price":"80000",
         "category":"vientos",
@@ -278,6 +306,7 @@
 
     {
         "id":"29",
+        "oferta": "false",
         "title":"YAMAHA YFL 212 Flauta Traversa Cerrada",
         "price":"45000",
         "category":"vientos",
@@ -288,6 +317,7 @@
 
     {
         "id":"30",
+        "oferta": "false",
         "title":"Trompeta Pocket Parquer",
         "price":"73000",
         "category":"vientos",
