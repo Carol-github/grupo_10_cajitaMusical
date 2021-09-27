@@ -9,7 +9,7 @@ app.use(express.static("./public"));
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
-app.listen(3030, () => {
+app.listen(process.env.PORT || 3030, () => {
     console.log('Servidor funcionando http://localhost:3030');
 });
 
