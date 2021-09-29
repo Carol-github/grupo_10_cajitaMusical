@@ -3,29 +3,29 @@
     {
         "category":"cuerdas",
         "title":"Cuerdas",
-        "image": "img_cuerdas.jpg",
+        "description": "Guitarras, Bajos, Violines, Contrabajos ...",
+        "image": "cat_guitar_color.jpg",
         "icon":"icon_cuerdas.svg"
     },
-
     {
         "category":"vientos",
         "title":"Vientos",
-        "image": "img_vientos.jpg",
+        "description": "Guitarras, Bajos, Violines, Contrabajos ...",
+        "image": "cat_winds_color.jpg",
         "icon":"icon_vientos.svg"
     },
-
     {
         "category":"teclas",
         "title":"Teclas",
-        "image": "img_teclas.jpg",
+        "description": "Guitarras, Bajos, Violines, Contrabajos ...",
+        "image": "cat_keyboards_color.jpg",
         "icon":"icon_teclas.svg"
     },
-
     {
         "category":"percusion",
         "title":"Percusión",
-        "image": "img_percusion.jpg",
+        "description": "Guitarras, Bajos, Violines, Contrabajos ...",
+        "image": "cat_drums_color.jpg",
         "icon":"icon_percusion.svg"
     }    
-
 ]

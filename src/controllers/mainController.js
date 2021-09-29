@@ -6,6 +6,9 @@ guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const categoriesFilePath = path.join(__dirname, '../data/dataCategory.json');
+const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
+
 //const mainController = {
   //  index: (req, res) => {
         //res.render(path.join(__dirname, '../views/index/index.ejs'));
@@ -21,7 +24,8 @@ const mainController = {
 		});
         //console.log(products_in_sale);
 		res.render('index.ejs',{
-			products_in_sale: products_in_sale
+			products_in_sale: products_in_sale,
+			categories: categories
 		});
 	}
 };
