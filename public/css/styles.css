@@ -133,10 +133,10 @@ p{
         border-style: solid; 
         border-width: 1px;
         display: inline-block;
-        background-image: url(/img/cat_guitar_color.jpg);
-        background-size: cover;
         border-color: #ededed; 
         border-radius: 12px;
+        position: relative;
+        overflow: hidden;
     }
     .item_menu:hover{
         width: 23%; 
@@ -144,14 +144,23 @@ p{
         border-color: #ededed; 
         border-width: 1px;
         display: inline-block;
-        background-image: none;
         background-color: rgba(40, 110, 240, 0.7);
         transition: all 600ms;
         padding-top: 20px;
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
+    .item_menu .img_category{
+        display: flex;
+        border-radius: 12px;
+        width: auto; height: 100%;
+        position: absolute;
+     }
+    .item_menu:hover .img_category{
+        display: none;
+    }
     .item_menu:hover .info_item_menu{
         visibility: visible;
+
     }
     .icon_category{
         width: 70px; 
@@ -210,6 +219,9 @@ p{
         align-content: center;
         align-items: center;
         visibility: hidden;
+        position: absolute;
+        top: 20px;
+        margin-left: 20%;
     }
     .line_2{
         border-top: 1px solid #ffffff;
@@ -341,6 +353,7 @@ p{
             width: 100%; 
         }
         .info_item_menu{
+            margin-left: 27%;
             padding-top: 20px;
             visibility: visible;
         }
