@@ -16,3 +16,13 @@
     height: 35px;
     border-radius: 5px;
 }
+.contenido{
+    padding-top:10%; 
+    margin-left: 0%;
+}
+@media (max-width: 420px){
+.contenido{
+    padding-top:10%; 
+    margin-left: 15%;
+}
+}
