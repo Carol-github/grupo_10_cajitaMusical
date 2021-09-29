@@ -7,29 +7,25 @@
         "image": "cat_guitar_color.jpg",
         "icon":"icon_cuerdas.svg"
     },
-
     {
         "category":"vientos",
         "title":"Vientos",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
-        "image": "cat_winds_color.jpg",
+        "image": "cat_winds_color.png",
         "icon":"icon_vientos.svg"
     },
-
     {
         "category":"teclas",
         "title":"Teclas",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
-        "image": "cat_keyboards_color.jpg",
+        "image": "cat_keyboards_color.png",
         "icon":"icon_teclas.svg"
     },
-
     {
         "category":"percusion",
         "title":"Percusión",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
-        "image": "cat_drums_color.jpg",
+        "image": "cat_drums_color.png",
         "icon":"icon_percusion.svg"
     }    
-
 ]

@@ -5,41 +5,18 @@
     
     
     <!-- header -->
-    <%- include ('../partials/header_minimal')%>
+    <%- include ('../partials/header_admin')%>
     
     <!-- main start -->
     
     <main class="main_list">
-        <section class="select_column">
-            <a class="modal_filter_btn"  href="#modal_filtros" class="link">
-                FILTRAR
-            </a>
-            <ol class="list">
-                <li class="link">Categorias</li>
-                <li class="link">Productos</li>
-                <li class="link">Banners</li>
-                <li class="link">Estetica</li>
-                <li class="link">Mi cuenta</li>
-            </ol>
-        </section>
-            <section style="padding-top: 5%;">
-                <h1>Alta de Producto</h1>
-                    <form class="form_reg"action="/login" method="POST">
-                        <label for="prod_name" class="label_reg">NOMBRE</label>
-                        <input type="text" id="prod_name" name="prod_name" required>
-                        <label for="prod_desc" class="label_reg">DESCRIPCION</label>
-                        <input type="email" id="prod_desc" name="prod_desc" required>
-                        <label for="prod_img" class="label_reg">IMAGEN</label>
-                        <input type="image" id="prod_img" name="prod_img" required>
-                        <label for="prod_cat" class="label_reg">CATEGORIA</label>
-                        <input type="text" id="prod_cat" name="prod_cat" required>
-                        <label for="prod_color" class="label_reg">COLORES</label>
-                        <input type="text" id="prod_color" name="prod_color" required>
-                        <label for="prod_price"  class="label_reg">PRECIO</label>
-                        <input class="input_reg" type="text" id="prod_price" name="prod_price"  minlength="5"  maxlength="10" required>
-                        <button class="btn no_disapear" type="submit">CREAR</button>
-                    </form>
-              
+        <%- include ('../partials/menu_admin')%>
+            <section style="padding-top:10%; margin-left: 0%;">
+               <h1 style="margin-bottom: 20px;">BIENVENIDO AL PANEL <br> DE ADMINISTRACION</h1>
+              <p style="text-align: center;">Desde este sitio odras dar de alta,<br> 
+                  modificar o borrar productos, categorias <br>
+                 estetica de sitio, datos de usuario.  
+                </p>
         </section>
     </main>
         

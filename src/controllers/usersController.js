@@ -10,6 +10,12 @@ const usersController = {
     },
     admin: (req, res) => {
         res.render('users/admin');
+    },
+    modif: (req, res) => {
+        res.render('users/modif');
+    },
+    upload: (req, res) => {
+        res.render('users/upload');
     }
 }
 
