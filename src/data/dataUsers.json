@@ -1,0 +1,20 @@
+[
+    {
+        "id":"1",
+        "nombre": "firstName",
+        "apellido":"lastName",
+        "email":"email",
+        "contraseña":"password",
+        "categoría":"user",
+        "imagen":"image"
+    },
+    {
+        "id":"1",
+        "nombre": "firstName",
+        "apellido":"lastName",
+        "email":"email",
+        "contraseña":"password",
+        "categoría":"admin",
+        "imagen":"image" 
+    }
+]
