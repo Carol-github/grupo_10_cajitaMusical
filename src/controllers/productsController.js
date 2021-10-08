@@ -9,15 +9,18 @@ const productsController = {
     productCart: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productCart.html'));
         res.render('products/productCart');
+        
     },
+   
     productDetail: (req, res) => {
-        //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
-        res.render('products/productDetail');
+        const product = products.filter(product => product.id_prod === req.params.id);
+        console.log(product)
+        res.render('products/productDetail',{ product });
     },
     productList: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
         // res.render('products/productList');
-        res.render('products/productList.ejs',{
+        res.render('products/productList',{
 			products: products
 		});
     }

@@ -207,7 +207,6 @@ p{
         font-size: 30px;
         font-weight: 300;
         color:black;
-        
     }
     .img_item_menu{
         width: 100%; 
@@ -222,7 +221,7 @@ p{
         visibility: hidden;
         position: absolute;
         top: 20px;
-        margin-left: 20%;
+        margin-left: 2.5%;
     }
     .line_2{
         border-top: 1px solid #ffffff;
@@ -349,12 +348,13 @@ p{
         }
         .item_menu{
             width: 100%;
+            margin-bottom: 15px;
         }
         .item_menu:hover{
             width: 100%; 
         }
         .info_item_menu{
-            margin-left: 27%;
+            margin-left: 10%;
             padding-top: 20px;
             visibility: visible;
         }
