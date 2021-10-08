@@ -10,27 +10,29 @@
     <!-- main start -->
     
     <main class="main_product">
+
+
         <section class="product_detail">
-            <h1 class="title_mobile">Guitarra Fender Stratocaster</h1>
+            <h1 class="title_mobile"><%= product[0].title %></h1>
             <div class="product_images">
                 <div class="product_ppal_image">
-                    <img  src="/img/guitarra.jpg" alt="guitarra">
+                    <img  src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
                 </div>
                 
                 <div class="product_slider_images">
                     
-                    <img class="product_slider_image" src="/img/guitarra.jpg" alt="guitarra">
-                    <img class="product_slider_image" src="/img/guitarra.jpg" alt="guitarra">
-                    <img class="product_slider_image" src="/img/guitarra.jpg" alt="guitarra">
-                    <img class="product_slider_image" src="/img/guitarra.jpg" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
                     
                 </div>
             </div>
             <div class="product_information">
-                <h1 class="product_name">Guitarra Fender Stratocaster</h1>
-                <h3 class="product_cost">$300.000</h3>
-                <span class="product_share">o en 18 cuotas de $16.666</span>
-                <p class="product_description">Nombrada con las características típicas que esperarías de una Stratocaster, la American Performer cuenta, sin embargo, con algunas características modernas pensadas para llevarla a cabo. Con pastillas Yosemite nuevas, un mástil liso con acabado satinado y el circuito de tono deseable 'Greasebucket', este instrumento puede servir como el caballo de batalla perfecto para cualquier guitarrista.</p>
+                <h1 class="product_name"><%= product[0].title %></h1>
+                <h3 class="product_cost"><%= product[0].price %></h3>
+                <span class="product_share">o en 18 cuotas de $<%= Math.round(product[0].price/18)  %></span>
+                <p class="product_description"><%= product[0].description %></p>
                 <div class="detail_btns">
                     <button class="btn"> Comprar </button>
                     <button class="btn">Agregar al carrito</button>

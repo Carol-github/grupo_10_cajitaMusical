@@ -1,6 +1,7 @@
 [
     
     {
+        "id_category":"1",
         "category":"cuerdas",
         "title":"Cuerdas",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
@@ -8,6 +9,7 @@
         "icon":"icon_cuerdas.svg"
     },
     {
+        "id_category":"2",
         "category":"vientos",
         "title":"Vientos",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
@@ -15,6 +17,7 @@
         "icon":"icon_vientos.svg"
     },
     {
+        "id_category":"3",
         "category":"teclas",
         "title":"Teclas",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
@@ -22,6 +25,7 @@
         "icon":"icon_teclas.svg"
     },
     {
+        "id_category":"4",
         "category":"percusion",
         "title":"Percusión",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
