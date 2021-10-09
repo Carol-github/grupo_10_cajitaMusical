@@ -39,11 +39,11 @@ const usersController = {
         users.push(user);
         // console.log(users);
 
-        const users_saved = JSON.stringify(users);
+        const users_saved = JSON.stringify(users, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
         fs.writeFileSync(usersFilePath, users_saved, 'utf-8')
 
         // let new_user = JSON.stringify(user);       
-        res.redirect('index');
+        res.redirect('/');
     },
     admin: (req, res) => {
         res.render('users/admin');

@@ -57,7 +57,7 @@ const productsController = {
         
 
         // JSON.stringify(output, null, 4) JSON ordenado
-        const products_saved = JSON.stringify(products, null, 4);
+        const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
         fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
         
         // let new_user = JSON.stringify(user);       

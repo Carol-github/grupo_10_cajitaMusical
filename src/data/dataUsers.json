@@ -1,1 +1,62 @@
-[{"id":0,"user":"user","first_name":"first_name","last_name":"last_name","email":"email","password":"password","category":"category","image":"image"},{"id":1,"user":"Luquechr ","first_name":"Christian","last_name":"Luque","email":"luque.christian@gmail.com","password":"12345","category":"user","image":"image"},{"id":2,"user":"mauroGato","first_name":"Mauro","last_name":"Ruix","email":"maurito77@yahoo.com","password":"12345","category":"user","image":"image"},{"id":3,"user":"br4indamage","first_name":"Matt","last_name":"Noguerá","email":"diablo2@gmail.com","password":"123456","category":"user","image":"image"},{"id":4,"user":"stevedrummer","first_name":"Esteb","last_name":"An","email":"estebanpcarles@hotmail","password":"456789","category":"user","image":"image"}]
+[
+    {
+        "id": 0,
+        "user": "user",
+        "first_name": "first_name",
+        "last_name": "last_name",
+        "email": "email",
+        "password": "password",
+        "category": "category",
+        "image": "image"
+    },
+    {
+        "id": 1,
+        "user": "Luquechr ",
+        "first_name": "Christian",
+        "last_name": "Luque",
+        "email": "luque.christian@gmail.com",
+        "password": "12345",
+        "category": "user",
+        "image": "image"
+    },
+    {
+        "id": 2,
+        "user": "mauroGato",
+        "first_name": "Mauro",
+        "last_name": "Ruix",
+        "email": "maurito77@yahoo.com",
+        "password": "12345",
+        "category": "user",
+        "image": "image"
+    },
+    {
+        "id": 3,
+        "user": "br4indamage",
+        "first_name": "Matt",
+        "last_name": "Noguerá",
+        "email": "diablo2@gmail.com",
+        "password": "123456",
+        "category": "user",
+        "image": "image"
+    },
+    {
+        "id": 4,
+        "user": "stevedrummer",
+        "first_name": "Esteb",
+        "last_name": "An",
+        "email": "estebanpcarles@hotmail",
+        "password": "456789",
+        "category": "user",
+        "image": "image"
+    },
+    {
+        "id": 5,
+        "user": "rolito",
+        "first_name": "Nikko",
+        "last_name": "Crocci",
+        "email": "rolitoinstrmunts@gmail.com",
+        "password": "12345",
+        "category": "user",
+        "image": "image"
+    }
+]
