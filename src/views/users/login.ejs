@@ -11,12 +11,15 @@
     
     <main class="content_reg">
         <section class="section_reg" >
-            <form class="form_reg"action="/login" method="POST">
+            <form class="form_reg"action="/usuarios/ingresar" method="POST">
                 <label class="label_reg" for="user">USUARIO</label>
                 <input class="input_reg" type="text" id="user" name="user" required>
+
                 <label class="label_reg" for="pass">CONTRASEÑA</label>
                 <input style="margin-bottom: 0%;"  class="input_reg" type="password" id="pass" name="pass" minlength="5"  maxlength="10" required>
+
                 <a href="#" style="margin-left: 0%;" class="link">Olvidaste tu contraseña</a>
+                
                 <button class="btn no_disapear" type="submit">INGRESAR</button>
                 <a href="/usuarios/registrar" class="link">¿No tenés usuario? Registrate</a>
             </form>

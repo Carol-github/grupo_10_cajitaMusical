@@ -12,15 +12,31 @@
     
     <main class="content_reg">
         <section class="section_reg">
-            <form class="form_reg"action="/login" method="POST">
+            <form class="form_reg"action="/usuarios/registrar" method="POST">
+
                 <label for="user" class="label_reg">NOMBRE DE USUARIO</label>
                 <input type="text" id="user" name="user" required>
+
+                <label for="first_name" class="label_reg">NOMBRE</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name" class="label_reg">APELLIDO</label>
+                <input type="text" id="last_name" name="last_name" required>
+
                 <label for="email" class="label_reg">EMAIL</label>
                 <input type="email" id="email" name="email" required>
-                <label for="pass"  class="label_reg">CONTRASEÑA</label>
-                <input class="input_reg" type="password" id="pass" name="pass"  minlength="5"  maxlength="10" required>
-                <label for="confirm_pass"  class="label_reg">REPETIR CONTRASEÑA</label>
-                <input class="input_reg" type="password" id="confirm_pass" name="confirm_pass"  minlength="5" maxlength="10"required>
+
+                <!-- ESTE es un INPUT para levantar archivos -->
+                <!-- <label for="avatar" class="label_reg">IMAGEN DE PERFIL</label>
+                <input type="file" id="avatar" name="avatar" required>
+                <label>Elegir Archivo...</label> -->
+
+                <label for="password"  class="label_reg">CONTRASEÑA</label>
+                <input class="input_reg" type="password" id="pass" name="password"  minlength="5"  maxlength="10" required>
+                
+                <label for="confirm_password"  class="label_reg">REPETIR CONTRASEÑA</label>
+                <input class="input_reg" type="password" id="confirm_password" name="confirm_pass"  minlength="5" maxlength="10"required>
+                
                 <button class="btn no_disapear" type="submit">REGISTRAR</button>
             </form>
         </section>

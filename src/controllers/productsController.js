@@ -14,7 +14,7 @@ const productsController = {
    
     productDetail: (req, res) => {
         const product = products.filter(product => product.id_prod === req.params.id);
-        console.log(product)
+        // console.log(product)
         res.render('products/productDetail',{ product });
     },
     productList: (req, res) => {
