@@ -55,7 +55,9 @@ const productsController = {
         products.push(product);
         console.log(products);
         
-        const products_saved = JSON.stringify(products);
+
+        // JSON.stringify(output, null, 4) JSON ordenado
+        const products_saved = JSON.stringify(products, null, 4);
         fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
         
         // let new_user = JSON.stringify(user);       
