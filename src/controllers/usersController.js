@@ -24,7 +24,7 @@ const usersController = {
         res.render('users/register');
     },
     store: (req, res) => {
-        console.log(users.length)
+        // console.log(users.length)
         const last_position = users.length - 1 ;
         const user = {  
             id: users[last_position].id + 1,
@@ -37,13 +37,13 @@ const usersController = {
             image:"image"
         }
         users.push(user);
-        console.log(users);
+        // console.log(users);
 
         const users_saved = JSON.stringify(users);
         fs.writeFileSync(usersFilePath, users_saved, 'utf-8')
 
         // let new_user = JSON.stringify(user);       
-        res.redirect('admin');
+        res.redirect('index');
     },
     admin: (req, res) => {
         res.render('users/admin');
@@ -51,9 +51,7 @@ const usersController = {
     modify: (req, res) => {
         res.render('users/modify');
     },
-    upload: (req, res) => {
-        res.render('users/upload');
-    },
+    
     profile: (req, res) => {
         res.render('users/profile');
     }

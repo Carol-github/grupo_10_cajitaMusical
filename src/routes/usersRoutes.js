@@ -14,6 +14,5 @@ router.get('/admin', usersController.admin);
 
 router.get('/modificar', usersController.modify);
 
-router.get('/upload', usersController.upload);
 
 module.exports = router;

@@ -1,0 +1,57 @@
+[    
+    {
+        "id": 1,        
+        "id_category": 1, 
+        "title":"Guitarra"        
+    },
+    {
+        "id": 2,        
+        "id_category": 1, 
+        "title":"Guitarra Criolla"        
+    },
+    {
+        "id": 3,        
+        "id_category": 1, 
+        "title":"Guitarra Acústica"        
+    },
+    {
+        "id": 4,        
+        "id_category": 1, 
+        "title":"Bajo"        
+    },
+    {
+        "id": 5,        
+        "id_category": 4, 
+        "title":"Batería Acústica"        
+    },
+    {
+        "id": 6,        
+        "id_category": 4, 
+        "title":"Batería Eléctrica"        
+    },
+    {
+        "id": 7,        
+        "id_category": 4, 
+        "title":"Pandereta"        
+    },
+    {
+        "id": 8,        
+        "id_category": 2, 
+        "title":"Armónica"        
+    },
+    {
+        "id": 9,        
+        "id_category": 2, 
+        "title":"Saxofón"        
+    },
+    {
+        "id": 10,        
+        "id_category": 3, 
+        "title":"Piano"        
+    },
+    {
+        "id": 11,        
+        "id_category": 3, 
+        "title":"Piano Eléctrico"        
+    }   
+]

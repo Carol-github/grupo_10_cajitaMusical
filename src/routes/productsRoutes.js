@@ -13,7 +13,8 @@ router.get('/detalle/:id', productsController.productDetail);
 // LISTA
 router.get('/lista', productsController.productList);
 // CREACION
-
+router.get("/carga_producto", productsController.upload);
+router.post("/carga_producto", productsController.store)
 
 // EDICION
 
