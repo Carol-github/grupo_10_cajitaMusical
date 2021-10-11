@@ -1,5 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+
+//aca definimos donde se van a guardar las imagenes de los usuarios
+const storage = multer.diskStorage({ 
+    destination: function (req, file, cb) { 
+       cb(null, './public/img/avatars'); 
+    }, 
+    filename: function (req, file, cb) { 
+       cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);  } 
+  });
+
+const uploadFile = multer({ storage });
+
 
 const usersController = require('../controllers/usersController.js');
 

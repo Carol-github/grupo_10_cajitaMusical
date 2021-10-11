@@ -21,8 +21,9 @@ const productsController = {
     },
     
     productDetail: (req, res) => {
-        const product = products.filter(product => product.id_prod === req.params.id);
-        // console.log(product)
+        console.log(req.params.id);
+        const product = products.filter(product => product.id == req.params.id);
+        console.log(product)
         res.render('products/productDetail',{ product });
     },
     productList: (req, res) => {
@@ -33,15 +34,19 @@ const productsController = {
         });
     },
     upload: (req, res) => {
-        console.log(categories);
-        console.log(subCategories);
+       // console.log(categories);
+       // console.log(subCategories);
         res.render('products/productUpload',{
             categories : categories,
             subCategories : subCategories  
         });        
     },
+    edit: (req, res) => {
+
+    },
     store: (req, res) => {        
         const last_position = products.length - 1 ;
+        req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
         const product = {              
             id: products[last_position].id + 1,
             oferta: req.body.offer,
@@ -50,7 +55,7 @@ const productsController = {
             category: req.body.prod_cat,
             subcategory:req.body.prod_subcat,
             description: req.body.prod_desc,
-            image: "no-image-product.jpg"
+            image: req.body.prod_img
         }
         products.push(product);
         console.log(products);

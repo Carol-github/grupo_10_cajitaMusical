@@ -1,5 +1,25 @@
+const path = require("path");
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+
+//aca definimos donde se van a guardar las imagenes de los usuarios
+const storage = multer.diskStorage({ 
+    //creacion nde ruta
+    destination: function (req, file, cb) { 
+       cb(null, './public/img/imgProducts'); 
+    }, 
+    // creacion de nombre de archivo
+    filename: function (req, file, cb) {
+       let productName = req.body.prod_name; 
+       
+       let imageFinalName = `imgProduct_${Date.now()}_${path.extname(file.originalname)}`;
+
+       cb(null, imageFinalName);  
+    } 
+});
+
+const uploadFile = multer({ storage });
 
 const productsController = require('../controllers/productsController.js');
 
@@ -14,10 +34,10 @@ router.get('/detalle/:id', productsController.productDetail);
 router.get('/lista', productsController.productList);
 // CREACION
 router.get("/carga_producto", productsController.upload);
-router.post("/carga_producto", productsController.store)
+router.post("/carga_producto", uploadFile.single("prod_img"), productsController.store)
 
 // EDICION
-
+router.get("/edita_producto", productsController.edit);
 
 // BORRADO
 
