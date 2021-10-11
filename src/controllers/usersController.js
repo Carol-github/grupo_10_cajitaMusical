@@ -15,7 +15,7 @@ const usersController = {
     process_login: (req, res) => {
         //res.render(path.join(__dirname, '../views/users/login.ejs'));
         let papa = req.body;
-        console.log(papa);
+       //console.log(papa);
         res.redirect('admin');
 
     },

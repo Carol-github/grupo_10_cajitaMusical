@@ -21,16 +21,16 @@ const productsController = {
     },
     
     productDetail: (req, res) => {
-        console.log(req.params.id);
+        //console.log(req.params.id);
         const product = products.filter(product => product.id == req.params.id);
-        console.log(product)
+        //console.log(product)
         res.render('products/productDetail',{ product });
     },
     productList: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
         // res.render('products/productList');
         res.render('products/productList',{
-            products: products
+            products
         });
     },
     upload: (req, res) => {
@@ -43,6 +43,48 @@ const productsController = {
     },
     edit: (req, res) => {
 
+        const product = products.filter(product => product.id == req.params.id);
+        res.render('products/productEdit',{ product, categories : categories, subCategories : subCategories });
+    },
+    delete: (req, res) => {
+        const newProducts = products.filter(product => product.id != req.params.id)
+
+        // JSON.stringify(output, null, 4) JSON ordenado
+        const products_saved = JSON.stringify(newProducts, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
+        fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
+      
+        
+        res.redirect('/productos/lista');
+       
+    },
+       
+    updated: (req, res) => {
+        
+        products.forEach(product => {
+
+            if (product.id == req.params.id) {
+
+                if (typeof req.file != "undefined") {product.image = req.file.filename}   
+                
+                req.body.offer ? product.oferta = "true" : product.oferta = "false";
+               //console.log(product.oferta);  
+                                                       
+                
+                product.title = req.body.prod_name;
+                product.price = req.body.prod_price;
+                product.category = req.body.prod_cat;
+                product.subcategory = req.body.prod_subcat;
+                product.description = req.body.prod_desc;
+                product.image = product.image;
+
+            }
+        })
+        // JSON.stringify(output, null, 4) JSON ordenado
+        const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
+        fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
+
+        res.redirect('/productos/lista');
+       
     },
     store: (req, res) => {        
         const last_position = products.length - 1 ;
@@ -58,7 +100,7 @@ const productsController = {
             image: req.body.prod_img
         }
         products.push(product);
-        console.log(products);
+        //.log(products);
         
 
         // JSON.stringify(output, null, 4) JSON ordenado

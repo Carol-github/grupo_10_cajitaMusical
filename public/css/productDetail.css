@@ -70,6 +70,8 @@
 .detail_btns{
     display: flex; 
     justify-content: start;  
+    margin-top: 15px;
+    width: 350px;
 }
 
 .title_mobile{

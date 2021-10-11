@@ -36,6 +36,13 @@
                 <div class="detail_btns">
                     <button class="btn"> Comprar </button>
                     <button class="btn">Agregar al carrito</button>
+                   
+                </div>
+                <div class="detail_btns">
+                    <a href="/productos/<%= product[0].id %>/edita_producto"><button class="btn">Editar</button></a>
+                    <form action="/productos/borrado/<%= product[0].id %>?_method=DELETE" method="POST">
+                        <button> Eliminar </button>
+                    </form> 
                 </div>
             </div>
         </section>   

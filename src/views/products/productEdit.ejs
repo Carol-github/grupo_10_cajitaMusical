@@ -12,43 +12,53 @@
     <main class="main_list">
         <%- include ('../partials/menu_admin')%>
         <section style="padding-top: 2%;">
-            <h1>Alta de Producto</h1>
-            <form style="height: 90%;" class="form_reg"action="/productos/carga_producto" method="POST" enctype="multipart/form-data">
+            <h1>Editar Producto</h1>
+            <form style="height: 90%;" class="form_reg" 
+            action="/productos/edita_producto/<%= product[0].id %>?_method=PUT" 
+            method="POST" 
+            enctype="multipart/form-data">
                 
                 <label for="prod_name" class="label_reg">NOMBRE</label>
-                <input  type="text" id="prod_name" name="prod_name" required>
+                <input  type="text" id="prod_name" name="prod_name" value="<%= product[0].title %> ">
+
+                <label for="prod_price" class="label_reg">PRECIO</label>
+                <input  type="text" id="prod_price" name="prod_price" value="<%= product[0].price %> ">
                 
                 <label for="prod_desc" class="label_reg">DESCRIPCION</label>
-                <textarea type="email" id="prod_desc" name="prod_desc" style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;" rows="10"required></textarea> 
+                <textarea type="email" id="prod_desc" name="prod_desc" style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;" rows="10" required><%= product[0].description %></textarea> 
                 
+                <div class="product_ppal_image">
+                    <img  src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
+                </div>
+
                 <label for="prod_img" class="label_reg">IMAGEN</label>
-                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" required> 
+                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" value="<%= product[0].image %>"> 
                 
                 <label for="prod_cat" class="label_reg">CATEGORIA</label>
                 <select name="prod_cat" id="prod_cat" >
                     <% categories.forEach(category => { %>
-                        <option value="<%= category.title %>"><%= category.title %> </option> 
+                        <option value="<%= category.category %>" <%=  category.category == product[0].category ? 'selected' : null %> ><%= category.category %></option>
                         <% }) %> 
                 </select>
                     
                 <label for="prod_subcat" class="label_reg">SUBCATEGORIA</label>
                 <select name="prod_subcat" id="prod_subcat" >
                     <% subCategories.forEach(subCategory => { %>
-                        <option value="<%= subCategory.title %>"><%= subCategory.title %> </option> 
+                        <option value="<%= subCategory.title %>" <%=  subCategory.title == product[0].subcategory ? 'selected' : null %> ><%= subCategory.title %></option>
                         <% }) %> 
-                </select>                    
-                    
-                    <label for="prod_color" class="label_reg">COLORES</label>
-                    <input type="text" id="prod_color" name="prod_color" required>
-                    
-                    <label for="prod_price"  class="label_reg">PRECIO</label>
-                    <input class="input_reg" type="text" id="prod_price" name="prod_price"  minlength="5"  maxlength="10" required>
-                    <div>
-                   <input type="checkbox" id="cbox1" value="first_checkbox" name="offer"> 
-                   <label for="offer">En oferta</label>
+                </select>
+                    <!-- <div style="display: flex; margin-top: 15px;  margin-bottom: 15px;">
+                   <input style="margin-top: auto; margin-bottom: auto;" type="checkbox" id="cbox1" value="first_checkbox" name="offer"  > 
+                   <label for="offer" style="width: 200px; margin-top: auto; margin-bottom: auto;">En oferta</label>
+                   </div> -->
+
+                   <div style="display: flex; margin-top: 15px;  margin-bottom: 15px;">
+                        <input style="margin-top: auto; margin-bottom: auto;" type="checkbox" id="cbox1" value="first_checkbox" name="offer" 
+                        <%= product[0].oferta == 'true' ? "checked" : null %>  > 
+                        <label for="offer" style="width: 200px; margin-top: auto; margin-bottom: auto;">En oferta</label>
                    </div>
                     
-                    <button class="btn no_disapear" type="submit">CREAR</button>
+                    <button class="btn no_disapear" type="submit">MODIFICAR</button>
                 </form>
                 
             </section>

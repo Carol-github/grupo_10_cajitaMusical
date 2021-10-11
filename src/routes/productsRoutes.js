@@ -37,8 +37,10 @@ router.get("/carga_producto", productsController.upload);
 router.post("/carga_producto", uploadFile.single("prod_img"), productsController.store)
 
 // EDICION
-router.get("/edita_producto", productsController.edit);
+router.get("/:id/edita_producto", productsController.edit);
+router.put("/edita_producto/:id", uploadFile.single("prod_img"), productsController.updated);
 
 // BORRADO
+router.delete("/borrado/:id", productsController.delete);
 
 module.exports = router;

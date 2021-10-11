@@ -2,7 +2,7 @@
     
     {
         "id_category":"1",
-        "category":"cuerdas",
+        "category":"Cuerdas",
         "title":"Cuerdas",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
         "image": "cat_guitar_color.jpg",
@@ -10,7 +10,7 @@
     },
     {
         "id_category":"2",
-        "category":"vientos",
+        "category":"Vientos",
         "title":"Vientos",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
         "image": "cat_winds_color.png",
@@ -18,7 +18,7 @@
     },
     {
         "id_category":"3",
-        "category":"teclas",
+        "category":"Teclas",
         "title":"Teclas",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
         "image": "cat_keyboards_color.png",
@@ -26,7 +26,7 @@
     },
     {
         "id_category":"4",
-        "category":"percusion",
+        "category":"Percusión",
         "title":"Percusión",
         "description": "Guitarras, Bajos, Violines, Contrabajos ...",
         "image": "cat_drums_color.png",
