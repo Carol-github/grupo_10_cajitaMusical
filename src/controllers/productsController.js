@@ -16,8 +16,7 @@ const subCategories = JSON.parse(fs.readFileSync(subCategoriesFilePath, 'utf-8')
 const productsController = {
     productCart: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productCart.html'));
-        res.render('products/productCart');
-        
+        res.render('products/productCart');     
     },
     
     productDetail: (req, res) => {
@@ -29,9 +28,7 @@ const productsController = {
     productList: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
         // res.render('products/productList');
-        res.render('products/productList',{
-            products
-        });
+        res.render('products/productList',{ products });
     },
     upload: (req, res) => {
        // console.log(categories);
@@ -42,9 +39,11 @@ const productsController = {
         });        
     },
     edit: (req, res) => {
-
         const product = products.filter(product => product.id == req.params.id);
-        res.render('products/productEdit',{ product, categories : categories, subCategories : subCategories });
+        res.render('products/productEdit',{ 
+            product, categories : categories, 
+            subCategories : subCategories 
+        });
     },
     delete: (req, res) => {
         const newProducts = products.filter(product => product.id != req.params.id)

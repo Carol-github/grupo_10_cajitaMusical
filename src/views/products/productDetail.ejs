@@ -39,10 +39,10 @@
                    
                 </div>
                 <div class="detail_btns">
-                    <a href="/productos/<%= product[0].id %>/edita_producto"><button class="btn">Editar</button></a>
+                    <a class="btn" href="/productos/<%= product[0].id %>/edita_producto"><button class="btn">Editar</button></a>
                     <form action="/productos/borrado/<%= product[0].id %>?_method=DELETE" method="POST" 
                         enctype="multipart/form-data">
-                        <button> Eliminar </button>
+                        <button class="delete_btn"> Eliminar </button>
                     </form> 
                 </div>
             </div>

@@ -87,9 +87,18 @@ p{
         display: flex;
         align-items: center;
         justify-content: space-around;
-        text-decoration: none;
+        text-decoration: none!important;
     }
     .delete_btn{
+        color: #ffffff;
+        border-style: none;
+        width: 150px;
+        height: 40px!important;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-decoration: none;
         background-color: red;
     }
     .txt_btn_login{
