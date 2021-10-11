@@ -40,7 +40,8 @@
                 </div>
                 <div class="detail_btns">
                     <a href="/productos/<%= product[0].id %>/edita_producto"><button class="btn">Editar</button></a>
-                    <form action="/productos/borrado/<%= product[0].id %>?_method=DELETE" method="POST">
+                    <form action="/productos/borrado/<%= product[0].id %>?_method=DELETE" method="POST" 
+                        enctype="multipart/form-data">
                         <button> Eliminar </button>
                     </form> 
                 </div>

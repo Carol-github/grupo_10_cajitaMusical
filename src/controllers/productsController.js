@@ -54,7 +54,7 @@ const productsController = {
         fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
       
         
-        res.redirect('/productos/lista');
+        res.redirect('/');
        
     },
        
