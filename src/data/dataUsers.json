@@ -58,5 +58,85 @@
         "password": "12345",
         "category": "user",
         "image": "image"
+    },
+    {
+        "id": 6,
+        "user": "shomway1",
+        "first_name": "gordon",
+        "last_name": "shomway",
+        "email": "shomway@gmail.com",
+        "password": "12345678",
+        "category": "user",
+        "image": "alf.jpeg"
+    },
+    {
+        "id": 7,
+        "user": "mauro",
+        "first_name": "mauro",
+        "last_name": "mauro",
+        "email": "mauro@mauco.com",
+        "password": "mauro",
+        "category": "user",
+        "image": "alf.jpeg"
+    },
+    {
+        "id": 8,
+        "user": "shenlong",
+        "first_name": "Juan Carlos",
+        "last_name": "Shenlong",
+        "email": "dragonforce@shengmail.com",
+        "password": "12345",
+        "category": "user",
+        "image": "009daff1aba645a4b9a0ec1f7cbaab45.jpeg"
+    },
+    {
+        "id": 9,
+        "user": "rolito",
+        "first_name": "nikko",
+        "last_name": "hielo",
+        "email": "nikkko@gmail.com",
+        "password": "12345",
+        "category": "user",
+        "image": "Captura de pantalla 2021-10-21 a la(s) 20.20.20.png"
+    },
+    {
+        "id": 10,
+        "user": "uocra",
+        "first_name": "uocra",
+        "last_name": "obrero",
+        "email": "uocra@gmail.com",
+        "password": "12345",
+        "category": "user",
+        "image": "009daff1aba645a4b9a0ec1f7cbaab45.jpeg"
+    },
+    {
+        "id": 11,
+        "user": "galoperro",
+        "first_name": "galo",
+        "last_name": "perro",
+        "email": "doghell@dogmail.com",
+        "password": "12345",
+        "category": "user",
+        "image": "009daff1aba645a4b9a0ec1f7cbaab45.jpeg"
+    },
+    {
+        "id": 12,
+        "user": "oscar",
+        "first_name": "bruno",
+        "last_name": "chau",
+        "email": "doctor@hbruno.com",
+        "password": "123456",
+        "category": "user",
+        "image": "avatar_1635031365328_.jpeg"
+    },
+    {
+        "id": 13,
+        "user": "Mauro",
+        "first_name": "Ruiz",
+        "last_name": "Ruiz",
+        "email": "mauror.df@gmail.com",
+        "password": "$2a$10$aaBC3QnL2mKxcPLx3N9j9O0NKH8Nw0ccPPOijjLEaCiWKpUQMbnya",
+        "category": "user",
+        "image": "avatar_1635031950567_.jpeg"
     }
 ]

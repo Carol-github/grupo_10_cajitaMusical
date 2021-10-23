@@ -8,7 +8,7 @@
 
 .section_reg{
     width: 100%; 
-    height: 55vh;   
+    height: 70vh;   
     border-radius: 35px;
 }
 
@@ -16,7 +16,7 @@
     display: flex; 
     flex-direction: column; 
     justify-content: space-evenly; 
-    height: 50vh; 
+    height: 70vh; 
     margin: auto;
     width: 50vw;
 }

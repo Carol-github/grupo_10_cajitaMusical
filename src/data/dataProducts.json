@@ -363,6 +363,15 @@
         "image": "no-image-product.jpg"
     },
     {
+        "id": 38,
+        "title": "Fender Telecastro Cuba Ltd edition",
+        "price": "420000",
+        "category": "Cuerdas",
+        "subcategory": "Guitarra",
+        "description": "Guitarra para zurdos sin brazos.",
+        "image": "no-image-product.jpg"
+    },
+    {
         "id": 39,
         "title": "Junior Jet Bass Ii, Rwn, 30.3 Scale",
         "price": "81602",
@@ -373,38 +382,22 @@
     },
     {
         "id": 40,
-        "title": "Prueba",
-        "price": "10000",
+        "oferta": "true",
+        "title": "guitarra ",
+        "price": "100000 ",
         "category": "Cuerdas",
         "subcategory": "Guitarra",
-        "description": "prueba",
-        "image": "Prueba_1633918213853_.jpg"
+        "description": "de 6 cuerdas",
+        "image": "imgProduct_1635026228439_.jpeg"
     },
     {
         "id": 41,
-        "title": "Archivo de prueba",
-        "price": "10000",
+        "oferta": "first_checkbox",
+        "title": "dragon guitar",
+        "price": "700000",
         "category": "Cuerdas",
         "subcategory": "Guitarra",
-        "description": "dendknsaknsa",
-        "image": "Archivo de prueba_1633918401365_.jpg"
-    },
-    {
-        "id": 42,
-        "title": "Prueba",
-        "price": "10000",
-        "category": "Cuerdas",
-        "subcategory": "Guitarra",
-        "description": "prueba",
-        "image": "imgProduct_1633918532174_.jpg"
-    },
-    {
-        "id": 43,
-        "title": "Archivo de prueba",
-        "price": "10000",
-        "category": "Cuerdas",
-        "subcategory": "Guitarra",
-        "description": "fgvsedgvdsgvsds",
-        "image": "imgProduct_1633918608149_.jpg"
+        "description": "dragon de 7 cuerdas",
+        "image": "imgProduct_1635029156002_.jpeg"
     }
 ]

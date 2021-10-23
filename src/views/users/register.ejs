@@ -12,7 +12,7 @@
     
     <main class="content_reg">
         <section class="section_reg">
-            <form class="form_reg"action="/usuarios/registrar" method="POST">
+            <form class="form_reg"action="/usuarios/registrar" method="POST" enctype="multipart/form-data">
 
                 <label for="user" class="label_reg">NOMBRE DE USUARIO</label>
                 <input type="text" id="user" name="user" required>
@@ -27,9 +27,10 @@
                 <input type="email" id="email" name="email" required>
 
                 <!-- ESTE es un INPUT para levantar archivos -->
-                <!-- <label for="avatar" class="label_reg">IMAGEN DE PERFIL</label>
-                <input type="file" id="avatar" name="avatar" required>
-                <label>Elegir Archivo...</label> -->
+                <label for="avatar" class="label_reg">IMAGEN DE PERFIL</label>
+                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="avatar" name="avatar" required> 
+
+                <label>Elegir Archivo...</label> 
 
                 <label for="password"  class="label_reg">CONTRASEÑA</label>
                 <input class="input_reg" type="password" id="pass" name="password"  minlength="5"  maxlength="10" required>
