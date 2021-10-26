@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { stringify } = require('querystring');
-const bcrypt = require ("bcryptjs");
+const bcrypt = require('bcryptjs');
 
 
 const usersFilePath = path.join(__dirname, '../data/dataUsers.json');
@@ -28,10 +28,12 @@ const usersController = {
     store: (req, res) => {
         // console.log(users.length)
         const last_position = users.length - 1 ;
-        req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
-        
-        req.body.password = bcrypt.hashSync(req.body.password, 10);
-
+        console.log(req.file);
+        if(typeof req.file!='undefined'){
+            req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
+        }
+        let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+        req.body.password = passEncriptada;
         const user = {  
             id: users[last_position].id + 1,
             user: req.body.user,
@@ -40,7 +42,7 @@ const usersController = {
             email:req.body.email,
             password: req.body.password,
             category: "user",
-            image: req.body.avatar
+            image:req.body.avatar
         }
         users.push(user);
         // console.log(users);

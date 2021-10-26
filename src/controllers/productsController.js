@@ -87,7 +87,12 @@ const productsController = {
     },
     store: (req, res) => {        
         const last_position = products.length - 1 ;
-        req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
+        console.log(req.file);
+        if(typeof req.file!='undefined'){
+            req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
+        }
+        
+
         const product = {              
             id: products[last_position].id + 1,
             oferta: req.body.offer,
