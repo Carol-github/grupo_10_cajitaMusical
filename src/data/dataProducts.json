@@ -381,16 +381,6 @@
         "image": "Gretsch-G2224-Junior-Jet-Bass-II-SB-Tobacco-Sunburst.jpg"
     },
     {
-        "id": 40,
-        "oferta": "true",
-        "title": "guitarra ",
-        "price": "100000 ",
-        "category": "Cuerdas",
-        "subcategory": "Guitarra",
-        "description": "de 6 cuerdas",
-        "image": "imgProduct_1635026228439_.jpeg"
-    },
-    {
         "id": 41,
         "oferta": "first_checkbox",
         "title": "dragon guitar",
