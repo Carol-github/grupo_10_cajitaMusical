@@ -36,8 +36,8 @@
                 <div class="detail_btns">
                     <button class="btn"> Comprar </button>
                     <button class="btn">Agregar al carrito</button>
-                   
                 </div>
+
                 <div class="detail_btns">
                     <a class="btn" href="/productos/<%= product[0].id %>/edita_producto"><button class="btn">Editar</button></a>
                     <form action="/productos/borrado/<%= product[0].id %>?_method=DELETE" method="POST" 
@@ -45,6 +45,7 @@
                         <button class="delete_btn"> Eliminar </button>
                     </form> 
                 </div>
+                
             </div>
         </section>   
     </main>

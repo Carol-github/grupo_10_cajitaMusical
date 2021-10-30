@@ -10,16 +10,24 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 // saved = fs.writeFileSync(file, content, 'utf8');
 
 const usersController = {
-    login: (req, res) => {
-        //res.render(path.join(__dirname, '../views/users/login.ejs'));
+    login: (req, res) => {       
         res.render('users/login');
     },
     process_login: (req, res) => {
-        //res.render(path.join(__dirname, '../views/users/login.ejs'));
-        let papa = req.body;
-       //console.log(papa);
-        res.redirect('admin');
-
+        let user = users.filter(user => req.body.user == user.user);
+        if(user.length != 0){
+                     
+            if(bcrypt.compareSync(req.body.pass, user[0].password )){
+                req.session.userLogged = user[0];
+                // console.log(req.session.userLogged);
+                res.redirect('admin');
+            } 
+            else{
+                res.send('Contraseña incorrecta');
+            }
+        } else{
+            res.send('Usuario incorrecto');
+        }
     },
 
     register: (req, res) => {
@@ -57,7 +65,7 @@ const usersController = {
         res.render('users/admin');
     },
     modify: (req, res) => {
-        res.render('users/modify');
+        res.render('users/modif');
     },
     
     profile: (req, res) => {

@@ -37,7 +37,7 @@
                 <label for="prod_cat" class="label_reg">CATEGORIA</label>
                 <select name="prod_cat" id="prod_cat" >
                     <% categories.forEach(category => { %>
-                        <option value="<%= category.category %>" <%=  category.category == product[0].category ? 'selected' : null %> ><%= category.category %></option>
+                        <option value="<%= category.category %>" <%= category.category == product[0].category ? 'selected' : null %> ><%= category.category %></option>
                         <% }) %> 
                 </select>
                     

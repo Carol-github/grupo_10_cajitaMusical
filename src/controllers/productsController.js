@@ -21,8 +21,9 @@ const productsController = {
     
     productDetail: (req, res) => {
         //console.log(req.params.id);
+        // req.session.userLogged = user[0];
         const product = products.filter(product => product.id == req.params.id);
-        //console.log(product)
+        console.log(res.locals)
         res.render('products/productDetail',{ product });
     },
     productList: (req, res) => {

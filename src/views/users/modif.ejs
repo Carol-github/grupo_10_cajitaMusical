@@ -13,21 +13,21 @@
         <%- include ('../partials/menu_admin')%>
 
     <section style="padding-top: 2%;">
-        <h1>Modificación de Producto</h1>
+        <h1>Modificación de perfil</h1>
             <form style="height: 90%;" class="form_reg"action="/login" method="POST">
-                <label for="prod_name" class="label_reg">NOMBRE</label>
-                <input  type="text" id="prod_name" name="prod_name" required>
-                <label for="prod_desc" class="label_reg">DESCRIPCION</label>
-                <textarea type="email" id="prod_desc" name="prod_desc" style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;" rows="10"required></textarea> 
-                <label for="prod_img" class="label_reg">IMAGEN</label>
-                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" required>
-                <label for="prod_cat" class="label_reg">CATEGORIA</label>
-                <input type="text" id="prod_cat" name="prod_cat" required>
-                <label for="prod_color" class="label_reg">COLORES</label>
-                <input type="text" id="prod_color" name="prod_color" required>
-                <label for="prod_price"  class="label_reg">PRECIO</label>
-                <input class="input_reg" type="text" id="prod_price" name="prod_price"  minlength="5"  maxlength="10" required>
-                <button class="btn no_disapear" type="submit">CREAR</button>
+                <label for="user_name" class="label_reg">NOMBRE</label>
+                <input  type="text" id="user_name" name="user_name" required>
+                <label for="user_lastname" class="label_reg">APELLIDO</label>
+                <input  type="text" id="user_lastname" name="user_lastname" required>
+                <label for="user_img" class="label_reg">IMAGEN</label>
+                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="user_img" name="user_img" required>
+                <label for="user_cat" class="label_reg">EMAIL</label>
+                <input type="text" id="user_cat" name="user_cat" required>
+                <label for="user_color" class="label_reg">DIRECCION</label>
+                <input type="text" id="user_color" name="user_color" required>
+                <label for="user_price"  class="label_reg">TELEFONO</label>
+                <input class="input_reg" type="text" id="user_price" name="user_price"  minlength="5"  maxlength="10" required>
+                <button class="btn no_disapear" type="submit">MODIFICAR</button>
             </form>
       
 </section>
