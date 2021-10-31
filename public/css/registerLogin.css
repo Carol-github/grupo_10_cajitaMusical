@@ -8,7 +8,8 @@
 
 .section_reg{
     width: 100%; 
-    height: 70vh;   
+    height: auto;
+    margin-bottom: 30px;   
     border-radius: 35px;
 }
 

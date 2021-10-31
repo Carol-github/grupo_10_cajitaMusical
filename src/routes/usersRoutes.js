@@ -3,6 +3,19 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 
+const { body } = require('express-validator');
+
+const validateCreateUserForm = [
+    body('user').notEmpty().withMessage('Debes ingresar un nombre de usuario'),
+    body('first_name').notEmpty().withMessage('Debes ingresar un nombre'),
+    body('last_name').notEmpty().withMessage('Debes ingresar un apellido'),
+    body('email').isEmail().withMessage('Debes ingresar un email válido'),
+    body('avatar').notEmpty().withMessage('Debes ingresar una imagen'),
+    body('password').notEmpty().withMessage('Debes ingresar un password'),
+    body('confirm_password').notEmpty().withMessage('Debes ingresar una confirmación de password')
+]
+
+
 // Middlewares
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
@@ -29,7 +42,7 @@ router.get('/ingresar', guestMiddleware, usersController.login);
 router.post('/ingresar', usersController.process_login);
 
 router.get('/registrar', guestMiddleware, usersController.register);
-router.post('/registrar', upload.single('avatar'), usersController.store)
+router.post('/registrar', upload.single('avatar'), validateCreateUserForm, usersController.store)
 
 router.get('/admin', authMiddleware, usersController.admin);
 
