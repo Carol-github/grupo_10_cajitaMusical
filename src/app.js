@@ -36,11 +36,21 @@ const mainRoutes = require('./routes/mainRoutes.js');
 const usersRoutes = require('./routes/usersRoutes.js');
 const productsRoutes = require('./routes/productsRoutes.js');
 const authMiddleware = require('./middlewares/authMiddleware.js');
+const { create } = require('domain');
 
 
 app.use('/', mainRoutes);
 app.use('/usuarios', usersRoutes);
 app.use('/productos', productsRoutes);
+
+app.use((req, res, netx)=>
+    next(createError(404)));
+// manejo de errores 404
+app.use((err, req, res, next)=>{
+    res.status(err.status || 500)
+    res.render ('error/error');
+}
+);
 
 
 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('../partials/head')%>
+<style>
+    .contenedor{
+        display:flex; 
+        flex-direction: row;
+        width: 100%;
+    }
+    @media (max-width: 1023px){
+.contenedor{
+    flex-direction: column;
+}
+
+    }
+</style>
+
+<div class="contenedor" >
+    <div style="display:flex; flex-direction: column; margin: auto; ">
+        <a style=" margin: 0 auto 0 auto;"href="/">
+            <img style="width: 80%; margin: 0 auto 0 auto;" src="/img/imagotipo.svg" alt="logo del sitio cajita musical.">
+        </a>
+        <div style="display:flex; flex-direction: column; ">
+        <h1 style="margin: auto 30px auto ;">
+            PONE BIEN LA RUTA ...
+        <br>
+            POR FAVOR!
+        </h1>
+        <span>(ERROR 404)</span>
+    </div>
+    </div>
+<img style="height: 100vh; width: auto; margin-right: 0!important; right: 0%;" src="https://media1.giphy.com/media/xT9IgLmgEdSTqqDKdW/giphy.gif?cid=790b7611652480fd40a2e00c18b07e5b004a510377d445b3&rid=giphy.gif&ct=g" alt="">
+</div>
+</body>
+    
+</html>
