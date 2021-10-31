@@ -23,13 +23,17 @@ const productsController = {
         //console.log(req.params.id);
         // req.session.userLogged = user[0];
         const product = products.filter(product => product.id == req.params.id);
-        console.log(res.locals)
-        res.render('products/productDetail',{ product });
+        console.log(req.session.userLogged)
+        res.render('products/productDetail',{ 
+            product, 
+            userLogged: req.session.userLogged });
     },
     productList: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
         // res.render('products/productList');
-        res.render('products/productList',{ products });
+        res.render('products/productList',{ 
+            products, 
+            userLogged: req.session.userLogged });
     },
     upload: (req, res) => {
        // console.log(categories);
@@ -88,7 +92,7 @@ const productsController = {
     },
     store: (req, res) => {        
         const last_position = products.length - 1 ;
-        console.log(req.file);
+        // console.log(req.file);
         if(typeof req.file!='undefined'){
             req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
         }

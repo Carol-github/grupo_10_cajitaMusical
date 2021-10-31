@@ -15,11 +15,21 @@ const usersController = {
         res.render('users/login');
     },
     process_login: (req, res) => {
-        let user = users.filter(user => req.body.user == user.user);
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            let user = users.filter(user => req.body.user == user.user);
         if(user.length != 0){
                      
             if(bcrypt.compareSync(req.body.pass, user[0].password )){
+                // delete user[0].dataValues.pass
                 req.session.userLogged = user[0];
+
+                // SETEAMOS LA COOKIE
+                if(req.body.remember){
+                    res.cookie(
+                        'cajitaMusicalCookie', req.session.userLogged,{maxAge:120000}
+                    )
+                };
                 // console.log(req.session.userLogged);
                 res.redirect('admin');
             } 
@@ -29,6 +39,14 @@ const usersController = {
         } else{
             res.send('Usuario incorrecto');
         }
+        } else { 
+            res.render('users/login', { 
+                errors: errors.array(),
+                old: req.body
+                
+            });
+        }
+        
     },
 
     register: (req, res) => {
@@ -39,7 +57,7 @@ const usersController = {
         if (errors.isEmpty()) {
                 // console.log(users.length)
             const last_position = users.length - 1 ;
-            console.log(req.file);
+            // console.log(req.file);
             if(typeof req.file!='undefined'){
                 req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
             }
@@ -73,7 +91,7 @@ const usersController = {
         
     },
     admin: (req, res) => {
-        res.render('users/admin');
+        res.render('users/admin', {userLogged: req.session.userLogged});
     },
     modify: (req, res) => {
         res.render('users/modif');
@@ -81,6 +99,12 @@ const usersController = {
     
     profile: (req, res) => {
         res.render('users/profile');
+    },
+    logout: (req, res) => {
+        // destrucción de la sesión
+        req.session.destroy();
+        res.cookie('cajitaMusicalCookie', null,{maxAge:1});
+        res.redirect('/');
     }
     
 }

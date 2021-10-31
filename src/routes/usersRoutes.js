@@ -9,10 +9,15 @@ const validateCreateUserForm = [
     body('user').notEmpty().withMessage('Debes ingresar un nombre de usuario'),
     body('first_name').notEmpty().withMessage('Debes ingresar un nombre'),
     body('last_name').notEmpty().withMessage('Debes ingresar un apellido'),
-    body('email').isEmail().withMessage('Debes ingresar un email válido'),
-    body('avatar').notEmpty().withMessage('Debes ingresar una imagen'),
-    body('password').notEmpty().withMessage('Debes ingresar un password'),
-    body('confirm_password').notEmpty().withMessage('Debes ingresar una confirmación de password')
+    body('email').isEmail().withMessage('Debes ingresar un email válido')
+   //  body('avatar').notEmpty().withMessage('Debes ingresar una imagen'),
+   //  body('password').notEmpty().withMessage('Debes ingresar un password'),
+   //  body('confirm_password').notEmpty().withMessage('Debes ingresar una confirmación de password')
+]
+
+const validateLoginUserForm = [
+   body('user').notEmpty().withMessage('Debes ingresar un nombre de usuario'),
+   body('pass').notEmpty().withMessage('Debes ingresar un password'),
 ]
 
 
@@ -39,7 +44,7 @@ const upload = multer({ storage: diskStorage });
 const usersController = require('../controllers/usersController.js');
 
 router.get('/ingresar', guestMiddleware, usersController.login);
-router.post('/ingresar', usersController.process_login);
+router.post('/ingresar', validateLoginUserForm, usersController.process_login);
 
 router.get('/registrar', guestMiddleware, usersController.register);
 router.post('/registrar', upload.single('avatar'), validateCreateUserForm, usersController.store)
@@ -48,6 +53,7 @@ router.get('/admin', authMiddleware, usersController.admin);
 
 
 router.get('/modificar', authMiddleware, usersController.modify);
+router.get('/logout', authMiddleware, usersController.logout);
 
 
 module.exports = router;
