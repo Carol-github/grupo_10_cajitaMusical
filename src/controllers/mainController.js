@@ -23,7 +23,9 @@ const mainController = {
 			return product.oferta == "true"
 		});
         // console.log(products_in_sale);
+		// console.log(req.session.userLogged);
 		res.render('index.ejs',{
+			userLogged : req.session.userLogged,
 			products_in_sale: products_in_sale,
 			categories: categories
 		});

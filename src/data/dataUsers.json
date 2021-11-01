@@ -146,7 +146,35 @@
         "last_name": "77",
         "email": "pikachu77@gmail.com",
         "password": "$2a$10$x9TD2PPN8RBODeBR9qogyOr1Gsi61E6A4scYJnCoFrQqmrM7SGLJK",
+        "category": "admin",
+        "image": "avatar_1635050037882_.png"
+    },
+    {
+        "id": 15,
+        "user": "Mauro",
+        "first_name": "mauror.55",
+        "last_name": "gato",
+        "email": "",
+        "password": "$2a$10$Q/JiK8mBHrV7OU1AXwNxZuh1UbQHFWXzo3AqxkmfrhmUN.55hgMbW",
+        "category": "user"
+    },
+    {
+        "id": 16,
+        "user": "mauro",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "password": "$2a$10$hv.xL.dLpBQxXllB8aJwiOnxmga8v2eRuEkyorMn.onrO1I6n6qn2",
+        "category": "user"
+    },
+    {
+        "id": 18,
+        "user": "charmander88",
+        "first_name": "char",
+        "last_name": "mander",
+        "email": "mander@gmail.com",
+        "password": "$2a$10$YbQVlbmRQAKVo.bW3Ws4/.cO9Lnfm39cweev/ej5P8YLUjlPcptz.",
         "category": "user",
-        "image": "avatar_1635050037882_.jpeg"
+        "image": "avatar_1635698710026_.png"
     }
 ]

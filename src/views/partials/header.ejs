@@ -17,10 +17,22 @@
                 <img src="/img/icon_search.svg"  style="width: 90%; opacity: 0.8; padding-left: 5px; padding-right: 5px;" alt="">
             </a>
         </div>
-        <a href="/usuarios/ingresar"class="btn disapear"> 
-            <img src="/img/icon_btn_login.svg" alt=""> 
-            <span class="txt_btn_login"> Mi cuenta</span>
-        </a>
+
+
+
+                <a href="/usuarios/ingresar"class="btn disapear"> 
+                   <% if(!userLogged) { %> 
+                     <img src="/img/icon_btn_login.svg" alt=""> 
+                     <span class="txt_btn_login"> INICIAR SESIÓN</span>
+                    <% } else { %>
+                        <img class="profile_img_user" src="img/avatars/<%= userLogged.image %>" alt="">
+                        <span class="txt_btn_login"> <%= userLogged.user %></span>
+                     <% } %>
+
+                </a>
+              
+
+     
         <!-- <ul class="burguer_container">
             <li class="burguer_li"> -->
                 <a href="#modal" class="burguer_menu btn-open-modal"> 
@@ -31,7 +43,15 @@
                     <div class="popup">
                         <ul>
                             <li>
-                                <a href="/usuarios/ingresar" class="link">Mi Cuenta</a>
+                                <% if(!userLogged) { %> 
+                                    <a href="/usuarios/ingresar" class="link">Mi Cuenta</a>
+                                   <% } else { %>
+                                    <div style="display: flex; flex-direction: column;">
+                                       <img class="profile_img_user_mobile" src="img/avatars/<%= userLogged.image %>" alt="">
+                                       <a href="/usuarios/ingresar" class="link"><%= userLogged.image %></a>
+                                    </div>
+                                    <% } %>
+                                
                             </li>
                             <div class="line_2"></div>
                             <li>
@@ -58,9 +78,11 @@
                                 <a href="/productos/carrito" class="link">Carrito</a>
                             </li>
                             <div class="line_2"></div>
+                            <%   if (!userLogged) { %> 
                             <li>
                                 <a href="/usuarios/registrar" class="link">REGISTRATE</a>
                             </li>
+                            <% } %> 
                         </ul>
                         <a href="#" class="btn_close_popup link">X</a>
                         <a href="#" class="btn_close_popup_2 link">VOLVER AL SITIO</a>
@@ -120,7 +142,11 @@
                 <img class="img_btn_cart" src="../img/icon_carrito.svg" alt="">
                 <span class="txt_btn_icon">Carrito</span> 
             </a>
-            <a href="/usuarios/registrar"class="btn_header_bottom_2">REGISTRATE</a>
+            <%   if (!userLogged) { %> 
+            
+                    <a href="/usuarios/registrar"class="btn_header_bottom_2">REGISTRATE</a>
+            
+                <% } %> 
         </div>
     </div>
 </header>
