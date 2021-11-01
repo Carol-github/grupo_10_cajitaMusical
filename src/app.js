@@ -6,6 +6,7 @@ const session = require('express-session');
 // const cookieParser = require('cookie-parser');
 
 // Middlewares
+//define la carpeta public donde se guardan las imagenes y css
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(session({
     secret:'Cajita Musical',
@@ -15,10 +16,11 @@ app.use(session({
 // app.use(cookieParser);
 //app.use(express.static("./public"));
 app.use(express.json());
+//urlencoded nos permite procesar los formularios
 app.use(express.urlencoded({extended:false})); 
 app.use(methodOverride("_method")); // Permite reconocer req.body
 
-/*Es el Engine Template*/
+/*Es el Engine Template para estar viendo vistas con ejs*/
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
