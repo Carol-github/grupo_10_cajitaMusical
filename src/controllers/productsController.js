@@ -15,18 +15,27 @@ const subCategories = JSON.parse(fs.readFileSync(subCategoriesFilePath, 'utf-8')
 
 const productsController = {
     productCart: (req, res) => {
-        //res.sendFile(path.join(__dirname, '../views/products/productCart.html'));
-        res.render('products/productCart');     
+        res.render('products/productCart',{  
+            userLogged: req.session.userLogged 
+        });
+                //res.sendFile(path.join(__dirname, '../views/products/productCart.html'));
+      
     },
     
     productDetail: (req, res) => {
         //console.log(req.params.id);
         // req.session.userLogged = user[0];
         const product = products.filter(product => product.id == req.params.id);
-        console.log(req.session.userLogged)
-        res.render('products/productDetail',{ 
-            product, 
-            userLogged: req.session.userLogged });
+   
+        if(req.session.userLogged!=undefined){
+            res.render('products/productDetail',{ 
+                product, 
+                userLogged: req.session.userLogged 
+            });
+                }else{
+                    console.log('usuarionologueado');
+                    res.render('products/productDetail',{product});
+                 }   
     },
     productList: (req, res) => {
         //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));

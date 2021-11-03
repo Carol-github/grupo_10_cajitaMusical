@@ -5,8 +5,6 @@ const multer = require('multer');
 
 // Middlewares
 const authMiddleware = require('../middlewares/authMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
-
 //aca definimos donde se van a guardar las imagenes de los usuarios
 const storage = multer.diskStorage({ 
     //creacion nde ruta
