@@ -27,7 +27,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 //aca definimos donde se van a guardar las imagenes de los usuarios
 const diskStorage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
-       cb(null, './public/img/users'); 
+       cb(null, './public/img/avatars'); 
     }, 
     filename: function (req, file, cb) { 
        let userName = req.body.avatar;
