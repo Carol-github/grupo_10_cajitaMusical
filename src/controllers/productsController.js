@@ -4,50 +4,56 @@ const { stringify } = require('querystring');
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
+
+/*LLAMADO DE DB*/
+let db = require("../database/models");
+
+
+/*LLAMADO DE PRODUCTOS*/
 const productsFilePath = path.join(__dirname, '../data/dataProducts.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+/*LLAMADO DE CATEGORIES*/
 const categoriesFilePath = path.join(__dirname, '../data/dataCategory.json');
 const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 
+/*LLAMADO DE SUBCATEGORIES*/
 const subCategoriesFilePath = path.join(__dirname, '../data/dataSubCategory.json');
 const subCategories = JSON.parse(fs.readFileSync(subCategoriesFilePath, 'utf-8'));
 
+/*METODOS*/
 const productsController = {
     productCart: (req, res) => {
         res.render('products/productCart',{  
             userLogged: req.session.userLogged 
-        });
-        //res.sendFile(path.join(__dirname, '../views/products/productCart.html'));
-        
+        });        
     },
     
-    productDetail: (req, res) => {
-        
-        //console.log(req.params.id);
-        // req.session.userLogged = user[0];
+    productDetail: (req, res) => {   
+        /*db.Products.findByPk(req.params.id)
+                .then(function(product) {
+                    res.render('products/productDetail',{
+                    product,
+                    userLogged: req.session.userLogged
+                });*/      
         const product = products.filter(product => product.id == req.params.id);       
-        if(req.session.userLogged==undefined){
-            console.log('usuarionologueado');
-            res.render('products/productDetail',{
-                product,
-                userLogged: req.session.userLogged});
-        } else {
-            res.render('products/productDetail',{ 
-                product, 
-                userLogged: req.session.userLogged });
-            }   
+        res.render('products/productDetail',{
+            product,
+            userLogged: req.session.userLogged
+        });        
         },
-        productList: (req, res) => {
-            //res.sendFile(path.join(__dirname, '../views/products/productDetail.html'));
-            // res.render('products/productList');
-            res.render('products/productList',{ 
+        productList: (req, res) => {            
+            /*db.Products.findAll()
+                .then(function(products) {
+                    res.render('products/productList', 
+                    {products:products}, 
+                    userLogged: req.session.userLogged    
+                })*/ 
+            res.render('products/productList',{
                 products, 
                 userLogged: req.session.userLogged });
             },
             upload: (req, res) => {
-                // console.log(categories);
-                // console.log(subCategories);
                 res.render('products/productUpload',{
                     categories : categories,
                     subCategories : subCategories  
@@ -63,7 +69,6 @@ const productsController = {
             delete: (req, res) => {
                 const newProducts = products.filter(product => product.id != req.params.id)
                 
-                // JSON.stringify(output, null, 4) JSON ordenado
                 const products_saved = JSON.stringify(newProducts, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
                 fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
                 
@@ -81,9 +86,7 @@ const productsController = {
                         if (typeof req.file != "undefined") {product.image = req.file.filename}   
                         
                         req.body.offer ? product.oferta = "true" : product.oferta = "false";
-                        //console.log(product.oferta);  
-                        
-                        
+                                                
                         product.title = req.body.prod_name;
                         product.price = req.body.prod_price;
                         product.category = req.body.prod_cat;
