@@ -1,42 +1,44 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Users";
+    let alias = 'User';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
+        name: {
+            type: dataTypes.STRING(50)
+        },
+        surname: {
+            type: dataTypes.STRING(50)
+        },
         user: {
-            type: dataTypes.STRING
-        },
-        first_name: {
-            type: dataTypes.STRING
-        },
-        last_name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING(50)
         },
         email: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING(100)
         },
         password: {
-            type: dataTypes.STRING
-        },
-        category_id: {
-            type: dataTypes.INTEGER
+            type: dataTypes.STRING(255)
         },
         image: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING(255)
         },
-        deleted: {
+        address: {
+            type: dataTypes.STRING(50)
+        },
+        idRole: {
             type: dataTypes.INTEGER
-        }
+        },
+        /*deleted:{
+            type: dataTypes.BOOLEAN
+        }*/
     };
     let config = {
-        tableName: "users",
-        timestamps: false
-    }
-    
-    const User = sequelize.define(alias, cols, config);
+        tableName: 'users',
+        timestamps: false,
+    };
+    const User = sequelize.define(alias, cols, config)
 
     return User;
 }

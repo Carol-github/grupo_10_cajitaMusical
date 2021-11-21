@@ -6,30 +6,27 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
-            type: dataTypes.STRING
-        },
-        offer: {
-            type: dataTypes.INTEGER
+        name: {
+            type: dataTypes.STRING(100)
         },
         price: {
+            type: dataTypes.FLOAT
+        },
+        idCategory: {
             type: dataTypes.INTEGER
         },
-        fk_category: {
-            type: dataTypes.INTEGER
-        },
-        fk_subcategory: {
+        idSubcategory: {
             type: dataTypes.INTEGER
         },
         description: {
             type: dataTypes.TEXT
         },
         image: {
-            type: dataTypes.STRING
+            type: dataTypes.BLOB
         },
-        deleted: {
+        /*deleted: {
             type: dataTypes.INTEGER
-        }
+        }*/
     };
     let config = {
         tableName: "products",
