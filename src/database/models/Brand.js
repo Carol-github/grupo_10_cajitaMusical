@@ -1,21 +1,20 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "UserCategory";
+    let alias = 'Brand';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        category_name: {
-            type: dataTypes.STRING
+        name: {
+            type: dataTypes.STRING(50)
         }
     };
     let config = {
-        tableName: "user_categories",
+        tableName: 'brands',
         timestamps: false
-    }
-    
-    const UserCategory = sequelize.define(alias, cols, config);
+    };
+    const Brand = sequelize.define(alias, cols, config)
 
-    return UserCategory;
+    return Brand;
 }
