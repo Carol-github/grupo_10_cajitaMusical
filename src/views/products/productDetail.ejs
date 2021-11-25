@@ -13,26 +13,26 @@
         
         
         <section class="product_detail">
-            <h1 class="title_mobile"><%= product[0].title %></h1>
+            <h1 class="title_mobile"><%= product.title %></h1>
             <div class="product_images">
                 <div class="product_ppal_image">
-                    <img  src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
+                    <img  src="/img/imgProducts/<%= product.image %>" alt="guitarra">
                 </div>
                 
                 <div class="product_slider_images">
                     
-                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
-                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
-                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
-                    <img class="product_slider_image" src="/img/imgProducts/<%= product[0].image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product.image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product.image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product.image %>" alt="guitarra">
+                    <img class="product_slider_image" src="/img/imgProducts/<%= product.image %>" alt="guitarra">
                     
                 </div>
             </div>
             <div class="product_information">
-                <h1 class="product_name"><%= product[0].title %></h1>
-                <h3 class="product_cost"><%= product[0].price %></h3>
-                <span class="product_share">o en 18 cuotas de $<%= Math.round(product[0].price/18)  %></span>
-                <p class="product_description"><%= product[0].description %></p>
+                <h1 class="product_name"><%= product.title %></h1>
+                <h3 class="product_cost"><%= product.price %></h3>
+                <span class="product_share">o en 18 cuotas de $<%= Math.round(product.price/18)  %></span>
+                <p class="product_description"><%= product.description %></p>
                 <div class="detail_btns">
                     <button class="btn"> Comprar </button>
                     <button class="btn">Agregar al carrito</button>
@@ -43,8 +43,8 @@
                         
                         <% } else { %>
                             <div class="detail_btns">
-                                <a class="btn" href="/productos/<%= product[0].id %>/edita_producto"><button class="btn">Editar</button></a>
-                                <form action="/productos/borrado/<%= product[0].id %>?_method=DELETE" method="POST" 
+                                <a class="btn" href="/productos/<%= product.id %>/edita_producto"><button class="btn">Editar</button></a>
+                                <form action="/productos/borrado/<%= product.id %>?_method=DELETE" method="POST" 
                                     enctype="multipart/form-data">
                                     <button class="delete_btn"> Eliminar </button>
                                 </form> 

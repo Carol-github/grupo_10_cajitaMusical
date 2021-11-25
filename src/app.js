@@ -30,8 +30,8 @@ app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
 
-app.listen(process.env.PORT || 3030, () => {
-    console.log('Servidor funcionando http://localhost:3030');
+app.listen(process.env.PORT || 3031, () => {
+    console.log('Servidor funcionando http://localhost:3031');
 });
 
 const mainRoutes = require('./routes/mainRoutes.js');
@@ -45,13 +45,13 @@ app.use('/', mainRoutes);
 app.use('/usuarios', usersRoutes);
 app.use('/productos', productsRoutes);
 
-app.use((req, res, next)=>
-    next(createError(404)));
-// manejo de errores 404
-app.use((err, req, res, next)=>{
-    res.status(err.status || 500)
-    res.render ('error/error');
-});
+// app.use((req, res, next)=>
+//     next(createError(404)));
+// // manejo de errores 404
+// app.use((err, req, res, next)=>{
+//     res.status(err.status || 500)
+//     res.render ('error/error');
+// });
 
 
 

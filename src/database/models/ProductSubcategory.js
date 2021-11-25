@@ -7,13 +7,16 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         subcategory_name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false
         },        
         fk_category: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false
         },
         deleted: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
     };
     let config = {
@@ -22,6 +25,18 @@ module.exports = (sequelize, dataTypes) => {
     }
     
     const ProductSubcategory = sequelize.define(alias, cols, config);
-
+     
+    ProductSubcategory.associate = function (models) {
+        ProductSubcategory.belongsTo(models.ProductCategory, { // models.Genre -> Genres es el valor de alias en genres.js
+            as: "products",
+            foreignKey: "fk_category"
+        });
+       }
+       ProductSubcategory.associate = function (models) {
+        ProductSubcategory.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
+            as: "products",
+            foreignKey: "fk_subcategory"
+        });
+       }
     return ProductSubcategory;
 }
