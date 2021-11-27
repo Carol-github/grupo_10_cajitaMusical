@@ -56,8 +56,8 @@ const productsController = {
         //     products, 
         //      userLogged: req.session.userLogged });
     },
-    upload: (req, res) => {
-        db.ProductCategory.findAll()
+    upload: async (req, res) => {
+        await db.ProductCategory.findAll()
             .then(categories => {
                 sequelize.query('SELECT * FROM product_subcategories')
                     .then(subCategories => {
@@ -70,9 +70,9 @@ const productsController = {
                     })
             })
     },
-    edit: (req, res) => {
+    edit: async (req, res) => {
 
-        db.Products.findByPk(req.params.id)
+        await db.Products.findByPk(req.params.id)
         .then(product =>{
             sequelize.query('SELECT * FROM product_categories')
             .then(categories => {
