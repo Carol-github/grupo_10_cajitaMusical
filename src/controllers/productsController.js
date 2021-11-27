@@ -81,7 +81,6 @@ const productsController = {
 
         await db.Products.findByPk(req.params.id)
         .then(product =>{
-            console.log(`El estado del select es  ${product.fk_category}`)
             sequelize.query('SELECT * FROM product_categories')
             .then(categories => {
 
@@ -122,8 +121,7 @@ const productsController = {
     },
 
     //GUARDA LA MODIFICACION
-    updated: (req, res) => {  
-        console.log(`El estado del select es  ${req.body.prod_cat}`)      
+    updated: (req, res) => {    
         
         if(req.body.offer == undefined){
             req.body.offer = 0
@@ -133,8 +131,7 @@ const productsController = {
         
         if(typeof req.file != 'undefined'){
             req.body.image = req.file.filename;
-        }
-        console.log(typeof req.body.prod_cat)
+        }        
         db.Products.update({
             title: req.body.prod_name,
             offer: req.body.offer,
@@ -189,8 +186,7 @@ const productsController = {
         if (typeof req.file != 'undefined') {
             req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
         }
-        console.log(req.body.prod_cat);
-        console.log(req.body.prod_subcat);        
+           
         await db.Products.create({
             title: req.body.prod_name,
             offer: req.body.offer,
@@ -201,8 +197,7 @@ const productsController = {
             image: req.body.prod_img,
             deleted: 0
         });
-        // const last_position = products.length - 1;
-        // // console.log(req.file);
+        // const last_position = products.length - 1;        
         // if (typeof req.file != 'undefined') {
         //     req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
         // }

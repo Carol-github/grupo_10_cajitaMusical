@@ -1,41 +1,41 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User';
+    let alias = 'Users';
     let cols = {
         id: {
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         user: {
-            type: dataTypes.STRING(12),
+            type: dataTypes.STRING,
             allowNull: false
         },
         first_name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
             allowNull: false
         },
         last_name: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
             allowNull: false
         },
         email: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING,
             allowNull: false
         },
         password: {
-            type: dataTypes.STRING(250),
+            type: dataTypes.STRING,
             allowNull: false
         },
         category_id: {
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         image: {
-            type: dataTypes.STRING(200),
+            type: dataTypes.STRING,
             allowNull: false
         },
         deleted:{
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -47,7 +47,7 @@ module.exports = (sequelize, dataTypes) => {
 
     User.associate = function (models) {
         User.belongsTo(models.UserCategory, { 
-            as: "user_category",
+            as: "categoria",
             foreignKey: "category_id"
         });
     }

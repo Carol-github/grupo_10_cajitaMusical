@@ -3,6 +3,11 @@ const path = require('path');
 const { stringify } = require('querystring');
 const bcrypt = require('bcryptjs');
 
+let db = require("../database/models");
+const { restart } = require('nodemon');
+const { Console } = require('console');
+const sequelize = db.sequelize;
+
 const usersFilePath = path.join(__dirname, '../data/dataUsers.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -30,7 +35,6 @@ const usersController = {
                         'cajitaMusicalCookie', req.session.userLogged,{maxAge:120000}
                     )
                 };
-                // console.log(req.session.userLogged);
                 res.redirect('admin');
             } 
             else{
@@ -52,42 +56,68 @@ const usersController = {
     register: (req, res) => {
         res.render('users/register');
     },
-    store: (req, res) => {
+    store: async (req, res) => {
         let errors = validationResult(req);
-        if (errors.isEmpty()) {
-                // console.log(users.length)
-            const last_position = users.length - 1 ;
-            // console.log(req.file);
-            if(typeof req.file!='undefined'){
-                req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
-            }
-            let passEncriptada = bcrypt.hashSync(req.body.password, 10);
-            req.body.password = passEncriptada;
-            const user = {  
-                id: users[last_position].id + 1,
-                user: req.body.user,
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                email:req.body.email,
-                password: req.body.password,
-                category: "user",
-                image:req.body.avatar
-            }
-            users.push(user);
-            // console.log(users);
+            if (errors.isEmpty()) {  
+        
+                if(typeof req.file!='undefined'){
+                    req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
+                }
 
-            const users_saved = JSON.stringify(users, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
-            fs.writeFileSync(usersFilePath, users_saved, 'utf-8')
+                let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+                req.body.password = passEncriptada;
+           
+                await db.Users.create({            
+                         user: req.body.user,
+                         first_name: req.body.first_name,
+                         last_name: req.body.last_name,
+                         email:req.body.email,
+                         password: req.body.password,
+                         category_id: 1, //Se envia "1" por default, correspondiente a categoria de "Customer"
+                         image:req.body.avatar,
+                         deleted: 0
+                });
+                res.redirect('/');
+            } else { 
+                     res.render('users/register', { 
+                         errors: errors.array(),
+                         old: req.body
+                        
+                     });
+            }
 
-            // let new_user = JSON.stringify(user);       
-            res.redirect('/');
-        } else { 
-            res.render('users/register', { 
-                errors: errors.array(),
-                old: req.body
+        // let errors = validationResult(req);
+        // if (errors.isEmpty()) {            
+        //     const last_position = users.length - 1 ;           
+        //     if(typeof req.file!='undefined'){
+        //         req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
+        //     }
+        //     let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+        //     req.body.password = passEncriptada;
+        //     const user = {  
+        //         id: users[last_position].id + 1,
+        //         user: req.body.user,
+        //         first_name: req.body.first_name,
+        //         last_name: req.body.last_name,
+        //         email:req.body.email,
+        //         password: req.body.password,
+        //         category: "user",
+        //         image:req.body.avatar
+        //     }
+        //     users.push(user);   
+
+        //     const users_saved = JSON.stringify(users, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
+        //     fs.writeFileSync(usersFilePath, users_saved, 'utf-8')
+
+        //     // let new_user = JSON.stringify(user);       
+        //     res.redirect('/');
+        // } else { 
+        //     res.render('users/register', { 
+        //         errors: errors.array(),
+        //         old: req.body
                 
-            });
-        }
+        //     });
+        // }
         
     },
     admin: (req, res) => {

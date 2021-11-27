@@ -31,12 +31,12 @@ module.exports = (sequelize, dataTypes) => {
             as: "products",
             foreignKey: "fk_category"
         });
-       }
-       ProductSubcategory.associate = function (models) {
+    }
+    ProductSubcategory.associate = function (models) {
         ProductSubcategory.hasMany(models.Products, { // models.Genre -> Genres es el valor de alias en genres.js
             as: "products",
             foreignKey: "fk_subcategory"
         });
-       }
+    }
     return ProductSubcategory;
 }

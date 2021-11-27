@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
         },
         category_name: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING
         }
     };
     let config = {
@@ -16,6 +16,13 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let UserCategory = sequelize.define(alias, cols, config)
+
+    UserCategory.associate = function (models) {
+        UserCategory.hasMany(models.Users, { 
+            as: "users",
+            foreignKey: "category_id"
+        });
+    }
 
 
     return UserCategory;
