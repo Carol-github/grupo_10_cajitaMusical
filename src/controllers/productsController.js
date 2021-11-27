@@ -35,8 +35,7 @@ const productsController = {
     //MANDA INFO PARA EL DETALLE DE PRODUCTO
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
-            .then(function (product) {
-                console.log(product);
+            .then(function (product) {                
                 res.render('products/productDetail',
                     { product, userLogged: req.session.userLogged });
                 /* const product = products.filter(product => product.id == req.params.id);       
@@ -82,6 +81,7 @@ const productsController = {
 
         await db.Products.findByPk(req.params.id)
         .then(product =>{
+            console.log(`El estado del select es  ${product.fk_category}`)
             sequelize.query('SELECT * FROM product_categories')
             .then(categories => {
 
@@ -122,7 +122,8 @@ const productsController = {
     },
 
     //GUARDA LA MODIFICACION
-    updated: (req, res) => {        
+    updated: (req, res) => {  
+        console.log(`El estado del select es  ${req.body.prod_cat}`)      
         
         if(req.body.offer == undefined){
             req.body.offer = 0
@@ -130,7 +131,19 @@ const productsController = {
             req.body.offer = 1
         }
         
-        db.Products.update(req.body, 
+        if(typeof req.file != 'undefined'){
+            req.body.image = req.file.filename;
+        }
+        console.log(typeof req.body.prod_cat)
+        db.Products.update({
+            title: req.body.prod_name,
+            offer: req.body.offer,
+            price: req.body.prod_price,
+            fk_category: req.body.prod_cat,
+            image: req.body.image,
+            fk_subcategory: req.body.prod_subcat,
+            description: req.body.prod_desc,            
+            deleted: 0 }, 
         {
             where: {
                 id: req.params.id
@@ -174,13 +187,14 @@ const productsController = {
         if (typeof req.file != 'undefined') {
             req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
         }
-        console.log(req.body);
+        console.log(req.body.prod_cat);
+        console.log(req.body.prod_subcat);        
         await db.Products.create({
             title: req.body.prod_name,
             offer: req.body.offer,
             price: req.body.prod_price,
-            category: req.body.prod_cat,
-            subcategory: req.body.prod_subcat,
+            fk_category: req.body.prod_cat,
+            fk_subcategory: req.body.prod_subcat,
             description: req.body.prod_desc,
             image: req.body.prod_img,
             deleted: 0
