@@ -227,8 +227,7 @@ const productsController = {
 
         // let new_user = JSON.stringify(user);       
         
-        res.redirect('carga_producto')
-        //res.redirect('lista');
+        res.redirect('lista');
     },
 }
 
