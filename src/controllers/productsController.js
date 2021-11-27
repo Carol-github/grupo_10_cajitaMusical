@@ -61,82 +61,138 @@ const productsController = {
             .then(categories => {
                 sequelize.query('SELECT * FROM product_subcategories')
                     .then(subCategories => {
-                        console.log(categories); 
+
                         res.render('products/productUpload', {
-                            categories: categories[0],
+                            categories: categories,
                             subCategories: subCategories[0]
+
                         });
                     })
             })
     },
     edit: (req, res) => {
-        const product = products.filter(product => product.id == req.params.id);
-        res.render('products/productEdit', {
-            product, categories: categories,
-            subCategories: subCategories
-        });
+
+        db.Products.findByPk(req.params.id)
+        .then(product =>{
+            sequelize.query('SELECT * FROM product_categories')
+            .then(categories => {
+
+                sequelize.query('SELECT * FROM product_subcategories')
+                    .then(subCategories => {
+                        
+                        res.render('products/productEdit', {
+                            product: product,
+                            categories: categories,
+                            subCategories: subCategories
+
+                        });
+                    })
+                })  
+            })
+        // const product = products.filter(product => product.id == req.params.id);
+        // res.render('products/productEdit', {
+        //     product, categories: categories,
+        //     subCategories: subCategories
+        // });
     },
     delete: (req, res) => {
-        const newProducts = products.filter(product => product.id != req.params.id)
 
-        const products_saved = JSON.stringify(newProducts, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
-        fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
+        db.Products.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
 
+        // const newProducts = products.filter(product => product.id != req.params.id)
+
+        // const products_saved = JSON.stringify(newProducts, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
+        // fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
 
         res.redirect('/');
 
     },
 
     updated: (req, res) => {
-
-        products.forEach(product => {
-
-            if (product.id == req.params.id) {
-
-                if (typeof req.file != "undefined") { product.image = req.file.filename }
-
-                req.body.offer ? product.oferta = "true" : product.oferta = "false";
-
-                product.title = req.body.prod_name;
-                product.price = req.body.prod_price;
-                product.category = req.body.prod_cat;
-                product.subcategory = req.body.prod_subcat;
-                product.description = req.body.prod_desc;
-                product.image = product.image;
-
-            }
-        })
-        // JSON.stringify(output, null, 4) JSON ordenado
-        const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
-        fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
-
-        res.redirect('/productos/lista');
-
-    },
-    store: (req, res) => {
-        const last_position = products.length - 1;
-        // console.log(req.file);
-        if (typeof req.file != 'undefined') {
-            req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
-        }
-
-        const product = {
-            id: products[last_position].id + 1,
-            oferta: req.body.offer,
+        db.Products.updated({
             title: req.body.prod_name,
+            offer: req.body.offer,
             price: req.body.prod_price,
             category: req.body.prod_cat,
             subcategory: req.body.prod_subcat,
             description: req.body.prod_desc,
             image: req.body.prod_img
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+        res.redirect('/productos/lista');
+        // products.forEach(product => {
+
+        //     if (product.id == req.params.id) {
+
+        //         if (typeof req.file != "undefined") { product.image = req.file.filename }
+
+        //         req.body.offer ? product.oferta = "true" : product.oferta = "false";
+
+        //         product.title = req.body.prod_name;
+        //         product.price = req.body.prod_price;
+        //         product.category = req.body.prod_cat;
+        //         product.subcategory = req.body.prod_subcat;
+        //         product.description = req.body.prod_desc;
+        //         product.image = product.image;
+
+        //     }
+        // })
+        // // JSON.stringify(output, null, 4) JSON ordenado
+        // const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
+        // fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
+
+        // res.redirect('/productos/lista');
+
+    },
+    store: async (req, res) => {
+        req.body.offer = 0
+        if (req.body.offer) {
+            req.body.offer = 1
         }
-        products.push(product);
-        //.log(products);
+        if (typeof req.file != 'undefined') {
+            req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
+        }
+        console.log(req.body);
+        await db.Products.create({
+            title: req.body.prod_name,
+            offer: req.body.offer,
+            price: req.body.prod_price,
+            category: req.body.prod_cat,
+            subcategory: req.body.prod_subcat,
+            description: req.body.prod_desc,
+            image: req.body.prod_img,
+            deleted: 0
+        });
+        // const last_position = products.length - 1;
+        // // console.log(req.file);
+        // if (typeof req.file != 'undefined') {
+        //     req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
+        // }
+
+        // const product = {
+        //     id: products[last_position].id + 1,
+        //     oferta: req.body.offer,
+        //     title: req.body.prod_name,
+        //     price: req.body.prod_price,
+        //     category: req.body.prod_cat,
+        //     subcategory: req.body.prod_subcat,
+        //     description: req.body.prod_desc,
+        //     image: req.body.prod_img
+        // }
+        // products.push(product);
+        // //.log(products);
 
 
-        // JSON.stringify(output, null, 4) JSON ordenado
-        const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
-        fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
+        // // JSON.stringify(output, null, 4) JSON ordenado
+        // const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
+        // fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
 
         // let new_user = JSON.stringify(user);       
         res.redirect('lista');

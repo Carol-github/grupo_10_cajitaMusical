@@ -22,11 +22,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         fk_category: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         fk_subcategory: {
             type: dataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         description: {
             type: dataTypes.STRING,

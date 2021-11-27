@@ -27,14 +27,14 @@
                 <label for="prod_cat" class="label_reg">CATEGORIA</label>
                 <select name="prod_cat" id="prod_cat" >
                     <% categories.forEach(category => { %>
-                        <option value="<%= category.title %>"><%= category.title %> </option> 
+                        <option value="<%= category.id %>"><%= category.category_name %> </option> 
                         <% }) %> 
                 </select>
                     
                 <label for="prod_subcat" class="label_reg">SUBCATEGORIA</label>
                 <select name="prod_subcat" id="prod_subcat" >
                     <% subCategories.forEach(subCategory => { %>
-                        <option value="<%= subCategory.title %>"><%= subCategory.title %> </option> 
+                        <option value="<%= subCategory.id %>"><%= subCategory.subcategory_name %> </option> 
                         <% }) %> 
                 </select>                    
                                     
