@@ -45,21 +45,14 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "products",
         timestamps: false
     }
-    let  Product = sequelize.define(alias, cols, config);
-         
-    // Product.associate = function (models) {
-    //     Product.hasMany(models.Product, { // models.Genre -> Genres es el valor de alias en genres.js
-    //         as: "genero",
-    //         foreignKey: "fk_category"
-    //     });
-    //    }
-    
-       Product.associate = function (models) {
-        Product.belongsTo(models.ProductSubcategory, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "subcategoria",
-            foreignKey: "fk_subcategory"
-        });
-       }
+    let  Product = sequelize.define(alias, cols, config);         
+      
+    Product.associate = function (models) {
+     Product.belongsTo(models.ProductSubcategory, { 
+         as: "subcategoria",
+         foreignKey: "fk_subcategory"
+     });
+    }
 
     return Product;
 }
