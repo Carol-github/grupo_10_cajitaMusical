@@ -182,7 +182,9 @@ const productsController = {
     store: async (req, res) => {
         
         if (req.body.offer) {
-            req.body.offer = 1
+            req.body.offer = 1 //si el check esta tildado, manda el valor "1"
+        } else{
+            req.body.offer = 0 // si el check esta destildad, manda el valor "0"
         }
         if (typeof req.file != 'undefined') {
             req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
@@ -224,7 +226,9 @@ const productsController = {
         // fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
 
         // let new_user = JSON.stringify(user);       
-        res.redirect('lista');
+        
+        res.redirect('carga_producto')
+        //res.redirect('lista');
     },
 }
 
