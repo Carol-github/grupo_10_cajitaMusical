@@ -45,13 +45,13 @@ app.use('/', mainRoutes);
 app.use('/usuarios', usersRoutes);
 app.use('/productos', productsRoutes);
 
-// app.use((req, res, next)=>
-//     next(createError(404)));
-// // manejo de errores 404
-// app.use((err, req, res, next)=>{
-//     res.status(err.status || 500)
-//     res.render ('error/error');
-// });
+app.use((req, res, next)=>
+    next(createError(404)));
+// manejo de errores 404
+app.use((err, req, res, next)=>{
+    res.status(err.status || 500)
+    res.render ('error/error');
+});
 
 
 

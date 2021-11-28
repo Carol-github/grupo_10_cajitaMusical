@@ -34,25 +34,32 @@ const productsController = {
 
     //MANDA INFO PARA EL DETALLE DE PRODUCTO
     productDetail: (req, res) => {
-        db.Products.findByPk(req.params.id)
-            .then(function (product) {                
-                res.render('products/productDetail',
-                    { product, userLogged: req.session.userLogged });
-                /* const product = products.filter(product => product.id == req.params.id);       
-                 res.render('products/productDetail',{
-                     product,
-                     userLogged: req.session.userLogged
-                 });    */
-            })
+        db.Products.findByPk(req.params.id)        
+            .then(function (product) {
+                if(product.deleted == 0){                              
+                    res.render('products/productDetail',
+                        { product, userLogged: req.session.userLogged });
+                    /* const product = products.filter(product => product.id == req.params.id);       
+                     res.render('products/productDetail',{
+                         product,
+                         userLogged: req.session.userLogged
+                    });    */
+                }else{
+                    res.render ('error/error')
+                }
+                })
     },
 
     //MANDA INFO PARA LISTA DE PRODUCTOS
     productList: (req, res) => {
-        db.Products.findAll()
+        db.Products.findAll(             
+            {where: {deleted: 0}}
+        )
             .then(products => {
 
                 return res.render('products/productList', {
-                    products: products, userLogged: req.session.userLogged
+                    products: products,                     
+                    userLogged: req.session.userLogged
                 })
             })
         //  res.render('products/productList',{
@@ -104,13 +111,13 @@ const productsController = {
 
     //ELIMINA EL PRODUCTO
     delete: (req, res) => {
-        db.Products.update({                        
-            deleted: 1 }, 
-        {
-            where: {
-                id: req.params.id
+        db.Products.update(
+            {deleted: 1}, 
+            {where: {
+                        id: req.params.id
+                    }
             }
-        })
+        )
         .then(()=>
             res.redirect('/')
         ) 
