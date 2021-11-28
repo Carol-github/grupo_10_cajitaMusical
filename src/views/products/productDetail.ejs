@@ -42,7 +42,7 @@
                     <% if(userLogged.category != 'admin') { %> 
                         
                         <% } else { %>
-                            <div class="detail_btns">
+                            <div class="detail_btns detail_2">
                                 <a class="btn" href="/productos/<%= product.id %>/edita_producto"><button class="btn">Editar</button></a>
                                 <form action="/productos/borrado/<%= product.id %>?_method=DELETE" method="POST" 
                                     enctype="multipart/form-data">

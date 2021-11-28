@@ -35,17 +35,31 @@
                 <input style="border-style: none;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" value="<%= product.image %>"> 
                 
                 <label for="prod_cat" class="label_reg">CATEGORIA</label>
-                <select name="prod_cat" id="prod_cat" >
-                    <% categories.forEach(category => { %>
-                        <option value="<%= category.category_name %>" <%= category.category_name == product.category ? 'selected' : null %> ><%= category.category %></option>
+                <select name="prod_cat" id="prod_cat" >                    
+                        <option value="" >Elegi una categoria</option>
+                        <% categories.forEach(category => { %>
+                            <option
+                            value="<%= category.id %>"
+                            <%= product.fk_category == category.id ? 'selected' : null %>
+                            >
+
+                            <%= category.category_name %>
+                        </option>                          
                         <% }) %> 
                 </select>
                     
                 <label for="prod_subcat" class="label_reg">SUBCATEGORIA</label>
                 <select name="prod_subcat" id="prod_subcat" >
+                    <option value="" >Elegi una categoria</option>
                     <% subCategories.forEach(subCategory => { %>
-                        <option value="<%= subCategory.subcategory_name %>"<%=  subCategory.subcategory_name == product.subcategory ? 'selected' : null %> ><%= subCategory.title %></option>
-                        <% }) %> 
+                        <option
+                        value="<%= subCategory.id %>"
+                        <%= product.fk_subcategory == subCategory.id ? 'selected' : null %>
+                        >
+
+                        <%= subCategory.subcategory_name %>
+                    </option>                          
+                    <% }) %> 
                 </select>
                     <!-- <div style="display: flex; margin-top: 15px;  margin-bottom: 15px;">
                    <input style="margin-top: auto; margin-bottom: auto;" type="checkbox" id="cbox1" value="first_checkbox" name="offer"  > 
@@ -54,7 +68,7 @@
 
                    <div style="display: flex; margin-top: 15px;  margin-bottom: 15px;">
                         <input style="margin-top: auto; margin-bottom: auto;" type="checkbox" id="cbox1" value="first_checkbox" name="offer" 
-                        <%= product.oferta == 'true' ? "checked" : null %>  > 
+                        <%= product.offer == 1 ? "checked" : null %>  > 
                         <label for="offer" style="width: 200px; margin-top: auto; margin-bottom: auto;">En oferta</label>
                    </div>
                     

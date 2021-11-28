@@ -1,65 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('../partials/head')%>
-<body>
-    
-    
-    <!-- header -->
-    <%- include ('../partials/header_admin')%>
-    
-    <!-- main start -->
-    
-    <main class="main_list">
-        <%- include ('../partials/menu_admin')%>
-        <section style="padding-top: 2%;">
-            <h1>Alta de Producto</h1>
-            <form style="height: 90%;" class="form_reg"action="/productos/carga_producto" method="POST" enctype="multipart/form-data">
-                
-                <label for="prod_name" class="label_reg">NOMBRE</label>
-                <input  type="text" id="prod_name" name="prod_name" required>
-                
-                <label for="prod_desc" class="label_reg">DESCRIPCION</label>
-                <textarea type="email" id="prod_desc" name="prod_desc" style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;" rows="10"required></textarea> 
-                
-                <label for="prod_img" class="label_reg">IMAGEN</label>
-                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" required> 
-                
-                <label for="prod_cat" class="label_reg">CATEGORIA</label>
-                <select name="prod_cat" id="prod_cat" >
-                    <% categories.forEach(category => { %>
-                        <option value="<%= category.id %>"><%= category.category_name %> </option> 
-                        <% }) %> 
-                </select>
-                    
-                <label for="prod_subcat" class="label_reg">SUBCATEGORIA</label>
-                <select name="prod_subcat" id="prod_subcat" >
-                    <% subCategories.forEach(subCategory => { %>
-                        <option value="<%= subCategory.id %>"><%= subCategory.subcategory_name %> </option> 
-                        <% }) %> 
-                </select>                    
-                                    
-                    <label for="prod_price"  class="label_reg">PRECIO</label>
-                    <input class="input_reg" type="text" id="prod_price" name="prod_price" required>
-                    <div>
-                   <input type="checkbox" id="cbox1" value="first_checkbox" name="offer"> 
-                   <label for="offer">En oferta</label>
-                   </div>
-                    
-                    <button class="btn no_disapear" type="submit">CREAR</button>
-                </form>
-                
-            </section>
-        </main>
-        
-        
-        <!-- footer -->
-        <%- include ('../partials/footer')%>
-        
-        <!-- JS BOOSTRAP -->
-        
-        <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <body>
+
+
+        <!-- header -->
+        <%- include ('../partials/header_admin')%>
+
+            <!-- main start -->
+
+            <main class="main_list">
+                <%- include ('../partials/menu_admin')%>
+                    <section class="form_alta_prod">
+                        <h1>Alta de Producto</h1>
+                        <form style="height: 90%;" class="form_reg" action="/productos/carga_producto" method="POST"
+                            enctype="multipart/form-data">
+
+                            <label for="prod_name" class="label_reg">NOMBRE</label>
+                            <input type="text" id="prod_name" name="prod_name" required>
+                            <label for="prod_price" class="label_reg">PRECIO</label>
+                            <input class="input_reg" type="text" id="prod_price" name="prod_price" required>
+                            <label for="prod_desc" class="label_reg">DESCRIPCION</label>
+                            <textarea type="email" id="prod_desc" name="prod_desc"
+                                style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;"
+                                rows="10" required></textarea>
+                            
+                            <div style=" width: 100%; border-style: solid; border-color: #3483FA; padding:2%; height:70px; border-radius: 10px; display: flex; justify-content: space-evenly; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto;">
+                                <div style="width: 70%; display: flex; margin-right: auto; margin-left: auto; padding:2%; ">
+                                    <label for="prod_img" class="label_reg" style="text-align: center; margin-left: 20px; margin-right: 20px;">IMAGEN</label>
+                                    <input style="border-style: none; margin-left: auto; margin-right: auto;" type="file" accept=".jpg,.png" id="prod_img" name="prod_img" required>
+                                </div>
+                            </div>
+
+
+                            <div style="display: flex; justify-content: space-evenly; margin-bottom: 20px; border-style: solid; border-color: #3483FA; height:70px; padding:1% 2% 1% 2%;  border-radius: 10px; ">
+                                
+                                <label for="prod_cat" class="label_reg" style="margin-top: auto; margin-bottom: auto;">CATEGORIA</label>
+                                <select name="prod_cat" id="prod_cat" style="height: 40px; margin-top: auto; margin-bottom: auto;">
+                                    <% categories.forEach(category=> { %>
+                                        <option value="<%= category.id %>">
+                                            <%= category.category_name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+
+                                <label for="prod_subcat" class="label_reg" style="margin-top: auto; margin-bottom: auto;">SUBCATEGORIA</label>
+                                <select name="prod_subcat" id="prod_subcat" style="height: 40px; margin-top: auto; margin-bottom: auto;">
+                                    <% subCategories.forEach(subCategory=> { %>
+                                        <option value="<%= subCategory.id %>">
+                                            <%= subCategory.subcategory_name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+
+                            </div>
+
+                            <div style="border-style: solid; border-color: #3483FA; height: 70px; border-radius: 10px; padding:0 5% 0 5%; margin-bottom: 30px; display: flex; width: 100%; margin-left: auto; margin-right: auto; justify-content: center; align-items: center;">
+                               <div style="width: 40%; display: flex; ">
+                                    <span style="text-align: center; width:300px; margin: auto;">¿esta en oferta?</span>
+                                    <input style="margin-bottom: auto; margin-top:auto;" type="checkbox" id="cbox1" value="first_checkbox" name="offer">
+                                </div>
+                            </div>
+
+                            <button class="btn no_disapear" type="submit">CREAR</button>
+                        </form>
+
+                    </section>
+            </main>
+
+
+            <!-- footer -->
+            <%- include ('../partials/footer')%>
+
+                <!-- JS BOOSTRAP -->
+
+                <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
             <script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
-            
-        </body>
-        
-        </html>
+
+    </body>
+
+</html>

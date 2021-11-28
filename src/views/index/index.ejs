@@ -8,14 +8,17 @@
     <!-- main start -->
     <main>
        <!-- <%- include ('../partials/carousel')%> -->
+       
         <section class="slider">
-            <img class="slider_img" src="/img/slider_cm_1.jpeg" alt="">
+            <img class="slider_img" src="/img/slider_cm_black_friday.jpeg" alt="">
         </section>
         <section class="slider_mobile">
-            <img  class="slider_img"  src="/img/slider_cm_1_mobile.jpeg" alt="">
+            <img  class="slider_img"  src="/img/slider_cm_black_friday_mobile.jpg" alt="">
         </section>
+
         <h3>CATEGORÍAS</h3>
-        <section class="menu">
+        <section class="sec_scroll">
+            <div class="div_scroll">
             <% categories.forEach(category => { %>
             <a href="/productos/lista" class="item_menu">
                 <img src="/img/categories/<%= category.image %>" class="img_category" alt="">
@@ -27,7 +30,7 @@
                 </div>
             </a>
             <% }) %>
-             
+             </div>
         </section>
         <!-- web info section -->
         <section class="web_info">
@@ -36,7 +39,8 @@
                 <div class="web_info_txt">
                     <h5 class="left_alig">IGUALAMOS LOS COSTOS</h5>
                     <p>Si encontrás un instrumento que vendemos en otra <br>
-                        Tienda oficial, más barato lo igualamos. <a href="" class="link">Conocé más.</a></p>
+                        Tienda oficial, más barato lo igualamos.   <a href="" class="link">Conocé más.</a></p>
+                     
                     </div>
                 </div>
                 <div class="web_info_box">
@@ -49,9 +53,9 @@
             </section>
             <!-- offers section -->
             <h3>OFERTAS IMPERDIBLES</h3>
-           
-            <section class="scroll">
-   
+            
+            <section class="sec_scroll">
+               <div class="div_scroll">
                 <% products_in_sale.forEach(product => { %>
                     
                     <a href="/productos/detalle/<%= product.id %>" class="item_menu_2 link" >
@@ -65,9 +69,15 @@
                     </a>
                     
                     <% }) %>
-               
+                </div>
                 </section>
-           
+
+                <section class="slider">
+                    <img class="slider_img" src="/img/slider_cm_ernie_ball.jpg" alt="">
+                </section>
+                <section class="slider_mobile">
+                    <img  class="slider_img"  src="/img/slider_cm_ernie_ball_mobile.jpg" alt="">
+                </section>    
                 
                 <!-- section web info -->
                 <section class="web_info_2">
@@ -96,8 +106,7 @@
                                 </div>
                             </div>
                             <div  class="web_info_box_2" >
-                                <img  class="web_info_img_2" style="margin-right: auto;
-                                margin-left: auto; " src="/img/icon_shield.svg" alt="">
+                                <img  class="web_info_img_2" src="/img/icon_shield.svg" alt="">
                                 <div  class="web_info_txt_2">
                                     <h5 class="center_alig">Seguridad, de principio a fin
                                     </h5>

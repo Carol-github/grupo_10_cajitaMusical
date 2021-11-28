@@ -13,11 +13,17 @@ header{
     justify-content: space-around;
     width: 100%!important;
 }
+.logo_link{
+
+    margin-left: auto;
+    margin-right: auto;
+}
 .logo_link_desktop{
     display: flex;
 }
 .logo_link_mobile{
     display: none;
+    margin-right: auto;
 }
 .logo_desktop{
     width: 45%;   
@@ -25,6 +31,8 @@ header{
 }
 .logo_mobile{
     display: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 .search_input{
     height: 40px;
@@ -35,7 +43,7 @@ header{
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
 }
 .search_input input{
     border-color: none!important;
@@ -43,6 +51,7 @@ header{
     border-width: none!important;
     border-radius: none!important;
     height: 35px;
+
 }
 /* 
 .login_btn{
@@ -78,11 +87,15 @@ header{
     height: 50px;
     margin-bottom: 20px; 
     border-radius: 50%;
+      margin-left: auto;
+    margin-right: auto;
 }
 .burguer_menu{
     display: none;
     position: relative;
     z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
 }
 .popup{
     display: none;
@@ -112,7 +125,8 @@ header{
     display:flex; 
     justify-content: space-evenly;
     width: 20%;
-    padding-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .icon_gps{
     width: 7%;
@@ -182,6 +196,8 @@ header{
     display: flex; 
     justify-content: space-between;
     width: 30%;
+    margin-left:auto;
+    margin-right:auto;
 }
 .btn_header_bottom {
     background-color: #ffffff;

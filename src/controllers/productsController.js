@@ -9,6 +9,7 @@ guardados en la carpeta Data como Json (un array de objetos literales) */
 /*LLAMADO DE DB*/
 let db = require("../database/models");
 const { restart } = require('nodemon');
+const { Console } = require('console');
 const sequelize = db.sequelize;
 
 /*LLAMADO DE PRODUCTOS*/
@@ -31,6 +32,7 @@ const productsController = {
         });
     },
 
+    //MANDA INFO PARA EL DETALLE DE PRODUCTO
     productDetail: (req, res) => {
         db.Products.findByPk(req.params.id)
             .then(function (product) {
@@ -44,6 +46,8 @@ const productsController = {
                  });    */
             })
     },
+
+    //MANDA INFO PARA LISTA DE PRODUCTOS
     productList: (req, res) => {
         db.Products.findAll()
             .then(products => {
@@ -56,6 +60,8 @@ const productsController = {
         //     products, 
         //      userLogged: req.session.userLogged });
     },
+
+    //ESTE MANDA LA INFORMACION PARA CREAR PRODUCTO
     upload: async (req, res) => {
         await db.ProductCategory.findAll()
             .then(categories => {
@@ -70,6 +76,8 @@ const productsController = {
                     })
             })
     },
+
+    //MANDA LA INFORMACION PARA EDITAR EL PRODUCTO
     edit: async (req, res) => {
 
         await db.Products.findByPk(req.params.id)
@@ -78,12 +86,11 @@ const productsController = {
             .then(categories => {
 
                 sequelize.query('SELECT * FROM product_subcategories')
-                    .then(subCategories => {
-                        
+                    .then(subCategories => {               
                         res.render('products/productEdit', {
                             product: product,
-                            categories: categories,
-                            subCategories: subCategories
+                            categories: categories[0],
+                            subCategories: subCategories[0]
 
                         });
                     })
@@ -95,6 +102,8 @@ const productsController = {
         //     subCategories: subCategories
         // });
     },
+
+    //ELIMINA EL PRODUCTO
     delete: (req, res) => {
 
         db.Products.destroy({
@@ -112,21 +121,25 @@ const productsController = {
 
     },
 
-    updated: (req, res) => {
-        db.Products.updated({
-            title: req.body.prod_name,
-            offer: req.body.offer,
-            price: req.body.prod_price,
-            category: req.body.prod_cat,
-            subcategory: req.body.prod_subcat,
-            description: req.body.prod_desc,
-            image: req.body.prod_img
-        }, {
+    //GUARDA LA MODIFICACION
+    updated: (req, res) => {        
+        
+        if(req.body.offer == undefined){
+            req.body.offer = 0
+        } else {
+            req.body.offer = 1
+        }
+        
+        db.Products.update(req.body, 
+        {
             where: {
                 id: req.params.id
             }
-        });
-        res.redirect('/productos/lista');
+        })
+        .then(()=>
+            res.redirect('/productos/lista')
+        ) 
+      
         // products.forEach(product => {
 
         //     if (product.id == req.params.id) {
@@ -151,8 +164,10 @@ const productsController = {
         // res.redirect('/productos/lista');
 
     },
+
+    //GUARDA EL PRODUCTO NUEVO
     store: async (req, res) => {
-        req.body.offer = 0
+        
         if (req.body.offer) {
             req.body.offer = 1
         }

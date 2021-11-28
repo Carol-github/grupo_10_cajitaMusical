@@ -30,7 +30,7 @@ CREATE TABLE `product_categories` (
   `icon` varchar(250) NOT NULL,
   `deleted` tinyint NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,8 +55,10 @@ CREATE TABLE `product_subcategories` (
   `subcategory_name` varchar(100) NOT NULL,
   `fk_category` int NOT NULL,
   `deleted` tinyint NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  KEY `product_subcategories_FK` (`fk_category`),
+  CONSTRAINT `product_subcategories_FK` FOREIGN KEY (`fk_category`) REFERENCES `product_categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,8 +83,8 @@ CREATE TABLE `products` (
   `title` varchar(100) NOT NULL,
   `offer` tinyint NOT NULL,
   `price` int NOT NULL,
-  `fk_category` int NOT NULL,
-  `fk_subcategory` int NOT NULL,
+  `fk_category` int DEFAULT NULL,
+  `fk_subcategory` int DEFAULT NULL,
   `description` text NOT NULL,
   `image` varchar(250) NOT NULL,
   `deleted` tinyint NOT NULL,
@@ -90,7 +92,7 @@ CREATE TABLE `products` (
   KEY `products_FK_subcat` (`fk_subcategory`),
   KEY `products_FK` (`fk_category`),
   CONSTRAINT `products_FK_subcat` FOREIGN KEY (`fk_subcategory`) REFERENCES `product_subcategories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +101,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Epiphone Allen Woody Rumblekat',0,50000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_bajo_epiphoneAllenWoodyRumblekatBass_bordo.jpg',0),(2,'Epiphone Jack Casady Bass',1,1200009,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.','cuerdas_bajo_epiphoneJackCasadyBass_dorado.jpg',0),(3,'Fender Jazz Bass 60´s Classic',1,130000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.','cuerdas_bajo_fender_jazzBass60Classic_blanco.jpg',0),(4,'Epiphone Thund PRO-IV',1,105000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_bajo_epiphoneThundProIV_madera.jpg',0),(5,'Fender Jazz Bass 60´s',1,140000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_bajo_fender_jazzBass60Classic_bordo.jpg',0),(6,'Epiphone Sheraton-II Pro',1,160000,1,1,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_guitarra_electrica_epiphoneSheratonIiPro_bordo.jpg',0),(7,'Epiphone Wildkat White Royale',0,175000,1,1,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_guitarra_electrica_epiphoneWildkatWhiteRoyale_blanco.jpg',0);
+INSERT INTO `products` VALUES (1,'Epiphone Allen Woody Rumblekat',0,50000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_bajo_epiphoneAllenWoodyRumblekatBass_bordo.jpg',0),(2,'Epiphone Jack Casady Bass',1,1200009,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.','cuerdas_bajo_epiphoneJackCasadyBass_dorado.jpg',0),(3,'Fender Jazz Bass 60´s Classic',1,130000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.','cuerdas_bajo_fender_jazzBass60Classic_blanco.jpg',0),(5,'Fender Jazz Bass 60´s',1,140000,1,4,'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \\\"de Finibus Bonorum et Malorum\\\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham','cuerdas_bajo_fender_jazzBass60Classic_bordo.jpg',0),(10,'sdf',0,12312312,NULL,NULL,'sdf','imgProduct_1637973879726_.png',0),(12,'qweqwe',0,32112312,NULL,NULL,'qweqweqwe','imgProduct_1637982308661_.png',0),(13,'nuevo',0,123456789,NULL,NULL,'nuevo','imgProduct_1637982371885_.png',0),(14,'nuevo2',0,1,NULL,NULL,'asdasasd','imgProduct_1637982969323_.png',0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +116,7 @@ CREATE TABLE `user_categories` (
   `id` int NOT NULL AUTO_INCREMENT,
   `category_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +149,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `users_FK` (`category_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`category_id`) REFERENCES `user_categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,4 +174,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-26  0:17:17
+-- Dump completed on 2021-11-27  0:19:05
