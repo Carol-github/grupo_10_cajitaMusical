@@ -104,20 +104,19 @@ const productsController = {
 
     //ELIMINA EL PRODUCTO
     delete: (req, res) => {
-
-        db.Products.destroy({
+        db.Products.update({                        
+            deleted: 1 }, 
+        {
             where: {
                 id: req.params.id
             }
         })
-
+        .then(()=>
+            res.redirect('/')
+        ) 
         // const newProducts = products.filter(product => product.id != req.params.id)
-
         // const products_saved = JSON.stringify(newProducts, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
         // fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
-
-        res.redirect('/');
-
     },
 
     //GUARDA LA MODIFICACION

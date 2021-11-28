@@ -27,13 +27,13 @@ const mainController = {
 		
 		 db.Products.findAll({
 				where: {
-					offer:1
+					offer:1,
+					deleted:0
 				}
 			 })
 		 .then (products_in_sale => {
 			sequelize.query('SELECT * FROM product_categories')
-			.then(categories=>{
-			
+			.then(categories=>{			
 				res.render('index.ejs',{
 				userLogged : req.session.userLogged,
 				products_in_sale: products_in_sale,
