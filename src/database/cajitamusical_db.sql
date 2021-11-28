@@ -149,7 +149,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `users_FK` (`category_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`category_id`) REFERENCES `user_categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,6 +158,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (12,'pikachu77','Juan','Pikaika','pikachu@cajitamusical.com','$2a$10$PG.22Y5z0Y744FQHHaQG.OnuXEC/MigYqbhe7C6IXxH3xcEzCm92.',2,'avatar_1638038861567_.png',0),(13,'charmander88','Jazmin','Fire','charmander@gmail.com','$2a$10$LoXIiYXA20ZAr98XHygxDuv9YaakY7pywqQTIy2ME/W5AR.dEF906',1,'avatar_1638038939521_.png',0),(14,'magikarp89','Mariel','Karp','pezmortal@gmail.com','$2a$10$qQlkG7SnW3ugEBNQsJ9x7uWRk0XQ5zlvIzNnj2VKUsAgqcFV1jcFm',1,'avatar_1638039215385_.jpg',0),(15,'squirtle666','John','Squire','maremoto@gmail.com','$2a$10$D4gcUhdFbF5q9Ico1dKlsOjiPFXV.t4xfhiL.raCqk4MYu3qbsX0u',1,'avatar_1638039650167_.jpg',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,4 +175,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-27 12:39:25
+-- Dump completed on 2021-11-27 21:46:04
