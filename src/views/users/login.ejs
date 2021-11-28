@@ -18,11 +18,12 @@
             <% })
             } %>
             <form class="form_reg"action="/usuarios/ingresar" method="POST">
-                <label class="label_reg" for="user">USUARIO</label>
-                <input class="input_reg" type="text" id="user" name="user" value="<%= locals.old && old.user ? old.user : '' %>">
+                
+                <label for="email" class="label_reg">EMAIL</label>
+                <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" >
 
-                <label class="label_reg" for="pass">CONTRASEÑA</label>
-                <input style="margin-bottom: 0%;"  class="input_reg" type="password" id="pass" name="pass" minlength="5"  maxlength="10" value="<%= locals.old && old.pass ? old.pass : '' %>">
+                <label class="label_reg" for="password">CONTRASEÑA</label>
+                <input style="margin-bottom: 0%;"  class="input_reg" type="password" id="pass" name="password" minlength="5"  maxlength="10" value="<%= locals.old && old.pass ? old.pass : '' %>">
                 <div style="margin-left: 0%; display: flex; width: 25%; justify-content: space-between;">
                     <input style="margin-bottom: 0%;"  class="input_reg" type="checkbox" id="remember" name="remember">
                     <label  style="margin-top: auto; margin-bottom: auto;" class="label_reg" for="remember">RECORDARME</label>

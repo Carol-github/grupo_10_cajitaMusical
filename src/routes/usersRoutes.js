@@ -16,8 +16,8 @@ const validateCreateUserForm = [
 ]
 
 const validateLoginUserForm = [
-   body('user').notEmpty().withMessage('Debes ingresar un nombre de usuario'),
-   body('pass').notEmpty().withMessage('Debes ingresar un password'),
+   body('email').notEmpty().withMessage('Debes ingresar un email válido'),
+   body('password').notEmpty().withMessage('Debes ingresar un password'),
 ]
 
 

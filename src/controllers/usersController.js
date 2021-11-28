@@ -20,36 +20,51 @@ const usersController = {
         res.render('users/login');
     },
     process_login: (req, res) => {
-        let errors = validationResult(req);
-        if (errors.isEmpty()) {
-            let user = users.filter(user => req.body.user == user.user);
-        if(user.length != 0){
-                     
-            if(bcrypt.compareSync(req.body.pass, user[0].password )){
-                // delete user[0].dataValues.pass
-                req.session.userLogged = user[0];
-
-                // SETEAMOS LA COOKIE
-                if(req.body.remember){
-                    res.cookie(
-                        'cajitaMusicalCookie', req.session.userLogged,{maxAge:120000}
-                    )
-                };
-                res.redirect('admin');
-            } 
-            else{
-                res.send('Contraseña incorrecta');
-            }
-        } else{
-            res.send('Usuario incorrecto');
-        }
-        } else { 
-            res.render('users/login', { 
-                errors: errors.array(),
-                old: req.body
+            // Buscar usuario por email
+            let errors = validationResult(req);
+    
+            if(errors.isEmpty()){
+    
+                db.Users.findOne({
+                    where : {
+                        email : req.body.email,
+                    }
+                    }).then(user => {
+                        // Si encontramos al usuario
+                        console.log(user)
+                        if (user != undefined) {
+                            // Al ya tener al usuario, comparamos las contraseñas
+                            
+                            if(bcrypt.compareSync(req.body.password, user.password)) {
+                               
+                                req.session.userLogged = user;
+                                 // Setear la cookie
+                                 if (req.body.remember) {
+                                     res.cookie('userCookie', req.session.userLogged, { maxAge: 60000 * 60 });
+                                 }
+                                 
+        
+                            // Redireccionamos al usuario al index
                 
-            });
-        }       
+                                 return res.redirect('/');
+        
+                
+                            } else {
+                                let errors = [{msg: 'El email o la contraseña es invalida'}]
+                                res.render('users/login', {errors});
+    
+                            }
+                        } else {
+                            let errors = [{msg: 'El email o la contraseña es invalida'}]
+                            res.render('users/login', {errors});
+    
+                        }
+        
+                    })
+            } else {
+    
+                res.render('users/login',{ errors : errors.errors, old: req.body})
+            }
 
     //     res.render('users/login');
     // },
