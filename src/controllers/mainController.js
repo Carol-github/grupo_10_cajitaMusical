@@ -46,7 +46,6 @@ const mainController = {
 // hazAlgo(function(resultado) {
 //   hazAlgoMas(resultado, function(nuevoResultado) {
 //     hazLaTerceraCosa(nuevoResultado, function(resultadoFinal) {
-//       console.log('Obtenido el resultado final: ' + resultadoFinal
 //     }, falloCallback);
 //   }, falloCallback);
 // }, falloCallback);

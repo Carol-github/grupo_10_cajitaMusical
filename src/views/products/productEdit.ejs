@@ -36,7 +36,7 @@
                 
                 <label for="prod_cat" class="label_reg">CATEGORIA</label>
                 <select name="prod_cat" id="prod_cat" >                    
-                        <option value="" >Elegi una categoria</option>
+                        
                         <% categories.forEach(category => { %>
                             <option
                             value="<%= category.id %>"
@@ -50,7 +50,7 @@
                     
                 <label for="prod_subcat" class="label_reg">SUBCATEGORIA</label>
                 <select name="prod_subcat" id="prod_subcat" >
-                    <option value="" >Elegi una categoria</option>
+                    
                     <% subCategories.forEach(subCategory => { %>
                         <option
                         value="<%= subCategory.id %>"

@@ -1,44 +1,56 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User';
+    let alias = 'Users';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
-            type: dataTypes.STRING(50)
-        },
-        surname: {
-            type: dataTypes.STRING(50)
-        },
         user: {
-            type: dataTypes.STRING(50)
+            type: dataTypes.STRING,
+            allowNull: false
+        },
+        first_name: {
+            type: dataTypes.STRING,
+            allowNull: false
+        },
+        last_name: {
+            type: dataTypes.STRING,
+            allowNull: false
         },
         email: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING,
+            allowNull: false
         },
         password: {
-            type: dataTypes.STRING(255)
+            type: dataTypes.STRING,
+            allowNull: false
+        },
+        category_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         image: {
-            type: dataTypes.STRING(255)
+            type: dataTypes.STRING,
+            allowNull: false
         },
-        address: {
-            type: dataTypes.STRING(50)
-        },
-        idRole: {
-            type: dataTypes.INTEGER
-        },
-        /*deleted:{
-            type: dataTypes.BOOLEAN
-        }*/
+        deleted:{
+            type: dataTypes.INTEGER,
+            allowNull: false
+        }
     };
     let config = {
         tableName: 'users',
         timestamps: false,
     };
-    const User = sequelize.define(alias, cols, config)
+    let User = sequelize.define(alias, cols, config)
+
+    User.associate = function (models) {
+        User.belongsTo(models.UserCategory, { 
+            as: "categoria",
+            foreignKey: "category_id"
+        });
+    }
 
     return User;
 }
