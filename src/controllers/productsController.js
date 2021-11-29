@@ -134,7 +134,6 @@ const productsController = {
         } else {
             req.body.offer = 1
         }
-        
         if(typeof req.file != 'undefined'){
             req.body.image = req.file.filename;
         }        

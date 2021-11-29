@@ -11,7 +11,7 @@
     
     <main class="main_list">
 
-        <% if(userLogged.category == 'admin') { %> 
+        <% if(userLogged.category_id == 1) { %> 
                  <%- include ('../partials/menu_admin')%>
            <% } else { %>
                 <%- include ('../partials/menu_user')%>

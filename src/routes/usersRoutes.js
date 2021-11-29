@@ -53,6 +53,8 @@ router.get('/admin', authMiddleware, usersController.admin);
 
 
 router.get('/modificar', authMiddleware, usersController.modify);
+router.put("/modificar", upload.single("avatar"), usersController.updated);
+router.put("/borrar", usersController.delete);
 router.get('/logout', authMiddleware, usersController.logout);
 
 

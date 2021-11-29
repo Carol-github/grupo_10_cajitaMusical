@@ -1,15 +1,25 @@
 <section class="select_column invisble_mobile">
     <ol class="list">
         <li >
-            <a class="link" href="">Mis Compras</a>
+            <a class="btn" href="">Mis Compras</a>
         </li>
              <div class="line"></div>
          <li >
-             <a class="link" href="">Facturas</a>
+             <a class="btn" href="">Facturas</a>
         </li>
             <div class="line"></div>
             <li >
-                <a class="link" href="">Mi cuenta</a>
+                <a class="btn" href="/usuarios/modificar">Mi cuenta</a>
+           </li>
+           <li>
+            <form 
+            action="/usuarios/borrar/?_method=PUT" 
+            method="POST" 
+            enctype="multipart/form-data">
+            <button class="delete_btn"  type="submit"> 
+                BORRAR CUENTA 
+            </button>
+             </form> 
            </li>
            <div class="line"></div>
            <li >
