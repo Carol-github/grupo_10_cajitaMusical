@@ -23,34 +23,42 @@ guardados en la carpeta Data como Json (un array de objetos literales) */
 
 
 const mainController = {
-	index: (req, res) => {
-		
-		 db.Products.findAll({
-				where: {
-					offer:1,
-					deleted:0
-				}
-			 })
-		 .then (products_in_sale => {
-			sequelize.query('SELECT * FROM product_categories')
-			.then(categories=>{			
-				res.render('index.ejs',{
-				userLogged : req.session.userLogged,
-				products_in_sale: products_in_sale,
-				categories: categories[0]
-				});
-			})
-			
+  index: (req, res) => {
+    db.Products.findAll({
+      where: {
+        offer: 1,
+        deleted: 0,
+      },
+    }).then((products_in_sale) => {
+      sequelize.query("SELECT * FROM product_categories").then((categories) => {
+        res.render("index.ejs", {
+          userLogged: req.session.userLogged,
+          products_in_sale: products_in_sale,
+          categories: categories[0],
+        });
+      });
 
-			
-// hazAlgo(function(resultado) {
-//   hazAlgoMas(resultado, function(nuevoResultado) {
-//     hazLaTerceraCosa(nuevoResultado, function(resultadoFinal) {
-//     }, falloCallback);
-//   }, falloCallback);
-// }, falloCallback);
-		})
-}}
+      // hazAlgo(function(resultado) {
+      //   hazAlgoMas(resultado, function(nuevoResultado) {
+      //     hazLaTerceraCosa(nuevoResultado, function(resultadoFinal) {
+      //     }, falloCallback);
+      //   }, falloCallback);
+      // }, falloCallback);
+    });
+  },
+  search: (req, res) => {
+    let search = req.query.keywords;
+    let filteredProducts = tazas.filter((taza) => {
+      return taza.name.toLowerCase().includes(search);
+    });
+
+    res.render("results", {
+      filteredProducts: filteredProducts,
+      search: search,
+      toThousand: toThousand,
+    });
+  },
+};
 
 
 
