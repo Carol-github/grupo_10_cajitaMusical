@@ -32,12 +32,15 @@
                 <input  type="text" id="user_lastname" name="user_lastname" value="<%= user.last_name %>">
                 <label for="user_email" class="label_reg">EMAIL</label>
                 <input type="text" id="user_email" name="user_email"  value="<%= user.email %>">
-
-                <div class="product_ppal_image">
-                    <img  src="/img/avatars/<%= user.image %>">
+                <div style=" justify-content: space-evenly; justify-content: center; align-items: center; border-style: solid; border-color: #3483FA; height: 100px; border-radius: 10px; padding:2.5% 5% 0 5%; margin-bottom: 30px; display: flex; width: 100%; margin-left: auto; margin-right: auto;">
+                    <div style="margin-left: auto; margin-right: auto;" class="product_ppal_image">
+                        <img style="width: 70px; border-radius: 50%; margin-right: 20px;" src="/img/avatars/<%= user.image %>">
+                    </div>
+                    <div style="margin:10px auto 0 auto;">
+                        <label for="avatar" class="label_reg">CAMBIAR AVATAR</label>
+                        <input style="margin-top: 10px; border-style: none;" type="file"  accept=".jpg,.png" id="avatar" name="avatar" value="<%= user.image %>">
+                    </div>
                 </div>
-                <label for="avatar" class="label_reg">IMAGEN</label>
-                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="avatar" name="avatar" value="<%= user.image %>">
                 <div style="display: flex; justify-content: space-around;width: 50%; margin-left: auto; margin-right: auto;">
                     <button class="btn no_disapear" type="submit">
                         MODIFICAR

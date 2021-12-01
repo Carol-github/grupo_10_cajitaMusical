@@ -8,8 +8,8 @@ const { restart } = require('nodemon');
 const { Console } = require('console');
 const sequelize = db.sequelize;
 
-const usersFilePath = path.join(__dirname, '../data/dataUsers.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// const usersFilePath = path.join(__dirname, '../data/dataUsers.json');
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const { validationResult } = require('express-validator');
 
@@ -61,12 +61,9 @@ const usersController = {
                 } else {
                     let errors = [{ msg: 'email o contraseña invalida. O usuario inexistente' }]
                     res.render('users/login', { errors });
-
                 }
-
             })
         } else {
-
             res.render('users/login', { errors: errors.errors, old: req.body })
         }
 
@@ -126,11 +123,11 @@ const usersController = {
                 last_name: req.body.last_name,
                 email: req.body.email,
                 password: req.body.password,
-                category_id: 1, //Se envia "1" por default, correspondiente a categoria de "Customer"
+                category_id: 2, //Se envia "2" por default, correspondiente a categoria de "Customer"
                 image: req.body.avatar,
                 deleted: 0
             });
-            res.redirect('/');
+            res.redirect('/usuarios/ingresar');
         } else {
             res.render('users/register', {
                 errors: errors.array(),
@@ -179,12 +176,10 @@ const usersController = {
     modify: async (req, res) => {
         await db.Users.findByPk(req.session.userLogged.id)
             .then(user => {
-
                 res.render('users/editProfile', {
                     user: user,
                     userLogged: req.session.userLogged 
                 });
-
             })
     },
     delete: async (req, res) => {
@@ -231,8 +226,11 @@ const usersController = {
                         id: req.session.userLogged.id
                     }
                 })
-                    .then(() =>
-                        res.redirect('/'))
+              
+                    .then(() =>{
+                     req.session.userLogged.image = req.body.avatar
+                       res.redirect('/')
+                    })
         } else {
             res.render('users/modificar', {
                 errors: errors.array(),
