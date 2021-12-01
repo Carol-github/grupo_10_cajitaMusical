@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: cajitamusical_db
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.21-MariaDB
+-- Server version	8.0.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -16,19 +16,49 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `cart_pivot`
+--
+
+DROP TABLE IF EXISTS `cart_pivot`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `cart_pivot` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fk_product` int NOT NULL,
+  `fk_cart` int NOT NULL,
+  `quantity` int NOT NULL,
+  `prod_price` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cart_pibot_FK` (`fk_product`),
+  KEY `cart_pibot_FK_1` (`fk_cart`),
+  CONSTRAINT `cart_pibot_FK` FOREIGN KEY (`fk_product`) REFERENCES `products` (`id`),
+  CONSTRAINT `cart_pibot_FK_1` FOREIGN KEY (`fk_cart`) REFERENCES `user_cart` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart_pivot`
+--
+
+LOCK TABLES `cart_pivot` WRITE;
+/*!40000 ALTER TABLE `cart_pivot` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cart_pivot` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `product_categories`
 --
 
 DROP TABLE IF EXISTS `product_categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deleted` tinyint(4) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deleted` tinyint NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -49,12 +79,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `product_subcategories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_subcategories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `subcategory_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fk_category` int(11) NOT NULL,
-  `deleted` tinyint(4) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `subcategory_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fk_category` int NOT NULL,
+  `deleted` tinyint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_subcategories_FK` (`fk_category`),
   CONSTRAINT `product_subcategories_FK` FOREIGN KEY (`fk_category`) REFERENCES `product_categories` (`id`)
@@ -77,17 +107,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `offer` tinyint(4) NOT NULL,
-  `price` int(11) NOT NULL,
-  `fk_category` int(11) DEFAULT NULL,
-  `fk_subcategory` int(11) DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deleted` tinyint(4) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `offer` tinyint NOT NULL,
+  `price` int NOT NULL,
+  `fk_category` int DEFAULT NULL,
+  `fk_subcategory` int DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deleted` tinyint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `products_FK_subcat` (`fk_subcategory`),
   KEY `products_FK` (`fk_category`),
@@ -106,15 +136,41 @@ INSERT INTO `products` VALUES (24,'Epiphone Allen Woody Rumblekat ',0,520000,1,4
 UNLOCK TABLES;
 
 --
+-- Table structure for table `user_cart`
+--
+
+DROP TABLE IF EXISTS `user_cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user_cart` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fk_user` int NOT NULL,
+  `name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_cart_FK` (`fk_user`),
+  CONSTRAINT `user_cart_FK` FOREIGN KEY (`fk_user`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_cart`
+--
+
+LOCK TABLES `user_cart` WRITE;
+/*!40000 ALTER TABLE `user_cart` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_categories`
 --
 
 DROP TABLE IF EXISTS `user_categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -135,17 +191,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `first_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `deleted` tinyint(4) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_id` int NOT NULL,
+  `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deleted` tinyint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `users_FK` (`category_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`category_id`) REFERENCES `user_categories` (`id`)
@@ -175,4 +231,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-01 15:10:00
+-- Dump completed on 2021-12-01 19:36:33
