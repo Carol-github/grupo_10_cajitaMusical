@@ -12,11 +12,13 @@
             <img src="/img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
         </a>
         <div class="search_input">
-            <input type="text" placeholder="Busca por marca, instrumento, etc.">
-            <a href="" style=" margin-top: auto; margin-bottom:auto;">
-                <img src="/img/icon_search.svg" style="width: 90%; opacity: 0.8; padding-left: 5px; padding-right: 5px;"
-                    alt="">
-            </a>
+            <form action="/productos/lista" method="GET" class="search-form" enctype="multipart/form-data">
+                <input type="text" name="searchProduct" placeholder="Busca por marca, instrumento, etc.">
+                <a href="" style=" margin-top: auto; margin-bottom:auto;">
+                    <img src="/img/icon_search.svg" style="width: 90%; opacity: 0.8; padding-left: 5px; padding-right: 5px;"
+                        alt="">
+                </a>
+            </form>
         </div>
         <a href="/usuarios/ingresar" class="btn disapear">
             <% if(!userLogged) { %>

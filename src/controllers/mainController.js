@@ -3,8 +3,10 @@ const path = require('path');
 
 // DATABASE
 
+/*LLAMADO DE DB*/
 let db = require("../database/models");
 const { restart } = require('nodemon');
+const { Console } = require('console');
 const sequelize = db.sequelize;
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
@@ -37,29 +39,8 @@ const mainController = {
           categories: categories[0],
         });
       });
-
-      // hazAlgo(function(resultado) {
-      //   hazAlgoMas(resultado, function(nuevoResultado) {
-      //     hazLaTerceraCosa(nuevoResultado, function(resultadoFinal) {
-      //     }, falloCallback);
-      //   }, falloCallback);
-      // }, falloCallback);
     });
-  },
-  search: (req, res) => {
-    let search = req.query.keywords;
-    let filteredProducts = tazas.filter((taza) => {
-      return taza.name.toLowerCase().includes(search);
-    });
-
-    res.render("results", {
-      filteredProducts: filteredProducts,
-      search: search,
-      toThousand: toThousand,
-    });
-  },
-};
-
-
+  }  
+}
 
 module.exports = mainController;
