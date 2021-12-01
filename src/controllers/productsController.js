@@ -75,8 +75,7 @@ const productsController = {
   /*BARRA DE BUSQUEDA */
   search: async (req, res) => {
     let search = req.query.searchProduct;
-    await db.Products.findAll(
-      // {deleted: 0},
+    await db.Products.findAll(      
       {
         where: {
           deleted: 0,
@@ -85,13 +84,12 @@ const productsController = {
           },          
         },
       }
-    ).then((products) => {      
+    ).then((products) => {    
       res.render("products/productList", {
         products: products,
         userLogged: req.session.userLogged,
       });
-    });
-    
+    });    
   },
 
   //BOTONES DE CATEGORIAS DEL INDEX
