@@ -173,7 +173,7 @@ const productsController = {
           id: req.params.id,
         },
       }
-    ).then(() => res.redirect("/productos/lista"));
+    ).then(() => res.redirect("/"));
 
     // products.forEach(product => {
 
@@ -244,7 +244,7 @@ const productsController = {
 
     // let new_user = JSON.stringify(user);
 
-    res.redirect("lista");
+    res.redirect("/");
   },
 };
 
