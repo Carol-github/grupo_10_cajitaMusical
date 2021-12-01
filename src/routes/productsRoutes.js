@@ -33,7 +33,7 @@ router.get('/carrito', authMiddleware, productsController.productCart);
 router.get('/detalle/:id', productsController.productDetail);
 
 // LISTA
-router.get('/lista', productsController.productList);
+router.get('/lista',  productsController.productList);
 // CREACION
 router.get("/carga_producto", authMiddleware, productsController.upload);
 router.post("/carga_producto", uploadFile.single("prod_img"), productsController.store)

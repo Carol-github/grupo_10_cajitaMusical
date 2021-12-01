@@ -11,7 +11,7 @@
     
     <main class="main_list">
         <%- include ('../partials/menu_admin')%>
-        <section style="padding-top: 2%;">
+        <section class="form_alta_prod">
             <h1>Editar Producto</h1>
             <form style="height: 90%;" class="form_reg" 
             action="/productos/edita_producto/<%= product.id %>?_method=PUT" 
@@ -22,21 +22,29 @@
                 <input  type="text" id="prod_name" name="prod_name" value="<%= product.title %> ">
 
                 <label for="prod_price" class="label_reg">PRECIO</label>
-                <input  type="text" id="prod_price" name="prod_price" value="<%= product.price %> ">
+                <input  type="number" id="prod_price" name="prod_price" value="<%= product.price %>">
                 
                 <label for="prod_desc" class="label_reg">DESCRIPCION</label>
                 <textarea type="text" id="prod_desc" name="prod_desc" style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;" rows="10" required><%= product.description %></textarea> 
                 
-                <div class="product_ppal_image">
-                    <img  src="/img/imgProducts/<%= product.image %>" alt="guitarra">
-                </div>
 
-                <label for="prod_img" class="label_reg">IMAGEN</label>
-                <input style="border-style: none;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" value="<%= product.image %>"> 
+                <div style=" justify-content: space-evenly; justify-content: center; align-items: center; border-style: solid; border-color: #3483FA; height: 250px; border-radius: 10px; padding:2.5% 5% 0 5%; margin-bottom: 30px; display: flex; width: 100%; margin-left: auto; margin-right: auto;">
+                    <div class="product_ppal_image" >
+                        <img style="width: 100px;" src="/img/imgProducts/<%= product.image %>" alt="guitarra">
+                    </div>
+                    <div style="margin:10px auto 0 auto;">
+                        <label for="prod_img" class="label_reg">NUEVA IMAGEN</label>
+                        <input style="border-style: none; width: 20px;" type="file"  accept=".jpg,.png" id="prod_img" name="prod_img" value="<%= product.image %>"> 
+                     </div>
+                </div>
                 
-                <label for="prod_cat" class="label_reg">CATEGORIA</label>
-                <select name="prod_cat" id="prod_cat" >                    
-                        
+               
+
+                <div style="display: flex; justify-content: space-evenly; margin-bottom: 20px; border-style: solid; border-color: #3483FA; height:70px; padding:1% 2% 1% 2%;  border-radius: 10px; ">
+                                
+                    <label for="prod_cat" class="label_reg" style="margin-top: auto; margin-bottom: auto;">CATEGORIA</label>
+                    <select name="prod_cat" id="prod_cat" style="height: 40px; margin-top: auto; margin-bottom: auto;">
+                         
                         <% categories.forEach(category => { %>
                             <option
                             value="<%= category.id %>"
@@ -46,21 +54,22 @@
                             <%= category.category_name %>
                         </option>                          
                         <% }) %> 
-                </select>
-                    
-                <label for="prod_subcat" class="label_reg">SUBCATEGORIA</label>
-                <select name="prod_subcat" id="prod_subcat" >
-                    
-                    <% subCategories.forEach(subCategory => { %>
-                        <option
-                        value="<%= subCategory.id %>"
-                        <%= product.fk_subcategory == subCategory.id ? 'selected' : null %>
-                        >
+                    </select>
 
-                        <%= subCategory.subcategory_name %>
-                    </option>                          
-                    <% }) %> 
-                </select>
+                    <label for="prod_subcat" class="label_reg" style="margin-top: auto; margin-bottom: auto;">SUBCATEGORIA</label>
+                    <select name="prod_subcat" id="prod_subcat" style="height: 40px; margin-top: auto; margin-bottom: auto;">
+                        <% subCategories.forEach(subCategory => { %>
+                            <option
+                            value="<%= subCategory.id %>"
+                            <%= product.fk_subcategory == subCategory.id ? 'selected' : null %>
+                            >
+    
+                            <%= subCategory.subcategory_name %>
+                        </option>                          
+                        <% }) %> 
+                    </select>
+
+                </div>
                     <!-- <div style="display: flex; margin-top: 15px;  margin-bottom: 15px;">
                    <input style="margin-top: auto; margin-bottom: auto;" type="checkbox" id="cbox1" value="first_checkbox" name="offer"  > 
                    <label for="offer" style="width: 200px; margin-top: auto; margin-bottom: auto;">En oferta</label>

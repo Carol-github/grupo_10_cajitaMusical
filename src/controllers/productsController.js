@@ -185,7 +185,7 @@ const productsController = {
         
         if (req.body.offer) {
             req.body.offer = 1 //si el check esta tildado, manda el valor "1"
-        } else{
+        } else {
             req.body.offer = 0 // si el check esta destildad, manda el valor "0"
         }
         if (typeof req.file != 'undefined') {
@@ -229,6 +229,27 @@ const productsController = {
         
         res.redirect('lista');
     },
+    search: (req, res) => {
+        const session = req.session.usuario;
+        db.Producto.findAll({
+
+                    where: {
+
+                        nombre: {
+                            [Op.like]: `%${req.body.productoBuscado}%`
+                        }
+                    }
+                }
+
+
+            )
+            .then(lista_productos => {
+                res.render('lista', {
+                    lista_productos,
+                    session: session
+                })
+            })
+    }
 }
 
 module.exports = productsController;

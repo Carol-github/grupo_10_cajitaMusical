@@ -19,6 +19,9 @@
             <% })
             } %> 
             <form class="form_reg"action="/usuarios/registrar" method="POST" enctype="multipart/form-data">
+               
+                <label for="email" class="label_reg">EMAIL</label>
+                <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" >
 
                 <label for="user" class="label_reg">NOMBRE DE USUARIO</label>
                 <input type="text" id="user" name="user" value="<%= locals.old && old.user ? old.user : '' %>" >
@@ -29,10 +32,7 @@
                 <label for="last_name" class="label_reg">APELLIDO</label>
                 <input type="text" id="last_name" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : '' %>">
 
-                <label for="email" class="label_reg">EMAIL</label>
-                <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" >
-
-               
+                              
                 <label for="avatar" class="label_reg">IMAGEN DE PERFIL</label>
                 <input style="border-style: none;" type="file"  accept=".jpg,.png" id="avatar" name="avatar" > 
 

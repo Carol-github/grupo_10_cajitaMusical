@@ -11,13 +11,13 @@
         <a href="/" class="logo_link_mobile">
             <img src="/img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
         </a>
-        <div class="search_input">
+        <form class="search_input" id="searchForm" action="/lista" method="POST" enctype="multipart/form-data">
             <input type="text" placeholder="Busca por marca, instrumento, etc.">
             <a href="" style=" margin-top: auto; margin-bottom:auto;">
                 <img src="/img/icon_search.svg" style="width: 90%; opacity: 0.8; padding-left: 5px; padding-right: 5px;"
                     alt="">
             </a>
-        </div>
+        </form>
         <a href="/usuarios/ingresar" class="btn disapear">
             <% if(!userLogged) { %>
                 <img src="/img/icon_btn_login.svg" alt="">
@@ -50,7 +50,7 @@
                                     <img class="profile_img_user_mobile" src="img/avatars/<%= userLogged.image %>"
                                         alt="">
                                     <a href="/usuarios/ingresar" class="link">
-                                        <%= userLogged.image %>
+                                        <%= userLogged.user %>
                                     </a>
                                 </div>
                                 <% } %>
