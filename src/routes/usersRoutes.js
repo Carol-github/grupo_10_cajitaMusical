@@ -6,13 +6,37 @@ const multer = require('multer');
 const { body } = require('express-validator');
 
 const validateCreateUserForm = [
-    body('user').notEmpty().withMessage('Debes ingresar un nombre de usuario'),
-    body('first_name').notEmpty().withMessage('Debes ingresar un nombre'),
-    body('last_name').notEmpty().withMessage('Debes ingresar un apellido'),
-    body('email').isEmail().withMessage('Debes ingresar un email válido')
-   //  body('avatar').notEmpty().withMessage('Debes ingresar una imagen'),
-   //  body('password').notEmpty().withMessage('Debes ingresar un password'),
-   //  body('confirm_password').notEmpty().withMessage('Debes ingresar una confirmación de password')
+    body('user')
+      .notEmpty().withMessage('Debes ingresar un nombre de usuario'),
+
+    body('first_name')
+      .notEmpty().withMessage('Debes ingresar un nombre')
+      .isLength({min: 2}).withMessage('El nombre debe tener al menos dos caracteres'),
+
+    body('last_name')
+      .notEmpty().withMessage('Debes ingresar un apellido')
+      .isLength({min: 2}).withMessage('El apellido debe tener al menos dos caracteres'),
+
+    body('email')
+      .notEmpty().withMessage('Debes ingresar una dirección de correo')
+      .isEmail().withMessage('Debes ingresar un email válido'),
+
+   //  body('avatar')
+   //    .notEmpty().withMessage('Debes ingresar una imagen'),
+
+    body('password')
+      .notEmpty().withMessage('Debes ingresar un password')
+      .isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),
+      // .matches(
+      //    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d@$.!%*#?&]/,
+      //  ).withMessage('La confirmación de contraseña debe tener al menos un carecter especial'),
+
+   //  body('confirm_password')
+   //    .notEmpty().withMessage('Debes ingresar una confirmación de contraseña')
+   //    .isLength({min: 8}).withMessage('La confirmación de contraseña debe tener al menos 8 caracteres')
+      // .matches(
+      //    /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d@$.!%*#?&]/,
+      //  ).withMessage('La confirmación de contraseña debe tener al menos un carecter especial')
 ]
 
 const validateLoginUserForm = [
