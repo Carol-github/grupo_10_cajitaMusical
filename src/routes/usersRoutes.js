@@ -21,8 +21,22 @@ const validateCreateUserForm = [
       .notEmpty().withMessage('Debes ingresar una dirección de correo')
       .isEmail().withMessage('Debes ingresar un email válido'),
 
-   //  body('avatar')
-   //    .notEmpty().withMessage('Debes ingresar una imagen'),
+    body('avatar').custom((value, {req}) => {
+      let file = req.file;
+      let acceptedExtensions = ['.jpg', '.png', '.gif']
+     
+
+      if (!file) {
+        throw new Error('Tenes que subir una imagen');
+      } else {
+        let fileExtension = path.extname(file.originalname);
+        if (!acceptedExtensions.includes(fileExtension)){
+          throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+      }     
+
+      return true;
+    }),
 
     body('password')
       .notEmpty().withMessage('Debes ingresar un password')
