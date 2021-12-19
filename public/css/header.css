@@ -36,7 +36,7 @@ header{
     margin-left: auto;
     margin-right: auto;
 }
-.search_input{
+.search_form{
     height: 40px;
     padding-left: 1%;
     width: 50%!important;
@@ -47,7 +47,7 @@ header{
     border-radius: 5px;
     margin-bottom: 20px;    
 }
-.search_input input{
+.search_form input{
     border-color: none!important;
     border-style: none!important;
     border-width: none!important;
@@ -55,6 +55,10 @@ header{
     height: 35px;
 
 }
+.search_input:focus {
+    outline: none;
+ }
+
 /* 
 .login_btn{
     background-color: var(--btn_background_color);
@@ -264,7 +268,7 @@ header{
     .login_btn, .nav_header, .btn_header_bottom, .btn_header_bottom_2 {
         display: none;
     }
-    .search_input{
+    .search_form{
         margin-top: 1%;
     }
     .burguer_menu{
@@ -376,7 +380,7 @@ header{
     .logo_link_mobile{
         width: 10%;
     }
-    .search_input{
+    .search_form{
         margin-top: 2%;
     }
     .icon_gps{

@@ -39,14 +39,10 @@ const usersController = {
                     if (bcrypt.compareSync(req.body.password, user.password)) {
 
                         req.session.userLogged = user;
-                     
                         // Setear la cookie
-
                         if (req.body.remember) {
                             res.cookie('userCookie', req.session.userLogged, { maxAge: 60000 * 60 });
                         }
-
-
                         // Redireccionamos al usuario al index
 
                         return res.redirect('/');
