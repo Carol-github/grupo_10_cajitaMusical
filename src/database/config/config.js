@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    //  "password": null,
+    // "password": null,
     "password": "calle12A7465",
     "database": "cajitamusical_db",
     "host": "127.0.0.1",

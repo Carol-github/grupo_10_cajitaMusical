@@ -42,7 +42,7 @@ router.post("/carga_producto", uploadFile.single("prod_img"), productsController
 
 // EDICION
 router.get("/:id/edita_producto", authMiddleware, productsController.edit);
-router.put("/edita_producto/:id", uploadFile.single("prod_img"), productsController.updated);
+router.put("/edita_producto/:id", authMiddleware, uploadFile.single("prod_img"), productsController.updated);
 
 // BORRADO
 router.delete("/borrado/:id", authMiddleware, productsController.delete);

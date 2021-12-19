@@ -100,34 +100,60 @@ const usersController = {
     },
 
     register: (req, res) => {
-        res.render('users/register');
+        let msgExistUser = 0
+        res.render('users/register',{
+            msgExistUser
+        });
     },
     store: async (req, res) => {
-        let errors = validationResult(req);
+        let errors = validationResult(req);       
         if (errors.isEmpty()) {
 
-            if (typeof req.file != 'undefined') {
-                req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
-            }
-
-            let passEncriptada = bcrypt.hashSync(req.body.password, 10);
-            req.body.password = passEncriptada;
-
-            await db.Users.create({
-                user: req.body.user,
-                first_name: req.body.first_name,
-                last_name: req.body.last_name,
-                email: req.body.email,
-                password: req.body.password,
-                category_id: 2, //Se envia "2" por default, correspondiente a categoria de "Customer"
-                image: req.body.avatar,
-                deleted: 0
-            });
-            res.redirect('/usuarios/ingresar');
+            db.Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            }).then(email => {
+                // Si encontramos al email
+                console.log(email)
+                if (email == undefined) {
+                    if (typeof req.file != 'undefined') {
+                        req.body.avatar = req.file.filename; //aca le asignamos el nombre de archivo desde router
+                    }
+        
+                    let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+                    req.body.password = passEncriptada;
+        
+                        db.Users.create({
+                        user: req.body.user,
+                        first_name: req.body.first_name,
+                        last_name: req.body.last_name,
+                        email: req.body.email,
+                        password: req.body.password,
+                        category_id: 2, //Se envia "2" por default, correspondiente a categoria de "Customer"
+                        image: req.body.avatar,
+                        deleted: 0
+                    });
+                    res.redirect('/usuarios/ingresar');
+                } else {
+                    // variable para 
+                    let msgExistUser = 1
+                    res.render('users/register', {
+                        errors: errors.array(),
+                        old: req.body,
+                        msgExistUser
+                           
+                    });                    
+                }
+            
+            })                
+            
         } else {
+            let msgExistUser = 0
             res.render('users/register', {
                 errors: errors.array(),
-                old: req.body
+                old: req.body,
+                msgExistUser
 
             });
         }

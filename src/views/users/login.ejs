@@ -14,7 +14,7 @@
             <h1>LOGIN</h1>
             <% if (locals.errors) {
                 errors.forEach(error => { %>
-                <p style="font-size: 12px; color: red;"><%= error.msg %></p>
+                <p style="font-size: 12px; color: red; text-align: center; font-weight: 600;"><%= error.msg %></p>
             <% })
             } %>
             <form class="form_reg"action="/usuarios/ingresar" method="POST">
