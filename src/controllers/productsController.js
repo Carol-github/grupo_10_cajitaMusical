@@ -10,6 +10,9 @@ guardados en la carpeta Data como Json (un array de objetos literales) */
 let db = require("../database/models");
 const sequelize = db.sequelize;
 
+
+const { validationResult } = require('express-validator');
+
 /*GUARDANDO LOS METODOS DE LA LIBRERIA SEQUELIZE*/
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -105,7 +108,7 @@ const productsController = {
         .then((subCategories) => {
           res.render("products/productUpload", {
             categories: categories,
-            subCategories: subCategories[0],
+            subCategories: subCategories[0]
           });
         });
     });
@@ -201,51 +204,43 @@ const productsController = {
 
   //GUARDA EL PRODUCTO NUEVO
   store: async (req, res) => {
-    if (req.body.offer) {
-      req.body.offer = 1; //si el check esta tildado, manda el valor "1"
-    } else {
-      req.body.offer = 0; // si el check esta destildad, manda el valor "0"
-    }
-    if (typeof req.file != "undefined") {
-      req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
-    }
 
-    await db.Products.create({
-      title: req.body.prod_name,
-      offer: req.body.offer,
-      price: req.body.prod_price,
-      fk_category: req.body.prod_cat,
-      fk_subcategory: req.body.prod_subcat,
-      description: req.body.prod_desc,
-      image: req.body.prod_img,
-      deleted: 0,
-    });
-    // const last_position = products.length - 1;
-    // if (typeof req.file != 'undefined') {
-    //     req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
-    // }
+    let errors = validationResult(req);       
+    if (errors.isEmpty()) {
 
-    // const product = {
-    //     id: products[last_position].id + 1,
-    //     oferta: req.body.offer,
-    //     title: req.body.prod_name,
-    //     price: req.body.prod_price,
-    //     category: req.body.prod_cat,
-    //     subcategory: req.body.prod_subcat,
-    //     description: req.body.prod_desc,
-    //     image: req.body.prod_img
-    // }
-    // products.push(product);
-    // //.log(products);
-
-    // // JSON.stringify(output, null, 4) JSON ordenado
-    // const products_saved = JSON.stringify(products, null, 4); //"null, 4" lo usamos para que grabe los nuevos productos en el JSON con saltos de línea
-    // fs.writeFileSync(productsFilePath, products_saved, 'utf-8')
-
-    // let new_user = JSON.stringify(user);
-
-    res.redirect("/");
-  },
-};
-
+      if (req.body.offer) {
+        req.body.offer = 1; //si el check esta tildado, manda el valor "1"
+      } else {
+        req.body.offer = 0; // si el check esta destildad, manda el valor "0"
+      }
+      if (typeof req.file != "undefined") {
+        req.body.prod_img = req.file.filename; //aca le asignamos el nombre de archivo desde router
+      }
+      await db.Products.create({
+        title: req.body.prod_name,
+        offer: req.body.offer,
+        price: req.body.prod_price,
+        fk_category: req.body.prod_cat,
+        fk_subcategory: req.body.prod_subcat,
+        description: req.body.prod_desc,
+        image: req.body.prod_img,
+        deleted: 0,
+      });
+      res.redirect("/");
+    
+  } else {
+    await db.ProductCategory.findAll().then((categories) => {
+      sequelize
+        .query("SELECT * FROM product_subcategories")
+        .then((subCategories) => {
+        res.render('products/productUpload', {
+        errors: errors.array(),
+        old: req.body,
+        categories: categories,
+        subCategories: subCategories[0]
+    })
+  }
+    )})}
+} 
+}
 module.exports = productsController;

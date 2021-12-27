@@ -1,7 +1,7 @@
 .content_reg{
     display: flex;
     justify-content: center; 
-    margin-top: 10vh;
+    margin-top: 5vh;
     height: auto;
 
 }
@@ -17,7 +17,7 @@
     display: flex; 
     flex-direction: column; 
     justify-content: space-evenly; 
-    height: 70vh; 
+    height: auto; 
     /* margin: auto; */
     width: 50vw;
     margin-left: auto;
@@ -29,7 +29,16 @@
     font-size: 16px;
     margin-left: 0;
 }
-
+ .alert{
+    display: none; 
+    color: red; 
+    margin-left:0%!important; 
+    font-size: 14px;
+ }
+ .alertMsg{
+     margin-top: -15px;
+     margin-bottom: 15px;
+ }
 @media (max-width: 420px){
     .form_reg{    
         width: 80vw;

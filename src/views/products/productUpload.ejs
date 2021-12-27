@@ -14,29 +14,50 @@
                 <%- include ('../partials/menu_admin')%>
                     <section class="form_alta_prod">
                         <h1>Alta de Producto</h1>
-                        <form style="height: 90%;" class="form_reg" action="/productos/carga_producto" method="POST"
+                        <% if (locals.errors) {
+                            errors.forEach(error => { %>
+                            <p style="font-size: 12px; color: red; text-align: center;"><%= error.msg %></p>
+                        <% })
+                        } %>
+                        <form style="height: 90%;" id="createProdForm" class="form_reg" action="/productos/carga_producto" method="POST"
                             enctype="multipart/form-data">
 
-                            <label for="prod_name" class="label_reg">NOMBRE</label>
-                            <input type="text" id="prod_name" name="prod_name" required>
-                            <label for="prod_price" class="label_reg">PRECIO</label>
-                            <input class="input_reg" type="number" id="prod_price" name="prod_price" required>
-                            <label for="prod_desc" class="label_reg">DESCRIPCION</label>
-                            <textarea type="email" id="prod_desc" name="prod_desc"
+                            <label for="prod_name" id="prod_name_label"  class="label_reg">NOMBRE</label>
+                            <input type="text" id="prod_name" name="prod_name">
+                            <div class="alertMsg"> 
+                                <p id="alert_prod_name" class="alert"></p> 
+                                <p id="alert_2_prod_name"  class="alert"></p> 
+                            </div>
+                            <label for="prod_price" id="prod_price_label" class="label_reg">PRECIO</label>
+                            <input class="input_reg" type="number" id="prod_price" name="prod_price"  >
+                            <div class="alertMsg"> 
+                                <p id="alert_prod_price" class="alert"></p> 
+                                <p id="alert_2_prod_price"  class="alert"></p> 
+                            </div>  
+                            <label for="prod_desc"  id="prod_desc_label" class="label_reg">DESCRIPCION</label>
+                            <textarea type="text" id="prod_desc" name="prod_desc" 
                                 style="width: 100%; margin-bottom: 15px; border-radius: 12px; border-color: #ededed;"
-                                rows="10" required></textarea>
-                            
-                            <div style=" width: 100%; border-style: solid; border-color: #3483FA; padding:2%; height:70px; border-radius: 10px; display: flex; justify-content: space-evenly; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto;">
+                                rows="10"  >
+                            </textarea>
+                            <div class="alertMsg"> 
+                                <p id="alert_prod_desc" class="alert"></p> 
+                                <p id="alert_2_prod_desc"  class="alert"></p> 
+                            </div> 
+                            <div id="img_container" style=" width: 100%; border-style: solid; border-color: #3483FA; padding:2%; height:70px; border-radius: 10px; display: flex; justify-content: space-evenly; margin-top: 20px; margin-bottom: 20px; margin-left: auto; margin-right: auto;">
                                 <div style="width: 70%; display: flex; margin-right: auto; margin-left: auto; padding:2%; ">
-                                    <label for="prod_img" class="label_reg" style="text-align: center; margin-left: 20px; margin-right: 20px;">IMAGEN</label>
-                                    <input style="border-style: none; margin-left: auto; margin-right: auto;" type="file" accept=".jpg,.png" id="prod_img" name="prod_img" required>
+                                    <label for="prod_img"  id="prod_img_label" class="label_reg prod_img_a" style="text-align: center; margin-left: 20px; margin-right: 20px;">IMAGEN</label>
+                                    <input style="border-style: none; margin-left: auto; margin-right: auto;" type="file" accept=".jpg,.png" id="prod_img" name="prod_img" class="prod_img_a"  >
                                 </div>
+                                <div class="alertMsg"> 
+                                    <p id="alert_prod_img" class="alert"></p> 
+                                 <p id="alert_2_prod_img"  class="alert"></p> 
+                                </div> 
                             </div>
 
 
                             <div style="display: flex; justify-content: space-evenly; margin-bottom: 20px; border-style: solid; border-color: #3483FA; height:70px; padding:1% 2% 1% 2%;  border-radius: 10px; ">
                                 
-                                <label for="prod_cat" class="label_reg" style="margin-top: auto; margin-bottom: auto;">CATEGORIA</label>
+                                <label for="prod_cat"  id="prod_cat_label" class="label_reg" style="margin-top: auto; margin-bottom: auto;">CATEGORIA</label>
                                 <select name="prod_cat" id="prod_cat" style="height: 40px; margin-top: auto; margin-bottom: auto;">
                                     <% categories.forEach(category=> { %>
                                       <option value="<%= category.id %>">
@@ -45,7 +66,7 @@
                                         <% }) %>
                                 </select>
 
-                                <label for="prod_subcat" class="label_reg" style="margin-top: auto; margin-bottom: auto;">SUBCATEGORIA</label>
+                                <label for="prod_subcat"  id="prod_subcat_label" class="label_reg" style="margin-top: auto; margin-bottom: auto;">SUBCATEGORIA</label>
                                 <select name="prod_subcat" id="prod_subcat" style="height: 40px; margin-top: auto; margin-bottom: auto;">
                                     <% subCategories.forEach(subCategory=> { %>
                                         <option value="<%= subCategory.id %>">

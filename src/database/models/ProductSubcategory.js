@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
      
     ProductSubcategory.associate = function (models) {
         ProductSubcategory.belongsTo(models.ProductCategory, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "products",
+            as: "categoria",
             foreignKey: "fk_category"
         });
     }

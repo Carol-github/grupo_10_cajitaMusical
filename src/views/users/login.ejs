@@ -10,7 +10,7 @@
     <!-- main start -->
     
     <main class="content_reg">
-        <section class="section_reg" >
+        <section class="section_reg login_extra" >
             <h1>LOGIN</h1>
             <% if (locals.errors) {
                 errors.forEach(error => { %>
@@ -19,16 +19,25 @@
             } %>
             <form class="form_reg"action="/usuarios/ingresar" method="POST">
                 
-                <label for="email" class="label_reg">EMAIL</label>
+                <label for="email" id="email_label" class="label_reg">EMAIL</label>
                 <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" >
                 <% if (locals.errors){ %>
                 <p style="font-size: 12px; color: red;"> <%= errors.msg %></p>    
                 <% } %>    
-                <label class="label_reg" for="password">CONTRASEÑA</label>
-                <input style="margin-bottom: 0%;"  class="input_reg" type="password" id="pass" name="password" minlength="5"  maxlength="10" value="<%= locals.old && old.pass ? old.pass : '' %>">
+                <div class="alertMsg"> 
+                    <p id="alert_email" class="alert"></p> 
+                    <p id="alert_2_email"  class="alert"></p> 
+                </div>
+                <label class="label_reg"id="password_label" for="password">CONTRASEÑA</label>
+                <input style="margin-bottom: 20px;"  class="input_reg" type="password" id="pass" name="password" minlength="5"  maxlength="10" value="<%= locals.old && old.pass ? old.pass : '' %>">
+                 <div class="alertMsg"> 
+                    <p id="alert_password" class="alert"></p> 
+                    <p id="alert_2_password"  class="alert"></p> 
+                </div>
                 <% if (locals.errors){ %>
                 <p style="font-size: 12px; color: red;"> <%= errors.msg %></p>    
                 <% } %>    
+              
                 <div style="margin-left: 0%; display: flex; width: 25%; justify-content: space-between;">
                     <input style="margin-bottom: 0%;"  class="input_reg" type="checkbox" id="remember" name="remember">
                     <label  style="margin-top: auto; margin-bottom: auto;" class="label_reg" for="remember">RECORDARME</label>
@@ -36,7 +45,7 @@
                 
                 <a href="#" style="margin-left: 0%;" class="link">Olvidaste tu contraseña</a>
                 
-                <button class="btn no_disapear" type="submit">INGRESAR</button>
+                <button class="btn no_disapear" style="margin: 15px auto 15px auto;" type="submit">INGRESAR</button>
                 <a href="/usuarios/registrar" class="link">¿No tenés usuario? Registrate</a>
             </form>
         </section>

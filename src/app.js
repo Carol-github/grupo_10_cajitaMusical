@@ -37,6 +37,8 @@ app.listen(process.env.PORT || 3031, () => {
 const mainRoutes = require('./routes/mainRoutes.js');
 const usersRoutes = require('./routes/usersRoutes.js');
 const productsRoutes = require('./routes/productsRoutes.js');
+const apiUsersRoutes  = require('./routes/api/apiUsersRoutes.js');
+const apiProductsRoutes = require('./routes/api/apiProductsRoutes.js');
 const authMiddleware = require('./middlewares/authMiddleware.js');
 const { create } = require('domain');
 
@@ -44,6 +46,8 @@ const { create } = require('domain');
 app.use('/', mainRoutes);
 app.use('/usuarios', usersRoutes);
 app.use('/productos', productsRoutes);
+app.use('/api/productos', apiProductsRoutes);
+app.use('/api/usuarios', apiUsersRoutes);
 
 // app.use((req, res, next)=>
 //     next(createError(404)));

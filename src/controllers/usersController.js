@@ -45,7 +45,7 @@ const usersController = {
                         }
                         // Redireccionamos al usuario al index
 
-                        return res.redirect('/');
+                        return res.redirect('/usuarios/admin');
 
 
                     } else {

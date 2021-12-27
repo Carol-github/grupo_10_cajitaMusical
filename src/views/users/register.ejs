@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include ('../partials/head')%>
+  
 <body>
-    
+ 
     <!-- header start-->
-    
         
     <!-- header -->
     <%- include ('../partials/header_minimal')%> 
@@ -20,36 +20,55 @@
             } %>
                   
 
-            <form class="form_reg"action="/usuarios/registrar" method="POST" enctype="multipart/form-data">
+            <form class="form_reg" action="/usuarios/registrar" method="POST" enctype="multipart/form-data">
                
-                <label for="email" class="label_reg">EMAIL</label>
+                <label for="email" id="email_label" class="label_reg">EMAIL</label>
                 <input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : '' %>" >
-                
+                <div class="alertMsg"></div>
+                    <p id="alert_email" class="alert"></p> 
+                    <p id="alert_2_email"  class="alert"></p> 
+                </div>
                 <% if(msgExistUser == 1){%>
                 <p style="font-size: 12px; color: red;">Este correo ya esta registrado</p>    
                 <% } %>
 
-                <label for="user" class="label_reg">NOMBRE DE USUARIO</label>
+                <label for="user" id="user_label" class="label_reg">NOMBRE DE USUARIO</label>
                 <input type="text" id="user" name="user" value="<%= locals.old && old.user ? old.user : '' %>" >
-
-                <label for="first_name" class="label_reg">NOMBRE</label>
+                <div class="alertMsg">
+                    <p id="alert_user" class="alert"></p> 
+                    <p id="alert_2_user"  class="alert"></p> 
+                </div>
+                <label for="first_name"  id="first_name_label" class="label_reg">NOMBRE</label>
                 <input type="text" id="first_name" name="first_name"  value="<%= locals.old && old.first_name ? old.first_name : '' %>">
-
-                <label for="last_name" class="label_reg">APELLIDO</label>
+                <div class="alertMsg">
+                    <p id="alert_first_name" class="alert"></p> 
+                    <p id="alert_2_first_name"  class="alert"></p> 
+                </div>   
+                <label for="last_name"  id="last_name_label" class="label_reg">APELLIDO</label>
                 <input type="text" id="last_name" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : '' %>">
-
+                <div class="alertMsg">
+                    <p id="alert_last_name" class="alert" ></p> 
+                    <p id="alert_2_last_name"  class="alert"></p> 
+                </div>
                               
-                <label for="avatar" class="label_reg">IMAGEN DE PERFIL</label>
+                <label for="avatar"  id="avatar_label" class="label_reg">IMAGEN DE PERFIL</label>
                 <input style="border-style: none;" type="file"  accept=".jpg,.png" id="avatar" name="avatar" > 
-
-                <label>Elegir Archivo...</label> 
-
-                <label for="password"  class="label_reg">CONTRASEÑA</label>
+                <div class="alertMsg">
+                    <p id="alert_avatar" class="alert"></p> 
+                    <p id="alert_2_avatar"  class="alert"></p> 
+                </div>    
+                <label for="password"  id="password_label" class="label_reg">CONTRASEÑA</label>
                 <input class="input_reg" type="password" id="pass" name="password"  minlength="5"  maxlength="10" >
-                
-                <label for="confirm_password"  class="label_reg">REPETIR CONTRASEÑA</label>
+                <div class="alertMsg">
+                    <p id="alert_password" class="alert"></p> 
+                    <p id="alert_2_password"  class="alert"></p> 
+                </div>
+                <label for="confirm_password"  id="confirm_pass_label"  class="label_reg">REPETIR CONTRASEÑA</label>
                 <input class="input_reg" type="password" id="confirm_password" name="confirm_pass"  minlength="5" maxlength="10">
-                
+                <div class="alertMsg"> 
+                    <p id="alert_password_b" class="alert"></p> 
+                    <p id="alert_2_password_b"  class="alert"></p> 
+                </div>
                 <button class="btn no_disapear" type="submit">REGISTRAR</button>
             </form>
         </section>
@@ -59,12 +78,12 @@
     <!-- footer -->
     <%- include ('../partials/footer')%>
     
-      
+
     <!-- JS BOOSTRAP -->
     
-    <!-- <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <!--<script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
-        
+    
     </body>
     
     </html>
