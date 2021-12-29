@@ -49,6 +49,30 @@ const apiProductsController = {
             })
             .catch(error=>console.log(error));
         },
-        
+        productDetail: (req, res) => {
+            let findById = 
+            db.Products
+            .findOne({
+              where: { id: req.params.id, deleted: 0 },
+            });
+    
+            Promise.all([findById])
+            .then((product) => {              
+              if (product[0] === null) {
+                res.send("El producto no existe");
+              } else {
+                product[0].image = `http://localhost:3031/img/imgProducts/${product[0].image}`;
+                let productToSend = {
+                  meta: {
+                    status: 200,
+                    total: product.length,
+                    url: req.originalUrl                
+                  },
+                  data: product,
+                };
+                res.json(productToSend);
+              }
+            }); 
+        }
 }
 module.exports = apiProductsController;
