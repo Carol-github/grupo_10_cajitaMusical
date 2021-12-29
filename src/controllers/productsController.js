@@ -102,7 +102,7 @@ const productsController = {
 
   //ESTE MANDA LA INFORMACION PARA CREAR PRODUCTO
   upload: async (req, res) => {
-    await db.ProductCategory.findAll().then((categories) => {
+    await db.ProductCategories.findAll().then((categories) => {
       sequelize
         .query("SELECT * FROM product_subcategories")
         .then((subCategories) => {
@@ -229,7 +229,7 @@ const productsController = {
       res.redirect("/");
     
   } else {
-    await db.ProductCategory.findAll().then((categories) => {
+    await db.ProductCategories.findAll().then((categories) => {
       sequelize
         .query("SELECT * FROM product_subcategories")
         .then((subCategories) => {
