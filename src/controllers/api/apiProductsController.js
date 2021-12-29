@@ -32,8 +32,7 @@ const apiProductsController = {
             Promise.all(
                 [allProducts, countByCategory]
             )
-            .then(([products, countByCategory]) =>{
-                console.log(countByCategory);
+            .then(([products, countByCategory]) =>{                
                 let result ={
                     metadata:{
                         url: req.originalUrl,
@@ -50,9 +49,6 @@ const apiProductsController = {
             })
             .catch(error=>console.log(error));
         },
-        find: (req,res)=>{
-            const wow ='wow';
-            res.send(wow);
-        }
+        
 }
 module.exports = apiProductsController;

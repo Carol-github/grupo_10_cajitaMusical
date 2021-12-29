@@ -6,6 +6,6 @@ const path = require ('path');
 const apiUserController = require ('../../controllers/api/apiUsersController');
 
 router.get('/', apiUserController.index);
-router.get('/:id', apiUserController.find);
+router.get('/:id', apiUserController.userDetail);
 
 module.exports = router;
