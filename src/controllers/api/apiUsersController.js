@@ -20,7 +20,6 @@ const apiUserController = {
                 quantity: users.length,
               },
               data: users,
-              // categories: categoria
             };
             return res.send(result);
           })
@@ -35,7 +34,6 @@ const apiUserController = {
 
         Promise.all([findById])
         .then((user) => {
-          console.log(user);
           if (user[0] === null) {
             res.send("El usuario no existe");
           } else {
@@ -51,30 +49,6 @@ const apiUserController = {
             res.json(userToSend);
           }
         }); 
-
-        // db.Users.findByPk(req.params.id);
-        
-        // Promise.all(
-        //     [findById]
-        // )            
-        // .then(user => {                     
-        //     if (user[0] != null && user[0].deleted == 0) {
-                
-        //         let userToSend = {
-        //             meta: {
-        //                 status: 200,
-        //                 total: user.length,
-        //                 url: '/api/usuarios/:id'
-        //             },
-        //             data: user 
-        //         }
-                
-        //       res.json(userToSend);
-           
-        //     } else{                
-        //         res.send("El usuario no existe")
-        //     }
-        // })
     } 
 }
        

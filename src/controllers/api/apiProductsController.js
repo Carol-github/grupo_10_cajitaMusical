@@ -22,28 +22,33 @@ const apiProductsController = {
             let allProducts = db.Products
             .findAll(
                  {
-                order:[['id', 'DESC']],
-                attributes:['id', 'title', 'description'],
-                where: {deleted : 0},
-                include:['categoria']
+                  order:[['id', 'DESC']],
+                  attributes:['id', 'title', 'description'],
+                  where: {deleted : 0},
+                  include:['categoria']
                
             }
             );
             Promise.all(
                 [allProducts, countByCategory]
             )
-            .then(([products, countByCategory]) =>{                
+
+            
+
+            .then(([products, countByCategory]) =>{
+                // if (products.url == null){
+                //     for(i=1 ; products.length ; i++){
+                //         products[i].url = `http://localhost:3031/productos/${products.id}`;; 
+                //     }                          
+                // }  
+                       
                 let result ={
                     metadata:{
                         url: req.originalUrl,
                         quantity:products.length,
-                        // categoryByQuantity:{
-                        //     ...categoryQuantity
-                        // }
                       countByCategory:[...countByCategory]
                     },
                     data: products,
-                    // categories: categoria
                 }
                 return res.send(result);
             })
