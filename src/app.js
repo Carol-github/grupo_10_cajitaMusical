@@ -4,7 +4,6 @@ const path = require('path');
 const methodOverride = require("method-override");
 const session = require('express-session'); 
 const cookieParser = require('cookie-parser');
-
 const userMiddleware = require('./middlewares/userMiddleware')
 
 // Middlewares
@@ -48,6 +47,8 @@ app.use('/usuarios', usersRoutes);
 app.use('/productos', productsRoutes);
 app.use('/api/productos', apiProductsRoutes);
 app.use('/api/usuarios', apiUsersRoutes);
+
+
 
 // app.use((req, res, next)=>
 //     next(createError(404)));
