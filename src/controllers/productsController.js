@@ -75,50 +75,68 @@ const productsController = {
     //      userLogged: req.session.userLogged });
   },
 
-  /*BARRA DE BUSQUEDA */
-  search: async (req, res) => {
-    let search = req.query.searchProduct;
-    await db.Products.findAll(      
-      {
-        where: {
-          deleted: 0,
-          title: {
-            [Op.like]: `%${search}%`,
-          },          
+ /*BARRA DE BUSQUEDA */
+ search: async (req, res) => {
+  let search = req.query.searchProduct;
+  await db.Products.findAll(
+    {
+      where: {
+        deleted: 0,
+        title: {
+          [Op.like]: `%${search}%`,
         },
-      }
-    ).then((products) => {    
-      res.render("products/productList", {
-        products: products,
-        userLogged: req.session.userLogged,
-      });
-    });    
-  },
-
-  //BOTONES DE CATEGORIAS DEL INDEX
-  categoryButtons: (req, res) => {
-
-  },
-
-  //ESTE MANDA LA INFORMACION PARA CREAR PRODUCTO
-  upload: async (req, res) => {
-    await db.ProductCategories.findAll().then((categories) => {
-      sequelize
-        .query("SELECT * FROM product_subcategories")
-        .then((subCategories) => {
-          res.render("products/productUpload", {
-            categories: categories,
-            subCategories: subCategories[0]
-          });
-        });
+      },
+    }
+  ).then((products) => {
+    res.render("products/productList", {
+      products: products,
+      userLogged: req.session.userLogged,
     });
-  },
+  });
+},
+
+//BOTONES DE CATEGORIAS DEL INDEX
+listByCategory: (req, res) => {
+ db.ProductCategories.findAll({
+    where: { deleted: 0, category_name: req.params.category }
+  })
+  .then((category)=>{
+    console.log(category)
+    console.log(category[0].id)
+   db.Products.findAll({ where: { deleted: 0, fk_category: category[0].id } })
+   .then((products) => {
+    console.log(products)
+    return res.render("products/productList", {
+      products: products,
+      userLogged: req.session.userLogged,
+    });
+  });
+  })
+
+
+
+},
+
+//ESTE MANDA LA INFORMACION PARA CREAR PRODUCTO
+upload: async (req, res) => {
+  await db.ProductCategories.findAll().then((categories) => {
+    sequelize
+      .query("SELECT * FROM product_subcategories")
+      .then((subCategories) => {
+        res.render("products/productUpload", {
+          categories: categories,
+          subCategories: subCategories[0]
+        });
+      });
+  });
+},
 
   //MANDA LA INFORMACION PARA EDITAR EL PRODUCTO
   edit: async (req, res) => {
     await db.Products.findByPk(req.params.id).then((product) => {
       sequelize.query("SELECT * FROM product_categories").then((categories) => {
-        sequelize.query("SELECT * FROM product_subcategories")
+        sequelize
+          .query("SELECT * FROM product_subcategories")
           .then((subCategories) => {
             res.render("products/productEdit", {
               product: product,
@@ -204,10 +222,8 @@ const productsController = {
 
   //GUARDA EL PRODUCTO NUEVO
   store: async (req, res) => {
-
-    let errors = validationResult(req);       
+    let errors = validationResult(req);
     if (errors.isEmpty()) {
-
       if (req.body.offer) {
         req.body.offer = 1; //si el check esta tildado, manda el valor "1"
       } else {
@@ -227,20 +243,20 @@ const productsController = {
         deleted: 0,
       });
       res.redirect("/");
-    
-  } else {
-    await db.ProductCategories.findAll().then((categories) => {
-      sequelize
-        .query("SELECT * FROM product_subcategories")
-        .then((subCategories) => {
-        res.render('products/productUpload', {
-        errors: errors.array(),
-        old: req.body,
-        categories: categories,
-        subCategories: subCategories[0]
-    })
-  }
-    )})}
-} 
-}
+    } else {
+      await db.ProductCategories.findAll().then((categories) => {
+        sequelize
+          .query("SELECT * FROM product_subcategories")
+          .then((subCategories) => {
+            res.render("products/productUpload", {
+              errors: errors.array(),
+              old: req.body,
+              categories: categories,
+              subCategories: subCategories[0],
+            });
+          });
+      });
+    }
+  },
+};
 module.exports = productsController;
