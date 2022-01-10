@@ -7,9 +7,13 @@
 
 .product_detail {
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 .product_images {
     width: 40vw!important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product_ppal_image {
@@ -66,14 +70,13 @@
 .product_share {
     font-size: 16px;
     font-weight: 300;
-    margin-bottom: 3%;
     color: #3483FA;
 }
 .detail_btns{
     display: flex; 
     justify-content: start;  
     margin-top: 15px;
-    width: 350px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -123,5 +126,10 @@
     .invisble_mobile{
         display: none;
         visibility: hidden;
+    }
+    .detail_btns{
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
     }
 }

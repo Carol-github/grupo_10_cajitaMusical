@@ -14,7 +14,7 @@ const apiProductsController = {
 
     let allProducts = db.Products.findAll({
       order: [["id", "DESC"]],
-      attributes: ["id", "title", "description"],
+      attributes: ["id", "title","price", "description"],
       where: { deleted: 0 },
       include: ["categoria"],
     });
@@ -38,6 +38,7 @@ const apiProductsController = {
           metadata: {
             url: req.originalUrl,
             quantity: products.length,
+            categoryQuantity: countCategory.length,
             categoryByQuantity: countByCategory,
           },
           data: products,

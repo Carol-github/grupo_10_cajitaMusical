@@ -1,6 +1,6 @@
 .section_cart{
     margin-top: 2%;
-    width: 100vw;
+    width: 90vw;
     margin-right: auto;
     margin-left: auto;
 }
@@ -8,6 +8,8 @@
 .cart_checkout{
     display:flex;
     justify-content: space-around;
+    width: 80%;
+    margin: 0 auto 0 auto;
 }
 
 .title_cart{
@@ -20,6 +22,8 @@
     font-size: 32px;
     margin-top: auto;
     margin-bottom: auto;
+    width: 50%;
+    text-align: center;
 }
 
 .line {
@@ -34,25 +38,37 @@
 .cart_item{
     display: flex;
     justify-content: space-evenly;
+    margin-bottom:30px;
+
 }
 
 .img_cart_product{
     width: 100px;
 }
 
+.prod_title_cart{
+    text-align: left;
+}
 .cart_detail_item{
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 30%;
 }
 
 .cart_amount_detail{
     display: flex;
+    flex-direction: column;
+    align-items: start;
     margin-top: auto;
     margin-bottom: auto;
 }
 
+.lefty{
+  
+    margin: 0%!important; 
 
+}
 .btn_cart{
     width: 30px!important;
     font-size: 20px!important;
@@ -97,28 +113,58 @@
 .final_btn_cart{
     display: none!important; 
 }
+.form-control{
+    width: 50px!important;
+}
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
 @media (max-width: 420px){
     .cart_checkout{
         flex-direction: column;
-        height: 150px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #cart-total-amount{
+        text-align: center;
+        width: 75%;
+        margin: 0px auto 20px auto!important ;
+    }
+    .cart_amount_detail{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .img_cart_product{
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin: 15px auto 15px auto;
+    }
+    .cart_detail_item{
+        width: 80%;
+            margin: 5px auto 5px auto; 
+    }
+    .prod_title_cart{
+        text-align: center;
+        width: 200px;
+        margin: 5px auto 5px auto; 
+
+    }
+    .bloqueado{
+        display: none!important;
     }
     .delivery_delete{
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 20px auto 10px auto;
         display: flex;
         flex-direction: row;
-        width: 250px; 
+        width: auto; 
     }
     .amount_price{
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 10px auto 10px auto;
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 80%;
     }
     .cart_item{
         flex-direction: column;
@@ -132,5 +178,15 @@
         margin-bottom: 20px;
         display: flex;
         
+    }
+    .form-control{
+        width: 50px!important;
+    }
+    .total_price{
+        margin: auto;
+    }
+    .total_price p{
+        text-align: center;
+        margin: auto;
     }
 }
