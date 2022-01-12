@@ -4,9 +4,12 @@ const path = require('path');
 const methodOverride = require("method-override");
 const session = require('express-session'); 
 const cookieParser = require('cookie-parser');
-const userMiddleware = require('./middlewares/userMiddleware')
 
-// Middlewares
+const userMiddleware = require('./middlewares/userMiddleware')
+const cartMiddleware = require('./middlewares/cartMiddleware')
+
+// Middlewares de aplicación
+
 //define la carpeta public donde se guardan las imagenes y css
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
@@ -18,7 +21,8 @@ app.use(session({
 app.use(cookieParser());
 //app.use(express.static("./public"));
 app.use(express.json());
-app.use(userMiddleware)
+app.use(userMiddleware);
+app.use(cartMiddleware);
 
 //urlencoded nos permite procesar los formularios
 app.use(express.urlencoded({extended:false})); 
@@ -50,13 +54,13 @@ app.use('/api/usuarios', apiUsersRoutes);
 
 
 
-// app.use((req, res, next)=>
-//     next(createError(404)));
-// // manejo de errores 404
-// app.use((err, req, res, next)=>{
-//     res.status(err.status || 500)
-//     res.render ('error/error');
-// });
+app.use((req, res, next)=>
+    next(createError(404)));
+// manejo de errores 404
+app.use((err, req, res, next)=>{
+    res.status(err.status || 500)
+    res.render ('error/error');
+});
 
 
 

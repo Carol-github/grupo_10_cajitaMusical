@@ -1,6 +1,6 @@
 ﻿# grupo_10_cajitaMusical
 Una breve descripcion de la oferta de productos:
-Tienda online de instrumentos musicales. Se venderán instrumentos musicales, categorizados en 4 tipos: vientos, percusion, cuerdas y teclados.
+Tienda online de instrumentos musicales. Se venderán instrumentos musicales, categorizados en 4 tipos: vientos, percusión, cuerdas y teclados.
 
 Público:  Va destinado a personas de 15 a 65 años, que tengan interes en la música o sean músicos.
 

@@ -12,7 +12,7 @@
             <img src="/img/isotipo.svg" class="logo_mobile" alt="logo del sitio cajita musical.">
         </a>
   
-            <form class="search_form"action="/productos/lista" method="GET" class="search-form" enctype="multipart/form-data">
+            <form class="search_form" action="/productos/lista" method="GET" class="search-form" enctype="multipart/form-data">
                 <input class="search_input" type="text" name="searchProduct" placeholder="Busca por marca, instrumento, etc.">
                 <button style=" margin-top: auto; margin-bottom:auto; background-color: #fff; border-style: none;" type="submit">
                     <img src="/img/icon_search.svg" style="width: 100%; opacity: 0.8; padding-left: 5px; padding-right: 5px;"
@@ -50,7 +50,7 @@
                             <a href="/usuarios/ingresar" class="link">Mi Cuenta</a>
                             <% } else { %>
                                 <div style="display: flex; flex-direction: column;">
-                                    <img class="profile_img_user_mobile" src="img/avatars/<%= userLogged.image %>"
+                                    <img class="profile_img_user_mobile" src="/img/avatars/<%= userLogged.image %>"
                                         alt="">
                                     <a href="/usuarios/ingresar" class="link">
                                         <%= userLogged.user %>
@@ -61,11 +61,11 @@
                     </li>
                     <div class="line_2"></div>
                     <li>
-                        <a href="/categorias" class="link">Categorias</a>
+                        <a href="/" class="link">Categorias</a>
                     </li>
                     <div class="line_2"></div>
                     <li>
-                        <a href="/ofertas" class="link">Ofertas</a>
+                        <a href="" class="link">Ofertas</a>
                     </li>
                     <div class="line_2"></div>
                     <li>
@@ -111,20 +111,23 @@
         </div>
         <nav class="nav_header">
             <ul class="nav_ul_header">
-                <li class="nav_ul_li_header" <a href="">Categorias</a>
+                <li class="nav_ul_li_header">Categorias
                     <ul class="nav_ul_li_cat_ul">
-                        <li class="nav_ul_li_cat_ul_li_1">
-                            <a href="">Cuerdas</a>
+                   
+
+                         <li class="nav_ul_li_cat_ul_li_1">
+                            <a  href="/productos/lista/cuerdas">Cuerdas</a>
                         </li>
                         <li class="nav_ul_li_cat_ul_li">
-                            <a href="">Percusión</a>
+                            <a  href="/productos/lista/Percusion">Percusión</a>
                         </li>
                         <li class="nav_ul_li_cat_ul_li">
-                            <a href="">Vientos</a>
+                            <a  href="/productos/lista/vientos">Vientos</a>
                         </li>
                         <li class="nav_ul_li_cat_ul_li">
-                            <a href="">Teclas</a>
+                            <a  href="/productos/lista/teclas">Teclas</a>
                         </li>
+
                     </ul>
                 </li>
                 <li class="nav_ul_li_header">

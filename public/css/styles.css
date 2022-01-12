@@ -159,8 +159,6 @@ p{
         display: flex; 
         flex-wrap: nowrap;
         justify-content: space-evenly;
-
-      
     }
     .item_menu{
         height: 250px;
@@ -429,7 +427,6 @@ p{
             width: 100%; 
         }
         .info_item_menu{
-            margin-left: 10%;
             padding-top: 20px;
             visibility: visible;
         }

@@ -1,5 +1,5 @@
 Comenzar a hacer: hacer APis de users y products.\
-Dejar de hacer: proecuparse por cosas que no son trascendentes al proyecto.\
+Dejar de hacer: preocuparse por cosas que no son trascendentes al proyecto.\
 Más de: comunicación.\
 Menos de: dejar para último momento las tareas.\
 Seguir haciendo: buscar errores y ver de corregirlos en nuestro código, las cosas a tiempo!

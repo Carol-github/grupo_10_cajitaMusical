@@ -45,6 +45,7 @@ const validateCreateProductForm = [
 
 // Middlewares
 const authMiddleware = require('../middlewares/authMiddleware');
+
 //aca definimos donde se van a guardar las imagenes de los usuarios
 const storage = multer.diskStorage({ 
     //creacion nde ruta
@@ -66,8 +67,10 @@ const uploadFile = multer({ storage });
 const productsController = require('../controllers/productsController.js');
 
 // CARRITO 
-router.get('/carrito', authMiddleware, productsController.productCart);
-// router.get('/detalle', productsController.productDetail);
+//router.get('/carrito', authMiddleware, productsController.productCart);
+router.get('/carrito', productsController.productCart);
+router.post('/carrito', productsController.addToCart);
+router.post('/outcart', productsController.cartDelete);
 
 // DETALLE
 router.get('/detalle/:id', productsController.productDetail);
@@ -75,6 +78,8 @@ router.get('/detalle/:id', productsController.productDetail);
 // LISTA
 // router.get('/lista', productsController.productList);
 router.get('/lista', productsController.search);
+router.get('/lista/:category', productsController.listByCategory);
+
 
 // CREACION
 router.get("/carga_producto", authMiddleware, productsController.upload);

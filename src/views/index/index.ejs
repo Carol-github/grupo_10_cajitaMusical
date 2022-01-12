@@ -17,14 +17,15 @@
         </section>
 
         <h3>CATEGORÍAS</h3>
+        <a name="categoriesStop"></a>
         <section class="sec_scroll">
             <div class="div_scroll">
             <% categories.forEach(category => { %>
-            <a href="/productos/lista" class="item_menu">
+            <a href="/productos/lista/<%= category.category_name %>" class="item_menu">
                 <img src="/img/categories/<%= category.image %>" class="img_category" alt="">
                 <div class="info_item_menu">
                     <img class="icon_category"  src="/img/categories/<%= category.icon %>" alt="">
-                    <h4><%= category.title %></h4>
+                    
                     <div class="line_2"></div>
                     <p><%= category.description %></p>
                 </div>

@@ -11,77 +11,68 @@
     <main>
         <section class="section_cart">
             <div class="cart_checkout">
-                <h1 class="title_cart">Carrito</h1>
-                <span class="cart_total_amount">Total: $900.000</span>
+                <!-- <h1 class="title_cart">Carrito</h1> -->
+                <span class="cart_total_amount" id="cart-total-amount"></span>
                 <button class="btn">Finalizar Compra</button>
             </div>
             
             <div class="line"></div>
             
-            <div class="cart_item">
-                <img class="img_cart_product" src="/img/guitarra.jpg" alt="">
-                <div class="cart_detail_item">
-                    <h2>Guitarra Fender</h2>
-                    <div class="delivery_delete">
+            <% products.forEach((product, idx) => {  %> 
+
+
+                <div class="cart_item" idx-product="<%= idx %>">
+                    <img class="img_cart_product" src="/img/imgProducts/<%= product.image %>" alt="<%= product.title %>">
+                    <div class="cart_detail_item">
+                        <h2 class="prod_title_cart"><%= product.title %></h2>
                         <span class="product_share">Envío gratis</span>
-                        <button class="btn btn_cart btn_width">Eliminar</button>
+                        <div class="delivery_delete">
+                          
+                            <form action="/productos/outcart" method="POST">
+                                <input class="bloqueado" type="hidden" name="productToCart" value="<%= product.id  %>">
+                                <button class="btn lefty"  type="submit">Eliminar</button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="amount_price">
+                        <div class="cart_amount_detail">
+                            <input style="margin-bottom: 0%!important;" class="form-control" type="number" value="1" min="1">
+                            <p>cantidad</p>
+                        </div>
+                        <div style="margin: auto; width: 200px;">
+                            <span class="cart_item_price" id="item-price"><%= product.price %></span>
+                            <p>costo por unidad</p>
+                        </div>
+                    </div>
+
+                    <div class="total_price cart_item_price">
+                        <span class="cart_total_price cart_item_price" id="tot-price"> <%= product.price %></span>
+                        <p>subtotal</p>
                     </div>
                 </div>
-                <div class="amount_price">
-                    <div class="cart_amount_detail">
-                        <button class="btn btn_cart">-</button>
-                        <span class="cart_item_amount">1</span>
-                        <button class="btn btn_cart">+</button>
-                    </div>
-                    <span class="cart_item_price">$300.000</span>
-                </div>
+                <div class="line"></div>
+
+            <%  }) %> 
+
+            <div class="cart_checkout" style="margin-top: 20px!important;">
+                <!-- <h1 class="title_cart">Carrito</h1> -->
+                <button class="btn">Finalizar Compra</button>
             </div>
+
             <div class="line"></div>
             
-            <div class="cart_item">
-                <img class="img_cart_product" src="/img/guitarra.jpg" alt="">
-                <div class="cart_detail_item">
-                    <h2>Guitarra Fender</h2>
-                    <div class="delivery_delete">
-                        <span class="product_share">Envío gratis</span>
-                        <button class="btn btn_cart btn_width">Eliminar</button>
-                    </div>
-                </div>
-                <div class="amount_price">
-                    <div class="cart_amount_detail">
-                        <button class="btn btn_cart">-</button>
-                        <span class="cart_item_amount">1</span>
-                        <button class="btn btn_cart">+</button>
-                    </div>
-                    <span class="cart_item_price">$300.000</span>
-                </div>
-            </div>
-            <div class="line"></div>
-            
-            <div class="cart_item">
-                <img class="img_cart_product" src="/img/guitarra.jpg" alt="">
-                <div class="cart_detail_item">
-                    <h2>Guitarra Fender</h2>
-                    <div class="delivery_delete">
-                        <span class="product_share">Envío gratis</span>
-                        <button class="btn btn_cart btn_width">Eliminar</button>
-                    </div>
-                </div>
-                <div class="amount_price">
-                    <div class="cart_amount_detail">
-                        <button class="btn btn_cart">-</button>
-                        <span class="cart_item_amount">1</span>
-                        <button class="btn btn_cart">+</button>
-                    </div>
-                    <span class="cart_item_price">$300.000</span>
-                </div>
-            </div>
-            <div class="line"></div>
-            <button class="btn final_btn_cart">Finalizar Compra</button>
         </section>
-        
+       
+
+
+
+
     </main>
       
+
+
+
     <!-- footer -->
     <%- include ('../partials/footer')%>
     
