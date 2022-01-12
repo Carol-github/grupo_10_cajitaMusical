@@ -62,6 +62,7 @@ const apiProductsController = {
           countByCategory[obj.category_name] = obj.count;
         });
 
+        //Aca dependiendo el valor de la pagina en la que estemos posicionados, retornara distintas metadatas con URLs de siguiente o anterior pagina
         if(page == 0){
           let result = {
             metadata: {
@@ -75,7 +76,7 @@ const apiProductsController = {
           };
           return res.send(result);          
         } else {
-          if(page == (products.length / size)-1){
+          if(page == (Math.ceil(products.length) / size)-1){
             let result = {
               metadata: {
                 url: req.originalUrl,
