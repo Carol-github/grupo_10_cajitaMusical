@@ -13,6 +13,8 @@ const apiProductsController = {
     });
 
     let allProducts = db.Products.findAll({
+      offset: 10, 
+      limit: 10,
       order: [["id", "DESC"]],
       attributes: ["id", "title","price", "description"],
       where: { deleted: 0 },
@@ -24,7 +26,7 @@ const apiProductsController = {
         products = products
           .map((el) => el.get({ plain: true }))
           .map((product) => {
-            product.url = `http://localhost:3031/api/productos/${product.id}`;
+            product.url = `http://localhost:3031/api/productos/item/${product.id}`;
             product.dbRelations = ["fk_category"];
             return product;
           });

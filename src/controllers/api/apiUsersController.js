@@ -15,7 +15,7 @@ const apiUserController = {
         users = users
           .map((el) => el.get({ plain: true }))
           .map((user) => {
-            user.url = `http://localhost:3031/api/usuarios/${user.id}`;
+            user.url = `http://localhost:3031/api/usuarios/usuario/${user.id}`;
             return user;
           });
         console.log(users);

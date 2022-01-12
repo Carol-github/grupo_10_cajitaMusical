@@ -41,7 +41,7 @@ const usersController = {
                         req.session.userLogged = user;
                         // Setear la cookie
                         if (req.body.remember) {
-                            res.cookie('userCookie', req.session.userLogged, { maxAge: 60000 * 60 });
+                            res.cookie('cajitaMusicalCookie', req.session.userLogged, { maxAge: 1200000 });
                         }
                         // Redireccionamos al usuario al index
 
