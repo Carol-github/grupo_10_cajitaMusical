@@ -1,4 +1,7 @@
 ﻿# grupo_10_cajitaMusical
+DASHBOARD
+https://github.com/maurordf/grupo_10_cajitaMusical_dashboard
+
 Una breve descripcion de la oferta de productos:
 Tienda online de instrumentos musicales. Se venderán instrumentos musicales, categorizados en 4 tipos: vientos, percusión, cuerdas y teclados.
 
