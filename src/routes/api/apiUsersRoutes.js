@@ -5,7 +5,7 @@ const path = require ('path');
 
 const apiUserController = require ('../../controllers/api/apiUsersController');
 
-router.get('/:page', apiUserController.index);
-router.get('/usuario/:id', apiUserController.userDetail);
+router.get('/', apiUserController.index);
+router.get('/:id', apiUserController.userDetail);
 
 module.exports = router;

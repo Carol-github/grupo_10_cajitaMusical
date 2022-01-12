@@ -6,28 +6,84 @@ const Op = db.sequelize.Op;
 
 const apiUserController = {
   index: (req, res) => {
+    // Guardo en variables lo que ingresa por la URL numero de pagina y cantidad de items por pagina
+    const pageAsNumber = Number.parseInt(req.query.page);
+    const sizeAsNumber = Number.parseInt(req.query.size);
+
+    //Por defecto inicia en pagina 0 y limitamos a que solo se consulte por numeros y paginas mayores 0
+    let page = 0;
+    if(!Number.isNaN(pageAsNumber) && pageAsNumber > 0) {
+      page = pageAsNumber;
+    };
+
+    //Por defecto la cantidad de items que mostramos por pagina es 10. Por query pueden ser valores entre 1 y 9
+    let size = 10;
+    if(!Number.isNaN(sizeAsNumber) && sizeAsNumber > 0 && sizeAsNumber < 10) {
+      size = sizeAsNumber;
+    }
+
     let allUsers = db.Users.findAll({
       order: [["id", "DESC"]],
       attributes: ["id", "user", "email"],
       where: { deleted: 0 },
+    });
+
+    let pagedUsers = db.Users.findAll({
+      limit: size,
+      offset: page * size,
+      order: [["id", "DESC"]],
+      attributes: ["id", "user", "email"],
+      where: { deleted: 0 },
     })
-      .then((users) => {
-        users = users
+
+
+    Promise.all([allUsers, pagedUsers])
+    .then(([users, usersPerPage]) => {
+        usersPerPage = usersPerPage
           .map((el) => el.get({ plain: true }))
-          .map((user) => {
-            user.url = `http://localhost:3031/api/usuarios/usuario/${user.id}`;
-            return user;
+          .map((userPerPage) => {
+            userPerPage.url = `http://localhost:3031/api/usuarios/${userPerPage.id}`;
+            return userPerPage;
           });
-        console.log(users);
-        let result = {
-          metadata: {
-            url: req.originalUrl,
-            quantity: users.length,
-          },
-          data: users,
-        };
-        // console.log(result)
-        return res.send(result);
+        
+        //Aca dependiendo el valor de la pagina en la que estemos posicionados, retornara distintas metadatas con URLs de siguiente o anterior pagina
+        if(page == 0){
+          let result = {
+            metadata: {
+              url: req.originalUrl,
+              nextPage: `http://localhost:3031/api/usuarios?page=${(page+1)}`,
+              quantity: users.length,
+            },
+            data: usersPerPage,
+          };
+          return res.send(result);
+        } else {
+          if(page == (Math.ceil(users.length / size))-1){
+            let result = {
+              metadata: {
+                url: req.originalUrl,
+                prevPage: `http://localhost:3031/api/usuarios?page=${(page-1)}`,
+                quantity: users.length,
+              },
+              data: usersPerPage,
+            };
+            return res.send(result);
+          } else {
+            let result = {
+              metadata: {
+                url: req.originalUrl,
+                nextPage: `http://localhost:3031/api/usuarios?page=${(page+1)}`,
+                prevPage: `http://localhost:3031/api/usuarios?page=${(page-1)}`,
+                quantity: users.length,
+              },
+              data: usersPerPage,
+            };
+            return res.send(result);
+          }
+        }
+
+
+        
       })
       .catch((error) => console.log(error));
   },

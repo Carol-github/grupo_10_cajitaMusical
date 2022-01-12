@@ -150,27 +150,29 @@ const productsController = {
 
  
 
-  },
 
-  //ESTE MANDA LA INFORMACION PARA CREAR PRODUCTO
-  upload: async (req, res) => {
-    await db.ProductCategories.findAll().then((categories) => {
-      sequelize
-        .query("SELECT * FROM product_subcategories")
-        .then((subCategories) => {
-          res.render("products/productUpload", {
-            categories: categories,
-            subCategories: subCategories[0]
-          });
+},
+
+//ESTE MANDA LA INFORMACION PARA CREAR PRODUCTO
+upload: async (req, res) => {
+  await db.ProductCategories.findAll().then((categories) => {
+    sequelize
+      .query("SELECT * FROM product_subcategories")
+      .then((subCategories) => {
+        res.render("products/productUpload", {
+          categories: categories,
+          subCategories: subCategories[0]
         });
-    });
-  },
+      });
+  });
+},
 
   //MANDA LA INFORMACION PARA EDITAR EL PRODUCTO
   edit: async (req, res) => {
     await db.Products.findByPk(req.params.id).then((product) => {
       sequelize.query("SELECT * FROM product_categories").then((categories) => {
-        sequelize.query("SELECT * FROM product_subcategories")
+        sequelize
+          .query("SELECT * FROM product_subcategories")
           .then((subCategories) => {
             res.render("products/productEdit", {
               product: product,
@@ -256,10 +258,8 @@ const productsController = {
 
   //GUARDA EL PRODUCTO NUEVO
   store: async (req, res) => {
-
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-
       if (req.body.offer) {
         req.body.offer = 1; //si el check esta tildado, manda el valor "1"
       } else {
@@ -279,7 +279,6 @@ const productsController = {
         deleted: 0,
       });
       res.redirect("/");
-
     } else {
       await db.ProductCategories.findAll().then((categories) => {
         sequelize
